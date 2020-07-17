@@ -1,5 +1,5 @@
 # bot.py
-import os, discord, urllib.request, json
+import os, discord, json, requests
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -14,8 +14,9 @@ command_list_embed = {}
 
 def update_commands():
     global command_data, command_embeds, dm_embeds, command_list_embed
-    with urllib.request.urlopen(COMMAND_URL) as url:
-        command_data = json.loads(url.read().decode())
+
+    with requests.get(COMMAND_URL) as response:
+        command_data = response.json()
 
     command_list_embed = discord.Embed(title="Command List", color=0x0099ff)
     for cmd in command_data:
