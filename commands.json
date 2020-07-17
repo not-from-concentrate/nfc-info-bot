@@ -1,0 +1,158 @@
+{
+    "!180": {
+        "info": "180 degree PCIe adapter",
+        "color": "#0099ff",
+        "title": "180 degree PCIe adapter",
+        "description": "",
+        "dm": false,
+        "fields": [
+            {
+                "name": "modDIY 180",
+                "value": "[modDIY](https://www.moddiy.com/products/GPU-VGA-8Pin-6Pin-PCIE-U-Turn-180-Degree-Angle-Connector-Adapter-Board.html)"
+            },
+            {
+                "name": "FormulaMod 180 (also some 90s)",
+                "value": "[FormulaMod](https://www.formulamod.com/formulamod-fm-pciatxusb-interface-direction-changer-converter-for-gpu-power-interfacemotherboard-atx24pin-usb30-p2205842.html)"
+            }
+        ]
+    },
+    
+    "!brickless": {
+        "info": "Brickless configurations",
+        "color": "#0099ff",
+        "title": "Brickless Fitment Info",
+        "description": "\"Brickless\" is a configuration where the the entire power supply function is housed inside the S4M chassis. This is in contrast to \"brick\" configurations, where the AC->DC conversion is done by a power brick (most commonly a Dell 330w unit) that lives outside the chassis.",
+        "dm": false,
+        "fields": [
+            {
+                "name": "Standard Layout",
+                "value": "The most common brickless configuration is using an HDPLEX 400W AC-DC module along the side of the chassis near the GPU to convert mains power input to 19V DC output. This is then fed to an HDPLEX 400W HiFi DC-ATX module, which converts the 19V to the various voltages and connectors necessary for the motherboard, GPU, and SATA drives (if used)."
+            }
+        ]
+    },
+    
+    "!c6": {
+        "info": "C6 Inlet Info",
+        "color": "#0099ff",
+        "title": "C6 Inlet Info",
+        "description": "The S4M is designed with a specific Schurter C6 inlet in mind. If you use an HDPlex 400 and it includes a C6, it is a different model and will be too long.",
+        "dm": false,
+        "fields": [
+            {
+                "name": "Schurter C6",
+                "value": "This Schurter C6 ([Mouser](https://www.mouser.com/ProductDetail/693-4300.0101)/[DigiKey](https://www.digikey.com/products/en?keywords=4300.0101)) is very similar to the one the S4M was designed for, but still needs to be shaved down a bit on the sides to fit. It should also be mounted from the outside."
+            }
+        ]
+    },
+    
+    "!custom": {
+        "info": "Get custom S4M work",
+        "color": "#0099ff",
+        "title": "Custom Requests",
+        "description": "",
+        "dm": false,
+        "fields": [
+            {
+                "name": "Send an email",
+                "value": "For all custom requests, whether that be custom front panel, custom cables, custom _anything_, email support@nfc-systems.com"
+            }
+        ]
+    },
+
+    "!gpu": {
+        "info": "GPU options and fitment",
+        "color": "#0099ff",
+        "title": "GPU Info",
+        "description": "GPU fitment presents an interesting challenge in the S4M. The community maintains the following list of GPU compatibility with the S4M chassis.",
+        "dm": false,
+        "fields": [
+            {
+                "name": "Maximum slots", "value": "Two (2)", "inline": true
+            },
+            {
+                "name": "Maximum card length", "value": "215mm", "inline": true
+            },
+            {
+                "name": "Maximum card height", "value": "111mm (without mods)", "inline": true
+            },
+            {
+                "name": "Easy drop-in GPU", "value": "[EVGA 2060 KO Ultra](https://www.evga.com/products/product.aspx?pn=06G-P4-2068-KR)", "inline": true
+            },
+            {
+                "name": "Current most powerful non-mod GPU", "value": "[Inno3D](http://www.inno3d.com/products_detail.php?refid=397)/[Galax](https://www.galax.com/en/graphics-card/20-series/galax-geforce-rtx-2070-black-mini-1click.html)/[KFA2](https://www.kfa2.com/kfa2/graphics-card/20-series/kfa2-geforce-rtx-2070-mini-1clickoc.html)/[ELSA](http://www.elsa-jp.co.jp/products/products-top/graphicsboard/geforce/ultra_high_end/elsa-geforce-rtx-2070-sac/) RTX 2070 (non-SUPER)"
+            },
+            {
+                "name": "Current most powerful mod-required GPU", "value": "[Zotac GTX 1080 ti Mini](https://www.zotac.com/jp/product/graphics_card/zotac-geforce-gtx-1080-ti-mini)"
+            },
+            {
+                "name": "Community GPU spreadsheet", "value": "[Link](https://docs.google.com/spreadsheets/d/1H7F9lVWRqY5UHa9y0bOolioUddbVZYbhnz5A5FsVyN0/edit?pli=1#gid=2119905704)"
+            }
+        ]
+    },
+
+    "!hdplex": {
+        "info": "HDPlex installation",
+        "color": "#0099ff",
+        "title": "HDPlex installation",
+        "description": "The HDPlex 400W NanoATX combo power supply is currently the best and most compatible power supply for the S4M, mostly because Josh works with the HDPlex designer to address fitment issues and new designs. It separates the two functions of a power supply (AC->DC conversion and DC voltage step-down) into two separate units to allow for more compact placement. HDPlex also offers a cheaper and more compact 200W combo that may be appropriate for lower-power builds.",
+        "dm": true,
+        "fields": [
+            {
+                "name": "Standard Layout",
+                "value": "The most common configuration is mounting the HDPLEX AC-DC unit along the side of the chassis near the GPU to convert mains power input to 19V DC output. This is then fed to the HDPLEX DC-ATX unit (400W unit mounts along the front of the chassis next to the motherboard, 200W unit plugs straight into the motherboard's 24-pin connector), which converts the 19V to the various voltages and connectors necessary for the motherboard, GPU, and SATA drives (if used)."
+            },
+            {
+                "name": "Flipped/Swapped Layout",
+                "value": "In order to accomodate some GPUs with height greater than the normal maximum of 111mm, the locations of the AC-DC unit and the DC-ATX unit can be swapped so that the AC-DC unit is along the front of the chassis and the DC-ATX unit is next to the GPU. This allows extra clearance since the DC-ATX unit is thinner, but it presents two extra challenges. First, custom power cabling will be likely since the main power input needs to run farther to reach the AC-DC unit, and the 24-pin and 8-pin power need to run further to reach the motherboard. Second, the original version (not marked with a version number) of the AC-DC unit is too thick to fit flush along the front of the chassis. It either needs to have a section milled out to fit, or you need to use a version 2.0 AC-DC unit (made thinner to fit)."
+            },
+            {
+                "name": "Hardware Revisions",
+                "value": "As of 2020-05-16, the 400W AC-DC unit has three versions: one with no version mark (called 1.X), 2.0, and 2.1. The significant difference is that version 2.0 was made thinner in order to accomodate flipped/swapped layout without requiring any milling. The 400W DC-ATX unit has gone through several revisions, and the revision is printed directly on the unit. The pinout of the PCIe power connector was changed between versions 1.X, 2.0, and 2.1. View the Specs page on the following product page link or follow the direct links below to reference the correct diagram for your revision of the 400W DC-ATX unit."
+            },
+            {
+                "name": "DC-ATX Product Page",
+                "value": "[Link](https://hdplex.com/hdplex-400w-hi-fi-dc-atx-power-supply-16v-24v-wide-range-voltage-input.html)"
+            },
+            {
+                "name": "DC-ATX Pin-out Diagrams",
+                "value": "[1.X](https://hdplex.com/pub/media/image/Product/400WDCATX/spec/HDPLEX.400WDCATX.DIAGRAM.SelfLock.png) | [2.0](https://hdplex.com/pub/media/image/Product/400WDCATX/spec/HDPLEX.400W.DC-ATX.2.0.Diagram.png) | [2.1](https://hdplex.com/pub/media/image/Product/400WDCATX/spec/HDPLEX.400W.DCATX.2.1.Diagram.png)"
+            },
+            {
+                "name": "Mounting",
+                "value": "You are advised against using adhesive/velcro to mount the DC-ATX unit to the front of the chassis (Search: Residue) unless absolutely necessary. The tension from the wires will be more than enough for most use cases. If you really feel the need to use some sort of adhesive to mount the DC-ATX in place. If you feel that you must mount it, then as per Josh, \"Use mounting tape. Grey/clear/or whatever from Scotch/3M if you NEED to, because it will come off without leaving sticky residue behind. And it's REALLY strong, way stronger than velcro. Velcro can hold really well, but it still vibrates in the hooks. Mounting tape doesn't.\" See: https://imgur.com/a/BqD27j2"
+            },
+            {
+                "name": "AC Inlet",
+                "value": "The 400W bundle includes two detachable connectors in the latest revisions (v2.0 - Onwards) - C6 and C14. Most brickless builds use the C6 connector, as the C14 connector does not fit into the cutout at the back of the S4M."
+            }
+        ]
+    },
+
+    "!riser": {
+        "info": "Risers",
+        "color": "#0099ff",
+        "title": "Riser Info",
+        "description": "The S4M-C use a custom-designed PCIe riser from Li-Heat, while for most of the S4M production run, a custom SILIFLEX riser instead as it is more compact. Both risers are high quality and work well. Late run S4Ms are shipping with the latest Li-Heat riser due to the minimum order quantity to secure additional SILIFLEX risers.",
+        "dm": false,
+        "fields": [
+            {
+                "name": "SILIFLEX riser",
+                "value": "[Link](https://store.nfc-systems.com/collections/parts-accessories/products/siliflex-riser)"
+            }
+        ]
+    },
+
+    "!support": {
+        "info": "Support Info",
+        "color": "#0099ff",
+        "title": "Support Info",
+        "description": "While Josh is on the server a lot and loves interacting with the community, the best way to get help on any questions or issues regarding orders (normal or custom), product availability, defective products, etc., is to send an e-mail.",
+        "dm": false,
+        "fields": [
+            {
+                "name": "Support E-mail",
+                "value": "support@nfc-systems.com"
+            }
+        ]
+    }
+}
