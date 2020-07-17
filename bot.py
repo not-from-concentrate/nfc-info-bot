@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv('BOT_TOKEN')
 COMMAND_URL = os.getenv('COMMAND_URL')
+ADMIN_USER = os.getenv('ADMIN_USER')
 
 command_data = {}
 command_embeds = {}
@@ -36,13 +37,13 @@ def update_commands():
         if cmd_data["dm"]:
             command_embeds[cmd].add_field(name="Notes", value="There is a *lot* of data on this topic. Please check the DM you were just sent.", inline=False)
     
-    command_list_embed.add_field(name="u200B", value="u200B")
+    command_list_embed.add_field(name="\u200B", value="\u200B")
     command_list_embed.add_field(name="About nfc-info-bot", value="Idea and prototype by @Sm0keWag0n, but @Carson made the NodeJS actually good. Then it got re-written in Python. ¯\_(ツ)_/¯", inline=False)
     command_list_embed.add_field(name="Contribute", value="This info is community-driven. If you have ideas or information to add/correct, please visit the [GitHub Repo](https://github.com/mikedalton/nfc-info-bot) and submit Issues, or fork/pull request.", inline=False)
 
-update_commands()
+    print(command_data.keys())
 
-#print(command_embeds)
+update_commands()
 
 client = discord.Client()
 
@@ -52,7 +53,26 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content.startswith("^py-info-bot"):
-        await message.channel.send(embed=command_list_embed)
+    if message.content.startswith("!"):
+        if message.content == "!info-bot":
+            await message.channel.send(embed=command_list_embed)
+        elif message.content == "!update-commands":
+            print("Update attempt: " + str(message.author.id))
+            if message.author.id == int(ADMIN_USER):
+                update_commands()
+                await message.channel.send("Commands updated")
+        else:
+            if len(message.mentions) > 0:
+                user = message.mentions[0]
+            else:
+                user = message.author
+            command = message.content.split()[0]
+
+            if command in command_data:
+                if command_data[command]["dm"]:
+                    await message.channel.send(embed=command_embeds[command])
+                    await user.send(embed=dm_embeds[command])
+                else:
+                    await message.channel.send(embed=command_embeds[command])
 
 client.run(TOKEN)
