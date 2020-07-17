@@ -1,12 +1,12 @@
-# nfc-discord-bot
+# nfc-info-bot
 
 ## About
 
-The nfc-discord-python bot exists to assist with providing fast and standardized answers to many of the most common questions asked on the NFC Discord server. The goal is for this information to be community-driven, but still moderated. If you would like to contribute to the project, please feel free to fork it, or open issues (please use the `new command`, `new info`, or `incorrect info` labels for most submissions, as appropriate). If you would like more direct involvement, message @Sm0keWag0n on the NFC Discord server to request access.
+The nfc-info-bot exists to assist with providing fast and standardized answers to many of the most common questions asked on the NFC Discord server. The goal is for this information to be community-driven, but still moderated. If you would like to contribute to the project, please feel free to fork it, or open issues (please use the `new command`, `new info`, or `incorrect info` labels for most submissions, as appropriate). If you would like more direct involvement, message @Sm0keWag0n on the NFC Discord server to request access.
 
 ## Command Data
 
-Data for the commands is stored in JSON format, in the [commands.json](commands.json) file. Most of the data is what is required for a Discord.JS MessageEmbed object, but some fields have been added. Keeping the commands alphabetized is preferred, although not required and there is no linting to enforce such.
+Data for the commands is stored in JSON format, in the [commands.json](commands.json) file. Most of the data is what is required for an Embed object, but some fields have been added. Keeping the commands alphabetized is preferred, although not required and there is no linting to enforce such.
 
 Example:
 ```
@@ -41,4 +41,4 @@ Example:
 
 ## Bot Command Updates
 
-The bot will automatically refresh its list of commands from the repo hourly at the top of the hour, so once changes have been approved and merged into the master branch, they will be visibile in the bot within an hour. If you believe that the change is important enough to warrant immediate update, please ping @Sm0keWag0n on the NFC Discord server.
+The bot will automatically refresh its list of commands from the repo hourly at the top of the hour, so once changes have been approved and merged into the master branch, they will be visible in the bot within an hour. If you believe that the change is important enough to warrant immediate update, please ping @Sm0keWag0n on the NFC Discord server.
