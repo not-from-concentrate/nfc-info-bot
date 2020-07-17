@@ -1,5 +1,5 @@
 # bot.py
-import os, discord, json, requests
+import os, discord, json, requests, threading
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -43,6 +43,9 @@ def update_commands():
     command_list_embed.add_field(name="Contribute", value="This info is community-driven. If you have ideas or information to add/correct, please visit the [GitHub Repo](https://github.com/mikedalton/nfc-info-bot) and submit Issues, or fork/pull request.", inline=False)
 
     print(command_data.keys())
+
+    # quick and dirty threading hourly loop
+    threading.Timer(3600.00, update_commands).start()
 
 update_commands()
 
