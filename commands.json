@@ -1,7 +1,7 @@
 {
     "!180": {
         "info": "180 degree PCIe adapter",
-        "color": "#0099ff",
+        "color": "0x0099ff",
         "title": "180 degree PCIe adapter",
         "description": "",
         "dm": false,
@@ -19,7 +19,7 @@
     
     "!brickless": {
         "info": "Brickless configurations",
-        "color": "#0099ff",
+        "color": "0x0099ff",
         "title": "Brickless Fitment Info",
         "description": "\"Brickless\" is a configuration where the the entire power supply function is housed inside the S4M chassis. This is in contrast to \"brick\" configurations, where the AC->DC conversion is done by a power brick (most commonly a Dell 330w unit) that lives outside the chassis.",
         "dm": false,
@@ -33,7 +33,7 @@
     
     "!c6": {
         "info": "C6 Inlet Info",
-        "color": "#0099ff",
+        "color": "0x0099ff",
         "title": "C6 Inlet Info",
         "description": "The S4M is designed with a specific Schurter C6 inlet in mind. If you use an HDPlex 400 and it includes a C6, it is a different model and will be too long.",
         "dm": false,
@@ -47,7 +47,7 @@
     
     "!custom": {
         "info": "Get custom S4M work",
-        "color": "#0099ff",
+        "color": "0x0099ff",
         "title": "Custom Requests",
         "description": "",
         "dm": false,
@@ -61,7 +61,7 @@
 
     "!gpu": {
         "info": "GPU options and fitment",
-        "color": "#0099ff",
+        "color": "0x0099ff",
         "title": "GPU Info",
         "description": "GPU fitment presents an interesting challenge in the S4M. The community maintains the following list of GPU compatibility with the S4M chassis.",
         "dm": false,
@@ -92,7 +92,7 @@
 
     "!hdplex": {
         "info": "HDPlex installation",
-        "color": "#0099ff",
+        "color": "0x0099ff",
         "title": "HDPlex installation",
         "description": "The HDPlex 400W NanoATX combo power supply is currently the best and most compatible power supply for the S4M, mostly because Josh works with the HDPlex designer to address fitment issues and new designs. It separates the two functions of a power supply (AC->DC conversion and DC voltage step-down) into two separate units to allow for more compact placement. HDPlex also offers a cheaper and more compact 200W combo that may be appropriate for lower-power builds.",
         "dm": true,
@@ -130,7 +130,7 @@
 
     "!riser": {
         "info": "Risers",
-        "color": "#0099ff",
+        "color": "0x0099ff",
         "title": "Riser Info",
         "description": "The S4M-C use a custom-designed PCIe riser from Li-Heat, while for most of the S4M production run, a custom SILIFLEX riser instead as it is more compact. Both risers are high quality and work well. Late run S4Ms are shipping with the latest Li-Heat riser due to the minimum order quantity to secure additional SILIFLEX risers.",
         "dm": false,
@@ -144,7 +144,7 @@
 
     "!support": {
         "info": "Support Info",
-        "color": "#0099ff",
+        "color": "0x0099ff",
         "title": "Support Info",
         "description": "While Josh is on the server a lot and loves interacting with the community, the best way to get help on any questions or issues regarding orders (normal or custom), product availability, defective products, etc., is to send an e-mail.",
         "dm": false,
