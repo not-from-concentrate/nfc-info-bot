@@ -24,8 +24,17 @@ def update_commands():
         else:
             command_list_embed.add_field(name=cmd, value=cmd_data["info"], inline=True)
         
-        command_embeds[cmd] = discord.Embed(title=cmd_data["title"], color=cmd_data["color"], description=cmd_data["description"])
-        dm_embeds[cmd] = discord.Embed(title=cmd_data["title"], color=cmd_data["color"], description=cmd_data["description"])
+        command_embeds[cmd] = discord.Embed(title=cmd_data["title"], color=0x0099ff, description=cmd_data["description"])
+        dm_embeds[cmd] = discord.Embed(title=cmd_data["title"], color=0x0099ff, description=cmd_data["description"])
+
+        for field in cmd_data["fields"]:
+            if cmd_data["dm"]:
+                dm_embeds[cmd].add_field(name=field["name"], value=field["value"], inline=field["inline"])
+            else: 
+                command_embeds[cmd].add_field(name=field["name"], value=field["value"], inline=field["inline"])
+
+        if cmd_data["dm"]:
+            command_embeds[cmd].add_field(name="Notes", value="There is a *lot* of data on this topic. Please check the DM you were just sent.", inline=False)
     
     command_list_embed.add_field(name="u200B", value="u200B")
     command_list_embed.add_field(name="About nfc-info-bot", value="Idea and prototype by @Sm0keWag0n, but @Carson made the NodeJS actually good. Then it got re-written in Python. ¯\_(ツ)_/¯", inline=False)
@@ -33,7 +42,7 @@ def update_commands():
 
 update_commands()
 
-print(command_embeds)
+#print(command_embeds)
 
 client = discord.Client()
 
