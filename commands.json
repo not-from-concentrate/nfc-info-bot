@@ -58,7 +58,7 @@
         "fields": [
             {
                 "name": "Send an email",
-                "value": "For all custom requests, whether that be custom front panel, custom cables, custom _anything_, email support@nfc-systems.com",
+                "value": "For all custom requests, whether that be custom front panel, custom cables, custom _anything_, email [support@nfc-systems.com](mailto:support@nfc-systems.com)",
                 "inline": false
             }
         ]
@@ -90,7 +90,7 @@
                 "name": "Current most powerful mod-required GPU", "value": "[Zotac GTX 1080 ti Mini](https://www.zotac.com/jp/product/graphics_card/zotac-geforce-gtx-1080-ti-mini)", "inline": false
             },
             {
-                "name": "Community GPU spreadsheet", "value": "[Link](https://docs.google.com/spreadsheets/d/1H7F9lVWRqY5UHa9y0bOolioUddbVZYbhnz5A5FsVyN0/edit?pli=1#gid=2119905704)", "inline": false
+                "name": "Community GPU spreadsheet", "value": "[Link](https://docs.google.com/spreadsheets/d/1n9scdPzsS2toauLei92J0qu5gzBA4gs8Wu0CwvSXP4M/edit#gid=2143955767)", "inline": false
             }
         ]
     },
@@ -114,7 +114,7 @@
             },
             {
                 "name": "Hardware Revisions",
-                "value": "As of 2020-05-16, the 400W AC-DC unit has three versions: one with no version mark (called 1.X), 2.0, and 2.1. The significant difference is that version 2.0 was made thinner in order to accomodate flipped/swapped layout without requiring any milling. The 400W DC-ATX unit has gone through several revisions, and the revision is printed directly on the unit. The pinout of the PCIe power connector was changed between versions 1.X, 2.0, and 2.1. View the Specs page on the following product page link or follow the direct links below to reference the correct diagram for your revision of the 400W DC-ATX unit.",
+                "value": "As of 2020-05-16, the 400W AC-DC unit has three versions: one with no version mark (called 1.X), 2.0, and 2.1. The significant difference is that version 2.0 was made thinner in order to accommodate flipped/swapped layout without requiring any milling. The 400W DC-ATX unit has gone through several revisions, and the revision is printed directly on the unit. The pinout of the PCIe power connector was changed between versions 1.X, 2.0, and 2.1. View the Specs page on the following product page link or follow the direct links below to reference the correct diagram for your revision of the 400W DC-ATX unit.",
                 "inline": false
             },
             {
@@ -151,6 +151,11 @@
                 "name": "SILIFLEX riser",
                 "value": "[Link](https://store.nfc-systems.com/collections/parts-accessories/products/siliflex-riser)",
                 "inline": false
+            },
+            {
+                "name": "Li-Heat riser",
+                "value": "[Link](http://www.liheat.com.tw/en/product_992828.html)",
+                "inline": false
             }
         ]
     },
@@ -164,7 +169,7 @@
         "fields": [
             {
                 "name": "Support E-mail",
-                "value": "support@nfc-systems.com",
+                "value": "[support@nfc-systems.com](mailto:support@nfc-systems.com)",
                 "inline": false
             }
         ]
