@@ -144,7 +144,7 @@
         "info": "Risers",
         "color": "0x0099ff",
         "title": "Riser Info",
-        "description": "The S4M-C use a custom-designed PCIe riser from Li-Heat, while for most of the S4M production run, a custom SILIFLEX riser instead as it is more compact. Both risers are high quality and work well. Late run S4Ms are shipping with the latest Li-Heat riser due to the minimum order quantity to secure additional SILIFLEX risers.",
+        "description": "The S4M-C used a custom-designed PCIe riser from Li-Heat, while for most of the S4M production run, a custom SILIFLEX riser was used instead as it is more compact. Both risers are high quality and work well. Late run S4Ms are shipping with the latest Li-Heat riser due to the minimum order quantity to secure additional SILIFLEX risers.",
         "dm": false,
         "fields": [
             {
