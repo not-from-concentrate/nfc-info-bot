@@ -121,9 +121,9 @@ async def on_message(message):
                 cursor.execute("SELECT * from stats WHERE command=?", [command])
                 command_row = cursor.fetchall()
                 if len(command_row) == 0:
-                    conn.execute("INSERT INTO stats VALUES (?,?,?)", [command, 1, datetime.datetime.now()])
+                    conn.execute("INSERT INTO stats VALUES (?,?,?)", [command, 1, datetime.datetime.utcnow()])
                     conn.commit()
-                elif len(command_row) ==1:
+                elif len(command_row) == 1:
                     conn.execute("UPDATE stats SET invocation_count=?, last_invocation=? WHERE command = ?", [command_row[0][1]+1, datetime.datetime.utcnow(), command])
                     conn.commit()
                 else:
