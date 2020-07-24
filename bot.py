@@ -1,17 +1,47 @@
 # bot.py
-import os, discord, json, requests, threading
+import os, discord, json, requests, threading, sqlite3, datetime
 from dotenv import load_dotenv
+from prettytable import PrettyTable
 
 load_dotenv()
 TOKEN = os.getenv('BOT_TOKEN')
 COMMAND_URL = os.getenv('COMMAND_URL')
 ADMIN_USER = os.getenv('ADMIN_USER')
 
+# Init variables
 command_data = {}
 command_embeds = {}
 dm_embeds = {}
 command_list_embed = {}
+stats_db_file = "stats.db"
+conn = None
 
+# Set up stats database
+if not os.path.isfile(stats_db_file):
+    conn = sqlite3.connect(stats_db_file)
+    conn.execute("CREATE TABLE stats (command text primary key, invocation_count integer, last_invocation text)")
+    conn.commit()
+    print("Database created")
+else:
+    conn = sqlite3.connect(stats_db_file)
+    print("Database loaded")
+
+def get_stats():
+    stats = conn.execute("SELECT * FROM stats").fetchall()
+
+    text_table = PrettyTable()
+    
+    text_table.field_names = ["Command", "Invocation Count", "Last Invocation"]
+    text_table.align["Command"] = "l"
+    text_table.align["Invocation Count"] = "r"
+    text_table.align["Last Invocation"] = "l"
+
+    for row in stats:
+        text_table.add_row([row[0], row[1], row[2]])
+
+    return text_table.get_string(title="Current nfc-info-bot stats")
+
+# Set up the commands JSON file pull and parse
 def update_commands():
     global command_data, command_embeds, dm_embeds, command_list_embed
 
@@ -44,7 +74,7 @@ def update_commands():
 
     print(command_data.keys())
 
-    # quick and dirty threading hourly loop
+    # Quick and dirty threading hourly loop
     threading.Timer(3600.00, update_commands).start()
 
 update_commands()
@@ -65,6 +95,14 @@ async def on_message(message):
             if message.author.id == int(ADMIN_USER):
                 update_commands()
                 await message.channel.send("Commands updated")
+            else:
+                await message.channel.send("Not authorized")
+        elif message.content == "!info-bot-stats":
+            print("Stats attempt: " + str(message.author.id))
+            if message.author.id == int(ADMIN_USER):
+                await message.channel.send("```" + get_stats() + "```")
+            else:
+                await message.channel.send("Not authorized")
         else:
             if len(message.mentions) > 0:
                 user = message.mentions[0]
@@ -78,5 +116,18 @@ async def on_message(message):
                     await user.send(embed=dm_embeds[command])
                 else:
                     await message.channel.send(embed=command_embeds[command])
+            print("Logging command")
+            cursor = conn.cursor()
+            cursor.execute("SELECT * from stats WHERE command=?", [command])
+            command_row = cursor.fetchall()
+            if len(command_row) == 0:
+                conn.execute("INSERT INTO stats VALUES (?,?,?)", [command, 1, datetime.datetime.now()])
+                conn.commit()
+            elif len(command_row) ==1:
+                conn.execute("UPDATE stats SET invocation_count=?, last_invocation=? WHERE command = ?", [command_row[0][1]+1, datetime.datetime.utcnow(), command])
+                conn.commit()
+            else:
+                print("Database error: too many matching rows")
+            cursor.close()
 
 client.run(TOKEN)
