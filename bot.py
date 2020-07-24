@@ -116,18 +116,18 @@ async def on_message(message):
                     await user.send(embed=dm_embeds[command])
                 else:
                     await message.channel.send(embed=command_embeds[command])
-            print("Logging command")
-            cursor = conn.cursor()
-            cursor.execute("SELECT * from stats WHERE command=?", [command])
-            command_row = cursor.fetchall()
-            if len(command_row) == 0:
-                conn.execute("INSERT INTO stats VALUES (?,?,?)", [command, 1, datetime.datetime.now()])
-                conn.commit()
-            elif len(command_row) ==1:
-                conn.execute("UPDATE stats SET invocation_count=?, last_invocation=? WHERE command = ?", [command_row[0][1]+1, datetime.datetime.utcnow(), command])
-                conn.commit()
-            else:
-                print("Database error: too many matching rows")
-            cursor.close()
+                print("Logging command")
+                cursor = conn.cursor()
+                cursor.execute("SELECT * from stats WHERE command=?", [command])
+                command_row = cursor.fetchall()
+                if len(command_row) == 0:
+                    conn.execute("INSERT INTO stats VALUES (?,?,?)", [command, 1, datetime.datetime.now()])
+                    conn.commit()
+                elif len(command_row) ==1:
+                    conn.execute("UPDATE stats SET invocation_count=?, last_invocation=? WHERE command = ?", [command_row[0][1]+1, datetime.datetime.utcnow(), command])
+                    conn.commit()
+                else:
+                    print("Database error: too many matching rows")
+                cursor.close()
 
 client.run(TOKEN)
