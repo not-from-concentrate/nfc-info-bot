@@ -84,7 +84,10 @@
                 "name": "Easy drop-in GPU", "value": "[EVGA 2060 KO Ultra](https://www.evga.com/products/product.aspx?pn=06G-P4-2068-KR)", "inline": true
             },
             {
-                "name": "Current most powerful non-mod GPU", "value": "[Inno3D](http://www.inno3d.com/products_detail.php?refid=397)/[Galax](https://www.galax.com/en/graphics-card/20-series/galax-geforce-rtx-2070-black-mini-1click.html)/[KFA2](https://www.kfa2.com/kfa2/graphics-card/20-series/kfa2-geforce-rtx-2070-mini-1clickoc.html)/[ELSA](http://www.elsa-jp.co.jp/products/products-top/graphicsboard/geforce/ultra_high_end/elsa-geforce-rtx-2070-sac/) RTX 2070 (non-SUPER)", "inline": false
+                "name": "Current most powerful non-mod Intel GPU", "value": "[Inno3D](http://www.inno3d.com/products_detail.php?refid=397)/[Galax](https://www.galax.com/en/graphics-card/20-series/galax-geforce-rtx-2070-black-mini-1click.html)/[KFA2](https://www.kfa2.com/kfa2/graphics-card/20-series/kfa2-geforce-rtx-2070-mini-1clickoc.html)/[ELSA](http://www.elsa-jp.co.jp/products/products-top/graphicsboard/geforce/ultra_high_end/elsa-geforce-rtx-2070-sac/) RTX 2070 (non-SUPER)", "inline": false
+            },
+            {
+                "name": "Current most powerful non-mod AMD GPU", "value": "[PowerColor Radeon RX 5700 ITX 8GB](https://www.powercolor.com/product?id=1581404657) (Japan only, but sometimes can be shipped internationall)", "inline": false
             },
             {
                 "name": "Current most powerful mod-required GPU", "value": "[Zotac GTX 1080 ti Mini](https://www.zotac.com/jp/product/graphics_card/zotac-geforce-gtx-1080-ti-mini)", "inline": false
