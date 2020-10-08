@@ -28,7 +28,7 @@
         "fields": [
             {
                 "name": "Bills of Materials",
-                "value": "[Link](https://nfc-systems.com/boms)",
+                "value": "[https://nfc-systems.com/boms](https://nfc-systems.com/boms)",
                 "inline": false
             }
         ]
