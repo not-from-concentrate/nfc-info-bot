@@ -78,6 +78,31 @@
             }
         ]
     },
+    
+    "!dimensions": {
+        "info": "Chassis Dimensions",
+        "color": "0x0099ff",
+        "title": "Chassis Dimensions",
+        "description": "",
+        "dm": false,
+        "fields": [
+            {
+                "name": "S4M External",
+                "value": "348mm x 225mm x 64mm",
+                "inline": false
+            },
+            {
+                "name": "S4M Internal",
+                "value": "341mm x 215mm x 57mm",
+                "inline": false
+            },
+            {
+                "name": "S4M Weight",
+                "value": "1.13kg",
+                "inline": false
+            }
+        ]
+    },
 
     "!gpu": {
         "info": "GPU options and fitment",
