@@ -88,16 +88,16 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if message.content.startswith("!"):
-        if message.content == "!info-bot":
+        if message.content.lower() == "!info-bot":
             await message.channel.send(embed=command_list_embed)
-        elif message.content == "!update-commands":
+        elif message.content.lower() == "!update-commands":
             print("Update attempt: " + str(message.author.id))
             if message.author.id == int(ADMIN_USER):
                 update_commands()
                 await message.channel.send("Commands updated")
             else:
                 await message.channel.send("Not authorized")
-        elif message.content == "!info-bot-stats":
+        elif message.content.lower() == "!info-bot-stats":
             print("Stats attempt: " + str(message.author.id))
             if message.author.id == int(ADMIN_USER):
                 await message.channel.send("```" + get_stats() + "```")
@@ -108,7 +108,7 @@ async def on_message(message):
                 user = message.mentions[0]
             else:
                 user = message.author
-            command = message.content.split()[0]
+            command = message.content.split()[0].lower()
 
             if command in command_data:
                 if command_data[command]["dm"]:
