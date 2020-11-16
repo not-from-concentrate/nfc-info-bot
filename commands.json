@@ -212,6 +212,26 @@
             }
         ]
     },
+    
+    "!sendcutsend": {
+        "info": "SendCutSend is a channel sponsor!",
+        "color": "0x0099ff",
+        "title": "SendCutSend",
+        "description": "[SendCutSend](https://sendcutsend.com) is now a channel sponsor!!! You can use the NFC15SCS promocode to get 15% off your SendCutSend orders!",
+        "dm": false,
+        "fields": [
+            {
+                "name": "Website",
+                "value": "[https://sendcutsend.com](https://sendcutsend.com)",
+                "inline": false
+            },
+            {
+                "name": "Promo code for 15% off your SendCutSend orders",
+                "value": "NFC15SCS",
+                "inline": false
+            }
+        ]
+    },
 
     "!support": {
         "info": "Support Info",
