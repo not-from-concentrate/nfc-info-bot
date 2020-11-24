@@ -121,7 +121,7 @@
                 "name": "Maximum card height", "value": "111mm (without mods)", "inline": true
             },
             {
-                "name": "Easy drop-in GPU", "value": "[EVGA 2060 KO Ultra](https://www.evga.com/products/product.aspx?pn=06G-P4-2068-KR)", "inline": true
+                "name": "Easy drop-in GPU", "value": "[EVGA 2060 KO Ultra](https://www.evga.com/products/product.aspx?pn=06G-P4-2066-KR)", "inline": true
             },
             {
                 "name": "Current most powerful non-mod NVidia GPU", "value": "[Inno3D](http://www.inno3d.com/products_detail.php?refid=397)/[Galax](https://www.galax.com/en/graphics-card/20-series/galax-geforce-rtx-2070-black-mini-1click.html)/[KFA2](https://www.kfa2.com/kfa2/graphics-card/20-series/kfa2-geforce-rtx-2070-mini-1clickoc.html)/[ELSA](http://www.elsa-jp.co.jp/products/products-top/graphicsboard/geforce/ultra_high_end/elsa-geforce-rtx-2070-sac/) RTX 2070 (non-SUPER)", "inline": false
