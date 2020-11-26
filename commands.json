@@ -108,7 +108,7 @@
         "info": "GPU options and fitment",
         "color": "0x0099ff",
         "title": "GPU Info",
-        "description": "GPU fitment presents an interesting challenge in the S4M. The community maintains the following list of GPU compatibility with the S4M chassis.",
+        "description": "GPU fitment presents an interesting challenge in the S4M. The community maintains the following list of GPU compatibility with the S4M chassis. Please note that the spreadsheet may contain errors, and is intended as a guide, not a final answer. Reference the sheet first, and then also feel free to ask in #modding-and-builds if you have any doubts.",
         "dm": false,
         "fields": [
             {
