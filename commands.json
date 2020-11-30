@@ -192,6 +192,31 @@
             }
         ]
     },
+    
+    "!lowprofile": {
+        "info": "Info about and guides on creating ultra-low-profile PCIe power cables",
+        "color": "0x0099ff",
+        "title": "Low Profile PCIe",
+        "description": "180 adapters work in many cases, but if they are still just a bit too thick, ultra-low-profile cables are the way to go. Ultra-low-profile cables do away with the plastic connector, leaving the individual wires with plugs attached, and those plugs are then slotted directly onto the pins on the GPU. Be _very_ careful to triple-check pinout before applying power.",
+        "dm": false,
+        "fields": [
+            {
+                "name": "Photo guide to make your own from existing cables",
+                "value": "https://imgur.com/gallery/dqkanA2",
+                "inline": false
+            },
+            {
+                "name": "Video guide on de-pinning cables using staples",
+                "value": "341mm x 215mm x 57mm",
+                "inline": false
+            },
+            {
+                "name": "3rd-party cables",
+                "value": "There are vendors who make low-profile cables, such as [Kareon Kables](https://kareonkables.com/products/nfc-skyreach-hdplex-dc-atx-series-ultra-low-profile-pci-e-psu-cable). These can be a good choice, but be _very_ careful and verify the correct pin-out anyway. Several members have had equipment damaged by incorrectly made 3rd-party cables.",
+                "inline": false
+            }
+        ]
+    },
 
     "!riser": {
         "info": "Risers",
