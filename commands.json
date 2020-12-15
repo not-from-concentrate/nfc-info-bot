@@ -7,6 +7,11 @@
         "dm": false,
         "fields": [
             {
+                "name": "NFC 180 - Buy this one. No, seriously. Buy it. It's objectively better.",
+                "value": "[NFC Shop page](https://store.nfc-systems.com/collections/parts-accessories/products/180-angle-adapter)",
+                "inline": false
+            },
+            {
                 "name": "modDIY 180",
                 "value": "[modDIY](https://www.moddiy.com/products/GPU-VGA-8Pin-6Pin-PCIE-U-Turn-180-Degree-Angle-Connector-Adapter-Board.html)",
                 "inline": false
