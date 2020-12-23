@@ -126,10 +126,10 @@
                 "name": "Maximum card height", "value": "111mm (without mods)", "inline": true
             },
             {
-                "name": "Easy drop-in GPU", "value": "[EVGA 2060 KO Gaming](https://www.evga.com/products/product.aspx?pn=06G-P4-2066-KR)", "inline": true
+                "name": "Easy drop-in GPU", "value": "[EVGA GeForce RTX 3060 Ti XC GAMING](https://www.evga.com/products/product.aspx?pn=08G-P5-3663-KR) (requires low-profile cables or 180 adapter)", "inline": true
             },
             {
-                "name": "Current most powerful non-mod NVidia GPU", "value": "[Inno3D](http://www.inno3d.com/products_detail.php?refid=397)/[Galax](https://www.galax.com/en/graphics-card/20-series/galax-geforce-rtx-2070-black-mini-1click.html)/[KFA2](https://www.kfa2.com/kfa2/graphics-card/20-series/kfa2-geforce-rtx-2070-mini-1clickoc.html)/[ELSA](http://www.elsa-jp.co.jp/products/products-top/graphicsboard/geforce/ultra_high_end/elsa-geforce-rtx-2070-sac/) RTX 2070 (non-SUPER)", "inline": false
+                "name": "Current most powerful non-mod NVidia GPU", "value": "[EVGA GeForce RTX 3060 Ti XC GAMING](https://www.evga.com/products/product.aspx?pn=08G-P5-3663-KR) (requires low-profile cables or 180 adapter)", "inline": false
             },
             {
                 "name": "Current most powerful non-mod AMD GPU", "value": "[PowerColor Radeon RX 5700 ITX 8GB](https://www.powercolor.com/product?id=1581404657) (Japan only, but sometimes can be shipped internationall)", "inline": false
