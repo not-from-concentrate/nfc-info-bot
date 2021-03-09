@@ -135,7 +135,7 @@
                 "name": "Current most powerful non-mod AMD GPU", "value": "[PowerColor Radeon RX 5700 ITX 8GB](https://www.powercolor.com/product?id=1581404657) (Japan only, but sometimes can be shipped internationall)", "inline": false
             },
             {
-                "name": "Current most powerful mod-required GPU", "value": "[Zotac GTX 1080 ti Mini](https://www.zotac.com/jp/product/graphics_card/zotac-geforce-gtx-1080-ti-mini)", "inline": false
+                "name": "Current most powerful mod-required GPU", "value": "[Zotac GTX 1080 ti Mini (in most cases, outperformed by 3060ti)](https://www.zotac.com/jp/product/graphics_card/zotac-geforce-gtx-1080-ti-mini)", "inline": false
             },
             {
                 "name": "Community GPU spreadsheet", "value": "[Link](https://docs.google.com/spreadsheets/d/1n9scdPzsS2toauLei92J0qu5gzBA4gs8Wu0CwvSXP4M/edit#gid=2143955767)", "inline": false
