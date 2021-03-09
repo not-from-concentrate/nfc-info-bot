@@ -246,7 +246,7 @@
     "!screws": {
         "info": "Screws",
         "color": "0x0099ff",
-        "title": "Riser Info",
+        "title": "Info on chassis screws",
         "description": "The exact screws used on the S4M chassis are a proprietary Lian Li design and are not easily available. QNAP makes screws that work as a good substitute, although very slightly shorter (perhaps 0.2mm shorter). Available from multiple sources, see the following Google links.",
         "dm": false,
         "fields": [
