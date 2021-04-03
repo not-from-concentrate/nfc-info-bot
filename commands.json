@@ -115,6 +115,13 @@
         "title": "Fusion360",
         "description": "Please use my [Fusion360 Referral Link](http://aklam.io/3gSHX4) for rewards if you are looking for CAD/CAM/Render software that NFC uses for designs. Thanks!",
         "dm": false,
+        "fields": [
+            {
+                "name": "Referral link",
+                "value": "http://aklam.io/3gSHX4",
+                "inline": false
+            }
+        ]
     },
 
     "!gpu": {
