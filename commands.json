@@ -3,7 +3,7 @@
         "info": "180 degree PCIe adapter",
         "color": "0x0099ff",
         "title": "180 degree PCIe adapter",
-        "description": "180 degree adapters are typically noted as \"A-type\" or \"B-type\", although this is not necessarily consistent between manufacturers. The difference between the types is whether the ridge for locking the plug in points toward the GPU's PCB or away from it. Most adapters still have pins sticking out the back, covered by a foam pad. However, the pins can still poke through the foam, causing a component-destroying high-current short. Remove the pad, sand/file down the pins, and then reinstall the pad. 180 degree adapters from NFC Systems already have this modification.",
+        "description": "180 degree adapters are typically noted as \"A-type\" or \"B-type\", although this is not necessarily consistent between manufacturers. The difference between the types is whether the ridge for locking the plug in points toward the GPU's PCB or away from it.\n\nMost adapters still have pins sticking out the back, covered by a foam pad. However, the pins can still poke through the foam, causing a component-destroying high-current short. Remove the pad, sand/file down the pins, and then reinstall the pad. 180 degree adapters from NFC Systems already have this modification.",
         "dm": false,
         "fields": [
             {
