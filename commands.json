@@ -58,7 +58,7 @@
             },
             {
                 "name": "S4T Brickless",
-                "value": "The S4T supports brickless configurations of HDPLEX [200W AC-DC](https://hdplex.com/hdplex-internal-200w-ac-dc-adapter-with-active-pfc-and-19vdc-output.html) + [200W DC-ATX](https://hdplex.com/hdplex-200w-dc-atx-power-supply-16v-24v-wide-range-voltage-input.html) \\[[Installation Video](https://www.youtube.com/watch?v=v0qfDD8sUvw&t=195s)\\], HDPLEX [400W AC-DC](https://hdplex.com/hdplex-internal-400w-ac-dc-adapter-with-active-pfc-and-19vdc-output.html) + [200W DC-ATX](https://hdplex.com/hdplex-200w-dc-atx-power-supply-16v-24v-wide-range-voltage-input.html) \\[[Installation Video](https://www.youtube.com/watch?v=v0qfDD8sUvw&t=320s)\\], and [Meanwell RPS-200-12-C AC-DC + J-HACK ONE2 PLUGin 200X DC-ATX kit](https://j-hackcompany.com/?product=j-hack-one2-plugin-200x-power-kit).",
+                "value": "The S4T supports the following brickless configurations:\n* HDPLEX [200W AC-DC](https://hdplex.com/hdplex-internal-200w-ac-dc-adapter-with-active-pfc-and-19vdc-output.html) + [200W DC-ATX](https://hdplex.com/hdplex-200w-dc-atx-power-supply-16v-24v-wide-range-voltage-input.html) \\[[Installation Video](https://www.youtube.com/watch?v=v0qfDD8sUvw&t=195s)\\]\n* HDPLEX [400W AC-DC](https://hdplex.com/hdplex-internal-400w-ac-dc-adapter-with-active-pfc-and-19vdc-output.html) + [200W DC-ATX](https://hdplex.com/hdplex-200w-dc-atx-power-supply-16v-24v-wide-range-voltage-input.html) \\[[Installation Video](https://www.youtube.com/watch?v=v0qfDD8sUvw&t=320s)\\]\n* [Meanwell RPS-200-12-C AC-DC + J-HACK ONE2 PLUGin 200X DC-ATX kit](https://j-hackcompany.com/?product=j-hack-one2-plugin-200x-power-kit)",
                 "inline": false
             }
         ]
