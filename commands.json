@@ -48,7 +48,7 @@
         "fields": [
             {
                 "name": "S4M Standard Layout",
-                "value": "The most common brickless configuration is using an HDPLEX 400W AC-DC module along the side of the chassis near the GPU to convert mains power input to 19V DC output. This is then fed to an HDPLEX 400W HiFi DC-ATX module, which converts the 19V to the various voltages and connectors necessary for the motherboard, GPU, and SATA drives (if used).",
+                "value": "The most common brickless configuration is using an [HDPLEX 400W AC-DC](https://hdplex.com/hdplex-internal-400w-ac-dc-adapter-with-active-pfc-and-19vdc-output.html) module along the side of the chassis near the GPU to convert mains power input to 19V DC output. This is then fed to an [HDPLEX 400W HiFi DC-ATX module](https://hdplex.com/hdplex-400w-hi-fi-dc-atx-power-supply-16v-24v-wide-range-voltage-input.html), which converts the 19V to the various voltages and connectors necessary for the motherboard, GPU, and SATA drives (if used).",
                 "inline": false
             },
             {
@@ -114,6 +114,20 @@
             {
                 "name": "S4M Weight",
                 "value": "1.13kg",
+                "inline": true
+            },{
+                "name": "S4T External",
+                "value": "348mm x 225mm x 64mm",
+                "inline": false
+            },
+            {
+                "name": "S4T Internal",
+                "value": "\[pending\]",
+                "inline": true
+            },
+            {
+                "name": "S4T Weight",
+                "value": "0.6kg",
                 "inline": true
             }
         ]
