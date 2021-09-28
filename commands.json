@@ -124,7 +124,7 @@
             {
                 "name": "S4T External",
                 "value": "348mm x 225mm x 64mm",
-                "inline": true
+                "inline": false
             },
             {
                 "name": "S4T Internal",
