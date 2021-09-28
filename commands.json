@@ -115,10 +115,16 @@
                 "name": "S4M Weight",
                 "value": "1.13kg",
                 "inline": true
-            },{
+            },
+            {
+                "name": '\b',
+                "value": '\b',
+                "inline": true
+            },
+            {
                 "name": "S4T External",
                 "value": "348mm x 225mm x 64mm",
-                "inline": false
+                "inline": true
             },
             {
                 "name": "S4T Internal",
