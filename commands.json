@@ -165,10 +165,13 @@
                 "name": "Maximum slots", "value": "Two (2)", "inline": true
             },
             {
-                "name": "Maximum card length", "value": "S4M: 215mm | S4T stacked/linked: 230mm", "inline": true
+                "name": "Maximum card length", "value": "S4M: 215mm\n\nS4T stacked/linked: 230mm", "inline": true
             },
             {
-                "name": "Maximum card height", "value": "S4M: 111mm (without mods) | S4T stacked/linked: 120mm with HDPlex 400W DC-ATX installed", "inline": true
+                "name": "Maximum card height", "value": "S4M: 111mm (without mods)\n\nS4T stacked/linked: 120mm with HDPlex 400W DC-ATX installed", "inline": true
+            },
+            {
+                "name": "Community GPU spreadsheet", "value": "[Link](https://docs.google.com/spreadsheets/d/1n9scdPzsS2toauLei92J0qu5gzBA4gs8Wu0CwvSXP4M/edit#gid=2143955767)", "inline": false
             },
             {
                 "name": "Easy drop-in GPU", "value": "[EVGA GeForce RTX 3060 Ti XC GAMING](https://www.evga.com/products/product.aspx?pn=08G-P5-3663-KR) (requires low-profile cables or 180 adapter)", "inline": true
@@ -181,9 +184,6 @@
             },
             {
                 "name": "Current most powerful mod-required GPU", "value": "[Zotac GTX 1080 ti Mini (in most cases, outperformed by 3060ti)](https://www.zotac.com/jp/product/graphics_card/zotac-geforce-gtx-1080-ti-mini)", "inline": false
-            },
-            {
-                "name": "Community GPU spreadsheet", "value": "[Link](https://docs.google.com/spreadsheets/d/1n9scdPzsS2toauLei92J0qu5gzBA4gs8Wu0CwvSXP4M/edit#gid=2143955767)", "inline": false
             }
         ]
     },
