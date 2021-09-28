@@ -117,8 +117,8 @@
                 "inline": true
             },
             {
-                "name": '\b',
-                "value": '\b',
+                "name": "\b",
+                "value": "\b",
                 "inline": true
             },
             {
