@@ -122,7 +122,7 @@
             },
             {
                 "name": "S4T Internal",
-                "value": "\[pending\]",
+                "value": "\\[pending\\]",
                 "inline": true
             },
             {
