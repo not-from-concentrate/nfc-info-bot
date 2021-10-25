@@ -42,3 +42,12 @@ Example:
 ## Bot Command Updates
 
 The bot will automatically refresh its list of commands from the repo hourly at the top of the hour, so once changes have been approved and merged into the master branch, they will be visible in the bot within an hour. If you believe that the change is important enough to warrant immediate update, please ping @Sm0keWag0n on the NFC Discord server.
+
+## Environment Variables
+
+| Variable | Description |
+|-|-|
+| BOT_TOKEN | Discord bot token used for authentication |
+| COMMAND_URL | URL to commands.json for command data |
+| ADMIN_USER | ID of discord user who can run restricted commands |
+| LOG_CHANNEL | ID of channel to log information to |

@@ -1,5 +1,6 @@
 # bot.py
-import os, discord, json, requests, threading, sqlite3, datetime
+import os, re, discord, requests, threading, sqlite3, datetime
+from thefuzz import fuzz
 from dotenv import load_dotenv
 from prettytable import PrettyTable
 
@@ -7,6 +8,10 @@ load_dotenv()
 TOKEN = os.getenv('BOT_TOKEN')
 COMMAND_URL = os.getenv('COMMAND_URL')
 ADMIN_USER = os.getenv('ADMIN_USER')
+LOG_CHANNEL = os.getenv('LOG_CHANNEL')
+LINK_PATTERN = r'(?:https?:\/\/)?(?:[^@\n]+@)?([^:\/\n\s?]+)'
+REAL_GIFT_DOMAIN = 'discord.gift'
+MIN_RATIO = 90
 
 # Init variables
 command_data = {}
@@ -85,49 +90,64 @@ client = discord.Client()
 async def on_ready():
     print(f'{client.user} has connected to Discord!')
 
+async def check_for_bad_links(message, domains):
+    log_channel = client.get_channel(int(LOG_CHANNEL))
+    for domain in domains:
+        ratio = fuzz.ratio(REAL_GIFT_DOMAIN, domain)
+        if ratio >= MIN_RATIO and ratio < 100:
+            await message.delete()
+            await log_channel.send(f'Deleted message from <@{message.author.id}> for suspicious link')
+            break
+
+async def handle_command(message):
+    if message.content.lower() == "!info-bot":
+        await message.channel.send(embed=command_list_embed)
+    elif message.content.lower() == "!update-commands":
+        print("Update attempt: " + str(message.author.id))
+        if message.author.id == int(ADMIN_USER):
+            update_commands()
+            await message.channel.send("Commands updated")
+        else:
+            await message.channel.send("Not authorized")
+    elif message.content.lower() == "!info-bot-stats":
+        print("Stats attempt: " + str(message.author.id))
+        if message.author.id == int(ADMIN_USER):
+            await message.channel.send("```" + get_stats() + "```")
+        else:
+            await message.channel.send("Not authorized")
+    else:
+        if len(message.mentions) > 0:
+            user = message.mentions[0]
+        else:
+            user = message.author
+        command = message.content.split()[0].lower()
+
+        if command in command_data:
+            if command_data[command]["dm"]:
+                await message.channel.send(embed=command_embeds[command])
+                await user.send(embed=dm_embeds[command])
+            else:
+                await message.channel.send(embed=command_embeds[command])
+            print("Logging command")
+            cursor = conn.cursor()
+            cursor.execute("SELECT * from stats WHERE command=?", [command])
+            command_row = cursor.fetchall()
+            if len(command_row) == 0:
+                conn.execute("INSERT INTO stats VALUES (?,?,?)", [command, 1, datetime.datetime.utcnow()])
+                conn.commit()
+            elif len(command_row) == 1:
+                conn.execute("UPDATE stats SET invocation_count=?, last_invocation=? WHERE command = ?", [command_row[0][1]+1, datetime.datetime.utcnow(), command])
+                conn.commit()
+            else:
+                print("Database error: too many matching rows")
+            cursor.close()
+
 @client.event
 async def on_message(message):
-    if message.content.startswith("!"):
-        if message.content.lower() == "!info-bot":
-            await message.channel.send(embed=command_list_embed)
-        elif message.content.lower() == "!update-commands":
-            print("Update attempt: " + str(message.author.id))
-            if message.author.id == int(ADMIN_USER):
-                update_commands()
-                await message.channel.send("Commands updated")
-            else:
-                await message.channel.send("Not authorized")
-        elif message.content.lower() == "!info-bot-stats":
-            print("Stats attempt: " + str(message.author.id))
-            if message.author.id == int(ADMIN_USER):
-                await message.channel.send("```" + get_stats() + "```")
-            else:
-                await message.channel.send("Not authorized")
-        else:
-            if len(message.mentions) > 0:
-                user = message.mentions[0]
-            else:
-                user = message.author
-            command = message.content.split()[0].lower()
-
-            if command in command_data:
-                if command_data[command]["dm"]:
-                    await message.channel.send(embed=command_embeds[command])
-                    await user.send(embed=dm_embeds[command])
-                else:
-                    await message.channel.send(embed=command_embeds[command])
-                print("Logging command")
-                cursor = conn.cursor()
-                cursor.execute("SELECT * from stats WHERE command=?", [command])
-                command_row = cursor.fetchall()
-                if len(command_row) == 0:
-                    conn.execute("INSERT INTO stats VALUES (?,?,?)", [command, 1, datetime.datetime.utcnow()])
-                    conn.commit()
-                elif len(command_row) == 1:
-                    conn.execute("UPDATE stats SET invocation_count=?, last_invocation=? WHERE command = ?", [command_row[0][1]+1, datetime.datetime.utcnow(), command])
-                    conn.commit()
-                else:
-                    print("Database error: too many matching rows")
-                cursor.close()
+    domains = re.findall(LINK_PATTERN, message.content)
+    if domains:
+        await check_for_bad_links(message, domains)
+    elif message.content.startswith("!"):
+        await handle_command(message)
 
 client.run(TOKEN)
