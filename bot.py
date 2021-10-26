@@ -9,7 +9,7 @@ TOKEN = os.getenv('BOT_TOKEN')
 COMMAND_URL = os.getenv('COMMAND_URL')
 ADMIN_USER = os.getenv('ADMIN_USER')
 LOG_CHANNEL = os.getenv('LOG_CHANNEL')
-LINK_PATTERN = r'((?:http|https)\:\/\/)?[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z]){2,6}([a-zA-Z0-9\.\&\/\?\:@\-_=#])*'
+LINK_PATTERN = r'(?:https?:\/\/)(?:[^@\n]+@)?([^:\/\n\s?]+)'
 REAL_GIFT_DOMAIN = 'discord.gift'
 MIN_RATIO = 90
 
