@@ -122,13 +122,18 @@
                 "inline": true
             },
             {
-                "name": "S4T External",
-                "value": "348mm x 225mm x 64mm",
-                "inline": false
+                "name": "S4T (standalone)",
+                "value": "200mm x 239mm x 69mm",
+                "inline": true
             },
             {
-                "name": "S4T Internal",
-                "value": "\\[pending\\]",
+                "name": "S4T-S (stacked, sandwich layout)",
+                "value": "200mm x 239mm x 134mm",
+                "inline": true
+            },
+            {
+                "name": "S4T-L (linked, vertical layout)",
+                "value": "400mm x 239mm x 69mm",
                 "inline": true
             },
             {
