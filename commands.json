@@ -292,17 +292,22 @@
         "info": "Screws",
         "color": "0x0099ff",
         "title": "Info on chassis screws",
-        "description": "The exact screws used on the S4M chassis are a proprietary Lian Li design and are not easily available. QNAP makes screws that work as a good substitute, although very slightly shorter (perhaps 0.2mm shorter). Available from multiple sources, see the following Google links.",
+        "description": "The screws used on the S4 chassis are M3 and use a 120° dountersunk head (most screws at hardware stores are 90° and will not sit flush). A seller on eBay sells screws that have been confirmed to work with the S4 chassis, but requires the use of a size #1 Phillips head rather than the #2 used for original S4 screws.",
         "dm": false,
         "fields": [
             {
-                "name": "Silver screws (EAN: 4713213515396)",
-                "value": "[QNAP product page](https://shop.qnap.com/index.php?route=product/product&product_id=320) | [Google search](https://www.google.com/search?q=EAN%3A+4713213515396)",
+                "name": "Screw sizes",
+                "value": "S4M: M3x4mm\nS4T: M3x5mm",
                 "inline": false
             },
             {
-                "name": "Black screws (EAN: 4712511129120)",
-                "value": "[QNAP product page](https://shop.qnap.com/index.php?route=product/product&product_id=163) | [Google search](https://www.google.com/search?q=EAN%3A+4712511129120)",
+                "name": "Silver screws",
+                "value": "[eBay link](https://www.ebay.com/itm/223973329759))",
+                "inline": false
+            },
+            {
+                "name": "Black screws",
+                "value": "[eBay link](https://www.ebay.com/itm/223609324702)",
                 "inline": false
             }
         ]
