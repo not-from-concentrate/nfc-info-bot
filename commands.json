@@ -292,7 +292,7 @@
         "info": "Screws",
         "color": "0x0099ff",
         "title": "Info on chassis screws",
-        "description": "The screws used on the S4 chassis are M3 and use a 120° dountersunk head (most screws at hardware stores are 90° and will not sit flush). A seller on eBay sells screws that have been confirmed to work with the S4 chassis, but requires the use of a size #1 Phillips head rather than the #2 used for original S4 screws.",
+        "description": "The screws used on the S4 chassis are M3 and use a 120° countersunk head (most screws at hardware stores are 90° and will not sit flush). A seller on eBay sells screws that have been confirmed to work with the S4 chassis, but requires the use of a size #1 Phillips head rather than the #2 used for original S4 screws.",
         "dm": false,
         "fields": [
             {
@@ -302,7 +302,7 @@
             },
             {
                 "name": "Silver screws",
-                "value": "[eBay link](https://www.ebay.com/itm/223973329759))",
+                "value": "[eBay link](https://www.ebay.com/itm/223973329759)",
                 "inline": false
             },
             {
