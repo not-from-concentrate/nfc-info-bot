@@ -202,7 +202,7 @@
         "info": "HDPlex installation",
         "color": "0x0099ff",
         "title": "HDPlex installation",
-        "description": "The HDPlex 400W NanoATX combo power supply is currently the best and most compatible power supply for the S4M, mostly because Josh works with the HDPlex designer to address fitment issues and new designs. It separates the two functions of a power supply (AC->DC conversion and DC voltage step-down) into two separate units to allow for more compact placement. HDPlex also offers a cheaper and more compact 200W combo that may be appropriate for lower-power builds.",
+        "description": "NOTE: The HDPlex 400W AC-DC unit has been discontinued, as HDPlex is focusing development on an all-in-one 500W GaN-based unit. Details on this unit are still unknown.\n\nThe HDPlex 400W NanoATX combo power supply is currently the best and most compatible power supply for the S4M, mostly because Josh works with the HDPlex designer to address fitment issues and new designs. It separates the two functions of a power supply (AC->DC conversion and DC voltage step-down) into two separate units to allow for more compact placement. HDPlex also offers a cheaper and more compact 200W combo that may be appropriate for lower-power builds.",
         "dm": true,
         "fields": [
             {
