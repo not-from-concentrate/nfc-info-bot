@@ -16,7 +16,7 @@ command_data = {}
 command_embeds = {}
 dm_embeds = {}
 command_list_embed = {}
-stats_db_file = "stats.db"
+stats_db_file = "/db/stats.db"
 conn = None
 
 # Set up stats database
