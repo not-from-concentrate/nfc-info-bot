@@ -1,10 +1,8 @@
 # bot.py
 import os, re, discord, requests, threading, sqlite3, datetime
 from thefuzz import fuzz
-from dotenv import load_dotenv
 from prettytable import PrettyTable
 
-load_dotenv()
 TOKEN = os.getenv('BOT_TOKEN')
 COMMAND_URL = os.getenv('COMMAND_URL')
 ADMIN_USER = os.getenv('ADMIN_USER')
