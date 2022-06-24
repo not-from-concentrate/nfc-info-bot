@@ -178,7 +178,7 @@
             },
             {
                 "name": "Fitment notes",
-                "value": "The 250W unit will fit in the front of the S4T chassis.\nTwo 250W units can be installed in the S4M and S4T expansion kit builds, with one unit to power the GPU and one to power the motherboard. In a dual PSU configuration, a jumper wire is used to allow the PSU powering the motherboard to control the second PSU. The dual configuration _does not_ combine the power to provide a single 500W source; it provides two discrete 250W sources.",
+                "value": "•The 250W unit will fit in the front of the S4T chassis.\n•Two 250W units can be installed in the S4M and S4T expansion kit builds, with one unit to power the GPU and one to power the motherboard. In a dual PSU configuration, a jumper wire is used to allow the PSU powering the motherboard to control the second PSU. The dual configuration _does not_ combine the power to provide a single 500W source; it provides two discrete 250W sources.",
                 "inline": false
             }
         ]
