@@ -158,6 +158,31 @@
             }
         ]
     },
+    
+    "!gan": {
+        "info": "HDPlex GaN power supplies",
+        "color": "0x0099ff",
+        "title": "HDPLex GaN",
+        "description": "HDPlex is introducing a new line of GaN-based SFF PSUs intended to replace the existing 400W and 200W units. 250W and 500W units have been announced, but currently details are only available for the 250W version.\nUnlike previous HDPlex units where the AC-DC and DC-ATX conversion is done in separate units (a split PSU), the GaN units are all-in-one.",
+        "dm": false,
+        "fields": [
+            {
+                "name": "Product links",
+                "value": "[250W unit](https://hdplex.com/hdplex-fanless-250w-gan-aio-atx-psu.html)",
+                "inline": false
+            },
+            {
+                "name": "Dimensions",
+                "value": "250W unit:\n170(D) x 55 (W) x 25 (H) mm",
+                "inline": false
+            },
+            {
+                "name": "Fitment notes",
+                "value": "The 250W unit will fit in the front of the S4T chassis.\nTwo 250W units can be installed in the S4M and S4T expansion kit builds, with one unit to power the GPU and one to power the motherboard. In a dual PSU configuration, a jumper wire is used to allow the PSU powering the motherboard to control the second PSU. The dual configuration _does not_ combine the power to provide a single 500W source; it provides two discrete 250W sources.",
+                "inline": false
+            }
+        ]
+    },
 
     "!gpu": {
         "info": "GPU options and fitment",
