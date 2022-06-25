@@ -163,7 +163,7 @@
         "info": "HDPlex GaN power supplies",
         "color": "0x0099ff",
         "title": "HDPLex GaN",
-        "description": "HDPlex is introducing a new line of GaN-based SFF PSUs intended to replace the existing 400W and 200W units. 250W and 500W units have been announced, but currently details are only available for the 250W version.\nUnlike previous HDPlex units where the AC-DC and DC-ATX conversion is done in separate units (a split PSU), the GaN units are all-in-one.",
+        "description": "**HDPlEX GAN UNITS ARE NOT YET AVAILABLE. ANY DATE ESTIMATES SHOULD NOT BE EXPECTED TO BE ACCURATE.**\n\nHDPlex is introducing a new line of GaN-based SFF PSUs intended to replace the existing 400W and 200W units. 250W and 500W units have been announced, but currently details are only available for the 250W version.\nUnlike previous HDPlex units where the AC-DC and DC-ATX conversion is done in separate units (a split PSU), the GaN units are all-in-one.",
         "dm": false,
         "fields": [
             {
