@@ -131,3 +131,6 @@ dmypy.json
 # SQLite3 databases
 *.db
 *.db-journal
+
+# NPM dependency directory
+node_modules/
