@@ -1,0 +1,12 @@
+name: JSON Lint
+on: [pull_request]
+jobs:
+  json-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v3
+      - name: Lint the json
+        run: |
+          sudo apt install jq
+          cat commands.json | jq
