@@ -79,6 +79,41 @@
         ]
     },
 
+    "!cooler": {
+        "info": "CPU Cooler recommendations",
+        "color": "0x0099ff",
+        "title": "CPU Cooler recommendations",
+        "description": "The following CPU coolers are recommended for use in S4M (45mm clearance) and S4T (47mm clearance). List of coolers that are NOT recommended and for what reason is included at the end. If you don't see a cooler listed, ask around.",
+        "dm": false,
+        "fields": [
+            {
+                "name": "Noctua NH-L9x with NA-FD1 duct",
+                "value": "One of the smallest and quietest CPU coolers on the market - great all-rounder with no compatibility issues. For use with 65W base TDP CPUs. Also available in black under 'chromax' name.\n• [Intel - NH-L9i](https://noctua.at/en/nh-l9i) - **Intel** variant - LGA115X and LGA1200 compatible.\n• [Intel - NH-L9i-17xx](https://noctua.at/en/nh-l9i-17xx) - Revised L9i with LGA1700 mount kit.\n• [AMD - NH-L9a](https://noctua.at/en/nh-l9a) - **AMD** variant - AM2(+), AM3(+), FM1 and FM2(+) compatible.\n• [AMD - NH-L9a-AM4](https://noctua.at/en/nh-l9a-am4) - **AMD** variant - Revised L9a with AM4 mount kit.\n• [NA-FD1 Fan duct](https://noctua.at/en/na-fd1) - Foam fan duct accessory for L9x - improves temperatures and muffles the fan noise - highly recommended.",
+                "inline": false
+            },
+            {
+                "name": "Metalfish Z39",
+                "value": "C-shaped alternative to NH-L9x with similar performance. Heatpipes can cause compatibility issues (i.e. interfere with M.2 stacks or VRAM heatsinks). For use with 65W base TDP CPUs. Compatible with LGA115X, LGA1200, LGA1700, AM3, AM4 and AM5.\n• [densium.net](https://densium.net/products/z39-cpu-cooler)",
+                "inline": false
+            },
+            {
+                "name": "Alpenföhn Black Ridge",
+                "value": "Larger C-shaped cooler with two possible fan configurations and common motherboard compatibility issues. For use with 95W base TDP CPUs. Compatible with LGA115X, LGA1200 and AM4 OOTB. Mount kit available for LGA1700.\n• Slim 92mm fan mode: RAM height limited to 33mm.\n• Slim 120mm fan mode: RAM height limited to 18mm.\n**S4M note**: Most Black Ridge coolers will not fit S4M out of the box. Slight bending of heatpipes is required to get the height below 45mm. The bending can further affect RAM height limits.\n• [Black Ridge](https://www.alpenfoehn.de/en/products/cpu-cooler/black-ridge-en)",
+                "inline": false
+            },
+            {
+                "name": "(S4T only) ID-Cooling IS-47K",
+                "value": "Black Ridge alternative with slightly improved motherboard compatibility, no RAM limitations and similar cooling capacity. Compatible with LGA115x, LGA1200 and AM4 OOTB. 3rd party mount kit for LGA1700 intermittently available on AliExpress.\n• [IS-47K](https://www.idcooling.com/Product/detail/id/205/name/IS-47K)",
+                "inline": false
+            },
+            {
+                "name": "NOT recommended",
+                "value": "• Any cooler below 37mm height: NH-L9x outperforms them in everything except cost.\n• Any cooler at or above 44mm height with fan on top: Fan running too close to side panel will cause turbulence. Examples: Cryorig C7, Thermalright AXP-90.\n• MasterAir G200P: Surpassed by both NH-L9x and Z39.",
+                "inline": false
+            }
+        ]
+    },
+
     "!custom": {
         "info": "Get custom S4M or S4T work",
         "color": "0x0099ff",
@@ -373,41 +408,6 @@
             {
                 "name": "Support E-mail",
                 "value": "support@nfc-systems.com",
-                "inline": false
-            }
-        ]
-    },
-
-    "!cooler": {
-        "info": "CPU Cooler recommendations",
-        "color": "0x0099ff",
-        "title": "CPU Cooler recommendations",
-        "description": "The following CPU coolers are recommended for use in S4M (45mm clearance) and S4T (47mm clearance) cases. See also list of coolers that are NOT recommended and why at the end. Neither of the two lists is exhaustive - when in doubt, ask around.",
-        "dm": false,
-        "fields": [
-            {
-                "name": "Noctua NH-L9x with NA-FD1 duct",
-                "value": "One of the smallest and quietest CPU coolers on the market - great all-rounder with maximum compatibility. Intended for use with 65W base TDP CPUs. Also available in black under chromax variant name.\n• [Intel - NH-L9i](https://noctua.at/en/nh-l9i) **Intel** variant - LGA115X and LGA1200 compatible OOTB. For LGA1700 look for NH-L9i-17xx variant.\n• [AMD - NH-L9a](https://noctua.at/en/nh-l9a) **AMD** variant of the smallest Noctua cooler. AM2(+), AM3(+), FM1 and FM2(+) compatible OOTB. For AM4 look for NH-L9a-AM4 variant.\n• [NA-FD1 Fan duct](https://noctua.at/en/na-fd1) Foam fan duct accessory for L9x - improves temperatures and noise by preventing hot air recirculation and muffling the fan noise - highly recommended.",
-                "inline": false
-            },
-            {
-                "name": "Metalfish Z39",
-                "value": "C-shaped alternative to NH-L9x with slightly worse motherboard compatibility (heatpipe bends can interfere with M.2 stacks or VRAM heatsinks) and similar performance. Compatible with LGA115X, LGA1200, LGA1700, AM3, AM4 and AM5 OOTB.\n[densium.net](https://densium.net/products/z39-cpu-cooler)",
-                "inline": false
-            },
-            {
-                "name": "Alpenfohn Black Ridge",
-                "value": "C-shaped cooler with two possible fan configurations and cooling capacity for 95W base TDP CPU. Compatible with LGA115X, LGA1200 and AM4 OOTB. Mount kit available for LGA1700.\n• Slim 92mm fan mode: RAM height limited to 33mm.\n• Slim 120mm fan mode: RAM height limited to 18mm.\nNote that on top of RAM height limits, the cooler has compatibility issues with many ITX boards.\n**S4M note**: Be advised that most Black Ridge coolers will not fit S4M out of the box. Slight bending of heatpipes is required to get the height below 45mm. The bending can further affect RAM height limits.",
-                "inline": false
-            },
-            {
-                "name": "(S4T only) ID-Cooling IS-47K",
-                "value": "Black Ridge alternative with slightly improved motherboard compatibility, no RAM limitations and similar cooling capacity. Compatible with LGA115x, LGA1200 and AM4 OOTB. 3rd party mount kit for LGA1700 intermittently available on AliExpress.",
-                "inline": false
-            },
-            {
-                "name": "NOT recommended",
-                "value": "• Any cooler below 37mm height: NH-L9x outperforms them in everything except cost.\n• Any cooler at or above 44mm height with fan on top: Fan running too close to side panel will cause turbulence. Examples: Cryorig C7, Thermalright AXP-90.\n• MasterAir G200P: Surpassed by both NH-L9x and Z39.",
                 "inline": false
             }
         ]
