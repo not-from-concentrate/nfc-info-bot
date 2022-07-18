@@ -23,7 +23,7 @@
             }
         ]
     },
-    
+
     "!bom": {
         "info": "Official NFC Bills of Materials",
         "color": "0x0099ff",
@@ -38,7 +38,7 @@
             }
         ]
     },
-    
+
     "!brickless": {
         "info": "Brickless configurations",
         "color": "0x0099ff",
@@ -63,7 +63,7 @@
             }
         ]
     },
-    
+
     "!c6": {
         "info": "C6 Inlet Info",
         "color": "0x0099ff",
@@ -78,7 +78,7 @@
             }
         ]
     },
-    
+
     "!custom": {
         "info": "Get custom S4M or S4T work",
         "color": "0x0099ff",
@@ -93,7 +93,7 @@
             }
         ]
     },
-    
+
     "!dimensions": {
         "info": "Chassis Dimensions",
         "color": "0x0099ff",
@@ -143,7 +143,7 @@
             }
         ]
     },
-    
+
     "!fusion360": {
         "info": "Use Josh's Fusion360 referral code!",
         "color": "0x0099ff",
@@ -158,7 +158,7 @@
             }
         ]
     },
-    
+
     "!gan": {
         "info": "HDPlex GaN power supplies",
         "color": "0x0099ff",
@@ -217,7 +217,7 @@
             }
         ]
     },
-    
+
     "!gunique": {
         "info": "Information about G-Unique power supplies",
         "color": "0x0099ff",
@@ -272,7 +272,7 @@
             }
         ]
     },
-    
+
     "!lowprofile": {
         "info": "Info and guides on ultra-low-profile PCIe power cables",
         "color": "0x0099ff",
@@ -317,7 +317,7 @@
             }
         ]
     },
-    
+
     "!screws": {
         "info": "Screws",
         "color": "0x0099ff",
@@ -342,7 +342,7 @@
             }
         ]
     },
-    
+
     "!sendcutsend": {
         "info": "SendCutSend is a channel sponsor!",
         "color": "0x0099ff",
@@ -373,6 +373,41 @@
             {
                 "name": "Support E-mail",
                 "value": "support@nfc-systems.com",
+                "inline": false
+            }
+        ]
+    },
+
+    "!cooler": {
+        "info": "CPU Cooler recommendations",
+        "color": "0x0099ff",
+        "title": "CPU Cooler recommendations",
+        "description": "The following CPU coolers are recommended for use in S4M (45mm clearance) and S4T (47mm clearance) cases. See also list of coolers that are NOT recommended and why at the end. Neither of the two lists is exhaustive - when in doubt, ask around.",
+        "dm": false,
+        "fields": [
+            {
+                "name": "Noctua NH-L9x with NA-FD1 duct",
+                "value": "One of the smallest and quietest CPU coolers on the market - great all-rounder with maximum compatibility. Intended for use with 65W base TDP CPUs. Also available in black under chromax variant name.\n• [Intel - NH-L9i](https://noctua.at/en/nh-l9i) **Intel** variant - LGA115X and LGA1200 compatible OOTB. For LGA1700 look for NH-L9i-17xx variant.\n• [AMD - NH-L9a](https://noctua.at/en/nh-l9a) **AMD** variant of the smallest Noctua cooler. AM2(+), AM3(+), FM1 and FM2(+) compatible OOTB. For AM4 look for NH-L9a-AM4 variant.\n• [NA-FD1 Fan duct](https://noctua.at/en/na-fd1) Foam fan duct accessory for L9x - improves temperatures and noise by preventing hot air recirculation and muffling the fan noise - highly recommended.",
+                "inline": false
+            },
+            {
+                "name": "Metalfish Z39",
+                "value": "C-shaped alternative to NH-L9x with slightly worse motherboard compatibility (heatpipe bends can interfere with M.2 stacks or VRAM heatsinks) and similar performance. Compatible with LGA115X, LGA1200, LGA1700, AM3, AM4 and AM5 OOTB.\n[densium.net](https://densium.net/products/z39-cpu-cooler)",
+                "inline": false
+            },
+            {
+                "name": "Alpenfohn Black Ridge",
+                "value": "C-shaped cooler with two possible fan configurations and cooling capacity for 95W base TDP CPU. Compatible with LGA115X, LGA1200 and AM4 OOTB. Mount kit available for LGA1700.\n• Slim 92mm fan mode: RAM height limited to 33mm.\n• Slim 120mm fan mode: RAM height limited to 18mm.\nNote that on top of RAM height limits, the cooler has compatibility issues with many ITX boards.\n**S4M note**: Be advised that most Black Ridge coolers will not fit S4M out of the box. Slight bending of heatpipes is required to get the height below 45mm. The bending can further affect RAM height limits.",
+                "inline": false
+            },
+            {
+                "name": "(S4T only) ID-Cooling IS-47K",
+                "value": "Black Ridge alternative with slightly improved motherboard compatibility, no RAM limitations and similar cooling capacity. Compatible with LGA115x, LGA1200 and AM4 OOTB. 3rd party mount kit for LGA1700 intermittently available on AliExpress.",
+                "inline": false
+            },
+            {
+                "name": "NOT recommended",
+                "value": "• Any cooler below 37mm height: NH-L9x outperforms them in everything except cost.\n• Any cooler at or above 44mm height with fan on top: Fan running too close to side panel will cause turbulence. Examples: Cryorig C7, Thermalright AXP-90.\n• MasterAir G200P: Surpassed by both NH-L9x and Z39.",
                 "inline": false
             }
         ]
