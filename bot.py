@@ -73,7 +73,7 @@ def update_commands():
     
     command_list_embed.add_field(name="\u200B", value="\u200B")
     command_list_embed.add_field(name="About nfc-info-bot", value="Idea and prototype by @Sm0keWag0n, but @Carson made the NodeJS actually good. Then it got re-written in Python. ¯\_(ツ)_/¯", inline=False)
-    command_list_embed.add_field(name="Contribute", value="This info is community-driven. If you have ideas or information to add/correct, please visit the [GitHub Repo](https://github.com/mikedalton/nfc-info-bot) and submit Issues, or fork/pull request.", inline=False)
+    command_list_embed.add_field(name="Contribute", value="This info is community-driven. If you have ideas or information to add/correct, please visit the [GitHub repo](https://github.com/not-from-concentrate/nfc-info-bot) and submit Issues, or fork/pull request.", inline=False)
 
     print(command_data.keys())
 
