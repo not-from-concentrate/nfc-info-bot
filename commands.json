@@ -198,7 +198,7 @@
         "info": "HDPlex GaN power supplies",
         "color": "0x0099ff",
         "title": "HDPLex GaN",
-        "description": "**HDPLEX GAN UNITS ARE NOT YET AVAILABLE. ANY DATE ESTIMATES SHOULD NOT BE EXPECTED TO BE ACCURATE.**\n\nHDPlex is introducing a new line of GaN-based SFF PSUs intended to replace the existing 400W and 200W units. 250W and 500W units have been announced, but currently details are only available for the 250W version.\nUnlike previous HDPlex units where the AC-DC and DC-ATX conversion is done in separate units (a split PSU), the GaN units are all-in-one.",
+        "description": "**HDPlex 250W GaN units are currently in pre-order stage. Expected shipping dates are July 30th for USA and August 10th for Germany.**\n\nHDPlex is introducing a new line of GaN-based SFF PSUs intended to replace the existing 400W and 200W units. 250W and 500W units have been announced, but currently details are only available for the 250W version.\nUnlike previous HDPlex units where the AC-DC and DC-ATX conversion is done in separate units (a split PSU), the GaN units are all-in-one.",
         "dm": false,
         "fields": [
             {
@@ -245,10 +245,14 @@
                 "name": "Current most powerful non-mod NVidia GPU", "value": "[EVGA GeForce RTX 3060 Ti XC GAMING](https://www.evga.com/search/?q=EVGA%20GeForce%20GTX%203060%20Ti%20XC%20GAMING) (requires low-profile cables or 180 adapter)", "inline": false
             },
             {
-                "name": "Current most powerful non-mod AMD GPU", "value": "[PowerColor Radeon RX 5700 ITX 8GB](https://www.powercolor.com/product?id=1581404657) (Japan only, but sometimes can be shipped internationall)", "inline": false
+                "name": "Current most powerful non-mod AMD GPU",
+                "value": "[PowerColor Fighter Radeon RX 6650 XT 8GB](https://www.powercolor.com/product?id=1650273595) (requires low-profile cables or 180 adapter)",
+                "inline": false
             },
             {
-                "name": "Current most powerful mod-required GPU", "value": "[Zotac GTX 1080 ti Mini (in most cases, outperformed by 3060ti)](https://www.zotac.com/jp/product/graphics_card/zotac-geforce-gtx-1080-ti-mini)", "inline": false
+                "name": "Current most powerful mod-required GPU",
+                "value": "[Asus Dual GeForce RTX 3070 SI](https://www.asus.com/Motherboards-Components/Graphics-Cards/Dual/DUAL-RTX3070-8G-SI/) (requires deshroud, cutting ~15mm of heatsink and swap of 400W PSU units for S4M)",
+                "inline": false
             }
         ]
     },
