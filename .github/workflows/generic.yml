@@ -1,0 +1,10 @@
+name: Generic
+on:
+  pull_request:
+    paths-ignore:
+      - '**.json'
+jobs:
+  json-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "No JSON to lint"'
