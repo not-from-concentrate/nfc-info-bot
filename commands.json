@@ -98,7 +98,7 @@
             },
             {
                 "name": "Alpenföhn Black Ridge",
-                "value": "Larger C-shaped cooler with two possible fan configurations and common motherboard compatibility issues. For use with 95W base TDP CPUs. Compatible with LGA115X, LGA1200 and AM4 OOTB. Mount kit available for LGA1700.\n• Slim 92mm fan mode: RAM height limited to 33mm.\n• Slim 120mm fan mode: RAM height limited to 18mm.\n**S4M note**: Most Black Ridge coolers will not fit S4M out of the box. Slight bending of heatpipes is required to get the height below 45mm. The bending can further affect RAM height limits.\n• [Black Ridge](https://www.alpenfoehn.de/en/products/cpu-cooler/black-ridge-en)",
+                "value": "Larger C-shaped cooler with two possible fan configurations and common motherboard compatibility issues. For use with 95W base TDP CPUs. Compatible with LGA115X, LGA1200 and AM4 OOTB. Mount kit available for LGA1700.\n• Slim 92mm fan mode: RAM height limited to 33mm.\n• Slim 120mm fan mode: RAM height limited to 18mm.\n**Stand-off mod**: It is recommended to put spacers in between the fan and heatsink when installed as intake. Foam ducts are available for both configurations.\n**S4M note**: Most Black Ridge coolers will not fit S4M out of the box. Slight bending of heatpipes is required to get the height below 45mm. The bending can further affect RAM height limits.\n• [Black Ridge](https://www.alpenfoehn.de/en/products/cpu-cooler/black-ridge-en)\n• [NA-FD1 Fan duct](https://noctua.at/en/na-fd1) - for stand-off mod with 92mm fan.\n• [Alphacool Phobya gasket](https://www.aquatuning.us/water-cooling/radiators/decoupling-and-damping/15056/phobya-radiator-gasket-5mm-for-120mm-fans) - for stand-off mod with 120mm fan.",
                 "inline": false
             },
             {
@@ -198,7 +198,7 @@
         "info": "HDPlex GaN power supplies",
         "color": "0x0099ff",
         "title": "HDPLex GaN",
-        "description": "**HDPlex 250W GaN units are currently in pre-order stage. Expected shipping dates are July 30th for USA and August 10th for Germany.**\n\nHDPlex is introducing a new line of GaN-based SFF PSUs intended to replace the existing 400W and 200W units. 250W and 500W units have been announced, but currently details are only available for the 250W version.\nUnlike previous HDPlex units where the AC-DC and DC-ATX conversion is done in separate units (a split PSU), the GaN units are all-in-one.",
+        "description": "**HDPlex 250W GaN units are currently in pre-order stage. Expected shipping dates are July 30th for USA and August 10th for Germany.**\n\nHDPlex is introducing a new line of GaN-based SFF PSUs intended to replace the existing 400W and 200W units. 250W and 500W units have been announced, but currently details are only available for the 250W version.\nUnlike previous HDPlex units where the AC-DC and DC-ATX conversion is done in separate units (a split PSU), the GaN units are all-in-one.\n\nFor info about legacy HDPlex PSUs, use **!hdplex** command.",
         "dm": false,
         "fields": [
             {
@@ -271,7 +271,7 @@
         "info": "HDPlex installation",
         "color": "0x0099ff",
         "title": "HDPlex installation",
-        "description": "NOTE: The HDPlex 400W AC-DC unit has been discontinued, as HDPlex is focusing development on an all-in-one 500W GaN-based unit. Details on this unit are still unknown.\n\nThe HDPlex 400W NanoATX combo power supply is currently the best and most compatible power supply for the S4M, mostly because Josh works with the HDPlex designer to address fitment issues and new designs. It separates the two functions of a power supply (AC->DC conversion and DC voltage step-down) into two separate units to allow for more compact placement. HDPlex also offers a cheaper and more compact 200W combo that may be appropriate for lower-power builds.",
+        "description": "NOTE: The HDPlex 400W AC-DC unit has been discontinued, as HDPlex is focusing development on an all-in-one 500W GaN-based unit. Details on this unit are still unknown.\n\nThe HDPlex 400W NanoATX combo power supply is currently the best and most compatible power supply for the S4M, mostly because Josh works with the HDPlex designer to address fitment issues and new designs. It separates the two functions of a power supply (AC->DC conversion and DC voltage step-down) into two separate units to allow for more compact placement. HDPlex also offers a cheaper and more compact 200W combo that may be appropriate for lower-power builds.\n\nFor info about HDPlex PSUs currently in production, use **!gan** command.",
         "dm": true,
         "fields": [
             {
