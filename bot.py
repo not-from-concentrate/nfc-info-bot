@@ -1,11 +1,11 @@
 # bot.py
-import os, re, discord, requests, threading, sqlite3, datetime
+import os, re, discord, requests, threading, sqlite3, datetime, json
 from thefuzz import fuzz
 from prettytable import PrettyTable
 
 TOKEN = os.getenv('BOT_TOKEN')
 COMMAND_URL = os.getenv('COMMAND_URL')
-ADMIN_USER = os.getenv('ADMIN_USER')
+ADMIN_USERS = json.loads(os.getenv('ADMIN_USER'))
 LOG_CHANNEL = os.getenv('LOG_CHANNEL')
 LINK_PATTERN = r'(?:https?:\/\/)(?:[^@\n]+@)?([^:\/\n\s?]+)'
 REAL_GIFT_DOMAIN = 'discord.gift'
@@ -109,7 +109,7 @@ async def handle_command(message):
             await message.channel.send("Not authorized")
     elif message.content.lower() == "!info-bot-stats":
         print("Stats attempt: " + str(message.author.id))
-        if message.author.id == int(ADMIN_USER):
+        if message.author.id in ADMIN_USERS:
             await message.channel.send("```" + get_stats() + "```")
         else:
             await message.channel.send("Not authorized")
