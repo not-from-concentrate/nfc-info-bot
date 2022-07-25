@@ -102,7 +102,7 @@ async def handle_command(message):
         await message.channel.send(embed=command_list_embed)
     elif message.content.lower() == "!update-commands":
         print("Update attempt: " + str(message.author.id))
-        if message.author.id == int(ADMIN_USER):
+        if message.author.id in ADMIN_USERS:
             update_commands()
             await message.channel.send("Commands updated")
         else:
