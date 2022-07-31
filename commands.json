@@ -433,7 +433,7 @@
         "info": "VLP RAM Options",
         "color": "0x0099ff",
         "title": "VLP RAM Options",
-        "description": "Use of certain coolers / cooler configurations may call for use of VLP (Very Low Profile) RAM. Here's a list of few viable options - please note that most of the kits don't have XMP profiles and are sold with the default JEDEC configuration. Overclocking the modules can bring them much closer to XMP config values seen in standard RAM kits.",
+        "description": "Certain cooler configurations may require VLP (Very Low Profile) RAM. Here's a list of recommended options - please note that the kits are sold with only the default JEDEC configuration (no XMP profiles). Overclocking the modules can bring them much closer to XMP config values seen in standard RAM kits.",
         "dm": false,
         "fields": [
             {
@@ -453,7 +453,7 @@
             },
             {
                 "name": "DDR5 VLP Options",
-                "value": "There are currently no viable VLP kits on sale. This(https://www.smartm.com/product/ddr5-vlp-rdimm) has been announced but so far no retailers carry it.",
+                "value": "There are currently no viable VLP kits on sale. [This](https://www.smartm.com/product/ddr5-vlp-rdimm) has been announced but so far no retailers carry it.",
                 "inline": false
             }
         ]
