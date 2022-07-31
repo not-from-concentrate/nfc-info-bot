@@ -98,7 +98,7 @@
             },
             {
                 "name": "Alpenföhn Black Ridge",
-                "value": "Larger C-shaped cooler with two possible fan configurations and common motherboard compatibility issues. For use with 95W base TDP CPUs. Compatible with LGA115X, LGA1200 and AM4 OOTB. Mount kit available for LGA1700.\n• Slim 92mm fan mode: RAM height limited to 33mm.\n• Slim 120mm fan mode: RAM height limited to 18mm.\n**Stand-off mod**: It is recommended to put spacers in between the fan and heatsink when installed as intake. Foam ducts are available for both configurations.\n**S4M note**: Most Black Ridge coolers will not fit S4M out of the box. Slight bending of heatpipes is required to get the height below 45mm. The bending can further affect RAM height limits.\n• [Black Ridge](https://www.alpenfoehn.de/en/products/cpu-cooler/black-ridge-en)\n• [NA-FD1 Fan duct](https://noctua.at/en/na-fd1) - for stand-off mod with 92mm fan.\n• [Alphacool Phobya gasket](https://www.aquatuning.us/water-cooling/radiators/decoupling-and-damping/15056/phobya-radiator-gasket-5mm-for-120mm-fans) - for stand-off mod with 120mm fan.",
+                "value": "Larger C-shaped cooler with two possible fan configurations and common motherboard compatibility issues. For use with 95W base TDP CPUs. Compatible with LGA115X, LGA1200 and AM4 OOTB. Mount kit available for LGA1700.\n• Slim 92mm fan mode: RAM height limited to 33mm.\n• Slim 120mm fan mode: RAM height limited to 18mm (see **!vlp** for viable RAM kits).\n**Stand-off mod**: It is recommended to put spacers in between the fan and heatsink when installed as intake. Foam ducts are available for both configurations.\n**S4M note**: Most Black Ridge coolers will not fit S4M out of the box. Slight bending of heatpipes is required to get the height below 45mm. The bending can further affect RAM height limits.\n• [Black Ridge](https://www.alpenfoehn.de/en/products/cpu-cooler/black-ridge-en)\n• [NA-FD1 Fan duct](https://noctua.at/en/na-fd1) - for stand-off mod with 92mm fan.\n• [Alphacool Phobya gasket](https://www.aquatuning.us/water-cooling/radiators/decoupling-and-damping/15056/phobya-radiator-gasket-5mm-for-120mm-fans) - for stand-off mod with 120mm fan.",
                 "inline": false
             },
             {
@@ -227,22 +227,34 @@
         "dm": false,
         "fields": [
             {
-                "name": "Maximum slots", "value": "Two (2)", "inline": true
+                "name": "Maximum slots",
+                "value": "Two (2)",
+                "inline": true
             },
             {
-                "name": "Maximum card length", "value": "S4M: 215mm\nS4T-S/L: 230mm", "inline": true
+                "name": "Maximum card length",
+                "value": "S4M: 215mm\nS4T-S/L: 230mm",
+                "inline": true
             },
             {
-                "name": "Maximum card height", "value": "S4M: 111mm (without mods)\nS4T-L: 120mm with HDPlex 400W DC-ATX installed\nS4T-S: depends on GPU orientation", "inline": true
+                "name": "Maximum card height",
+                "value": "S4M: 111mm (without mods)\nS4T-L: 120mm with HDPlex 400W DC-ATX installed\nS4T-S: depends on GPU orientation",
+                "inline": true
             },
             {
-                "name": "Community GPU spreadsheet", "value": "[Link](https://docs.google.com/spreadsheets/d/1n9scdPzsS2toauLei92J0qu5gzBA4gs8Wu0CwvSXP4M/edit#gid=2143955767)", "inline": false
+                "name": "Community GPU spreadsheet",
+                "value": "[Link](https://docs.google.com/spreadsheets/d/1n9scdPzsS2toauLei92J0qu5gzBA4gs8Wu0CwvSXP4M/edit#gid=2143955767)",
+                "inline": false
             },
             {
-                "name": "Easy drop-in GPU", "value": "[EVGA GeForce RTX 3060 Ti XC GAMING](https://www.evga.com/search/?q=EVGA%20GeForce%20GTX%203060%20Ti%20XC%20GAMING) (requires low-profile cables or 180 adapter)", "inline": true
+                "name": "Easy drop-in GPU",
+                "value": "[EVGA GeForce RTX 3060 Ti XC GAMING](https://www.evga.com/search/?q=EVGA%20GeForce%20GTX%203060%20Ti%20XC%20GAMING) (requires low-profile cables or 180 adapter)",
+                "inline": true
             },
             {
-                "name": "Current most powerful non-mod NVidia GPU", "value": "[EVGA GeForce RTX 3060 Ti XC GAMING](https://www.evga.com/search/?q=EVGA%20GeForce%20GTX%203060%20Ti%20XC%20GAMING) (requires low-profile cables or 180 adapter)", "inline": false
+                "name": "Current most powerful non-mod NVidia GPU",
+                "value": "[EVGA GeForce RTX 3060 Ti XC GAMING](https://www.evga.com/search/?q=EVGA%20GeForce%20GTX%203060%20Ti%20XC%20GAMING) (requires low-profile cables or 180 adapter)",
+                "inline": false
             },
             {
                 "name": "Current most powerful non-mod AMD GPU",
@@ -412,6 +424,36 @@
             {
                 "name": "Support E-mail",
                 "value": "support@nfc-systems.com",
+                "inline": false
+            }
+        ]
+    },
+
+    "!vlp": {
+        "info": "VLP RAM Options",
+        "color": "0x0099ff",
+        "title": "VLP RAM Options",
+        "description": "Use of certain coolers / cooler configurations may call for use of VLP (Very Low Profile) RAM. Here's a list of few viable options - please note that most of the kits don't have XMP profiles and are sold with the default JEDEC configuration. Overclocking the modules can bring them much closer to XMP config values seen in standard RAM kits.",
+        "dm": false,
+        "fields": [
+            {
+                "name": "Kingston 2x8GB 2666MHz CL19",
+                "value": "[Kingston 8GB 2666MHz CL19](https://www.kingston.com/en/memory/client/ddr4-2666mts-non_ecc-unbuffered-vlp%20dimm)",
+                "inline": false
+            },
+            {
+                "name": "V-Color 2x16GB 2666MHz CL19",
+                "value": "[V-Color 2x16GB 2666MHz CL19](https://v-color.net/products/ddr4-32gb-ecc-vlp-udimm-server-memory)",
+                "inline": false
+            },
+            {
+                "name": "Kingston 2x16GB 3200MHz CL22",
+                "value": "[Kingston 2x16GB 3200MHz CL22](https://www.amazon.com/gp/product/B08GKVFMGN)",
+                "inline": false
+            },
+            {
+                "name": "DDR5 VLP Options",
+                "value": "There are currently no viable VLP kits on sale. This(https://www.smartm.com/product/ddr5-vlp-rdimm) has been announced but so far no retailers carry it.",
                 "inline": false
             }
         ]
