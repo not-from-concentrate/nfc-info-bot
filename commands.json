@@ -433,12 +433,12 @@
         "info": "VLP RAM Options",
         "color": "0x0099ff",
         "title": "VLP RAM Options",
-        "description": "Certain cooler configurations may require VLP (Very Low Profile) RAM. Here's a list of recommended options - please note that the kits are sold with only the default JEDEC configuration (no XMP profiles). Overclocking the modules can bring them much closer to XMP config values seen in standard RAM kits.\n\nOther kits might be compatible but note that there are potential compatibility issues related to ECC RAM. Intel doesn't support ECC with desktop motherboards (only Wx80 series). AMD generally supports Unbuffered / Unregistered ECC modules but note that some motherboards might have limited support - checking motherboard manual is highly recommended.",
+        "description": "Certain cooler configurations may require VLP (Very Low Profile) RAM. Here's a list of recommended options - please note that the kits are sold with only the default JEDEC configuration (no XMP profiles). Overclocking the modules can bring them much closer to XMP config values seen in standard RAM kits.\n\nNote that there are compatibility issues related to ECC RAM: Intel doesn't support ECC with desktop motherboards (only Wx80 series). AMD supports Unbuffered/Unregistered ECC modules but some motherboards might have limited support - check your motherboard manual to confirm.",
         "dm": false,
         "fields": [
             {
                 "name": "DDR4",
-                "value": "• [Kingston 2x8GB 2666MHz CL19](https://www.kingston.com/en/memory/client/ddr4-2666mts-non_ecc-unbuffered-vlp%20dimm): non-ECC, for use with Intel\n• [V-Color 2x16GB 2666MHz CL19](https://v-color.net/products/ddr4-32gb-ecc-vlp-udimm-server-memory): ECC unbuffered, for use with AMD\n• [Micron 16GB 3200MHz CL22](https://www.amazon.com/MICRON-DDR4-UDIMM-16GB-2RX8/dp/B09TFK74GW): ECC unbuffered, for use with AMD\n• There are currently **DDR5** VLP kits available. [This](https://www.smartm.com/product/ddr5-vlp-rdimm) has been announced but so far no retailers carry it.",
+                "value": "• [Kingston 8GB 2666MHz CL19](https://www.amazon.com/dp/B07MK1YJFZ): non-ECC, for use with Intel and AMD\n• [URAM 16GB 2666MHz CL19](https://www.amazon.com/2666MHz-Compatible-PC4-21300-Unbuffered-Computer/dp/B09VNVC2HR): non-ECC, for use with Intel and AMD\n• [V-Color 2x16GB 2666MHz CL19](https://v-color.net/products/ddr4-32gb-ecc-vlp-udimm-server-memory): ECC unbuffered, for use with AMD\n• [Micron 16GB 3200MHz CL22](https://www.amazon.com/MICRON-DDR4-UDIMM-16GB-2RX8/dp/B09TFK74GW): ECC unbuffered, for use with AMD",
                 "inline": false
             },
             {
