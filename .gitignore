@@ -134,3 +134,6 @@ dmypy.json
 
 # NPM dependency directory
 node_modules/
+
+#IDEA files
+/.idea/
