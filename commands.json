@@ -433,27 +433,17 @@
         "info": "VLP RAM Options",
         "color": "0x0099ff",
         "title": "VLP RAM Options",
-        "description": "Certain cooler configurations may require VLP (Very Low Profile) RAM. Here's a list of recommended options - please note that the kits are sold with only the default JEDEC configuration (no XMP profiles). Overclocking the modules can bring them much closer to XMP config values seen in standard RAM kits.",
+        "description": "Certain cooler configurations may require VLP (Very Low Profile) RAM. Here's a list of recommended options - please note that the kits are sold with only the default JEDEC configuration (no XMP profiles). Overclocking the modules can bring them much closer to XMP config values seen in standard RAM kits.\n\nOther kits might be compatible but note that there are potential compatibility issues related to ECC RAM. Intel doesn't support ECC with desktop motherboards (only Wx80 series). AMD generally supports Unbuffered / Unregistered ECC modules but note that some motherboards might have limited support - checking motherboard manual is highly recommended.",
         "dm": false,
         "fields": [
             {
-                "name": "Kingston 2x8GB 2666MHz CL19",
-                "value": "[Kingston 8GB 2666MHz CL19](https://www.kingston.com/en/memory/client/ddr4-2666mts-non_ecc-unbuffered-vlp%20dimm)",
+                "name": "DDR4",
+                "value": "• [Kingston 2x8GB 2666MHz CL19](https://www.kingston.com/en/memory/client/ddr4-2666mts-non_ecc-unbuffered-vlp%20dimm): non-ECC, for use with Intel\n• [V-Color 2x16GB 2666MHz CL19](https://v-color.net/products/ddr4-32gb-ecc-vlp-udimm-server-memory): ECC unbuffered, for use with AMD\n• [Micron 16GB 3200MHz CL22](https://www.amazon.com/MICRON-DDR4-UDIMM-16GB-2RX8/dp/B09TFK74GW): ECC unbuffered, for use with AMD\n• There are currently **DDR5** VLP kits available. [This](https://www.smartm.com/product/ddr5-vlp-rdimm) has been announced but so far no retailers carry it.",
                 "inline": false
             },
             {
-                "name": "V-Color 2x16GB 2666MHz CL19",
-                "value": "[V-Color 2x16GB 2666MHz CL19](https://v-color.net/products/ddr4-32gb-ecc-vlp-udimm-server-memory)",
-                "inline": false
-            },
-            {
-                "name": "Kingston 2x16GB 3200MHz CL22",
-                "value": "[Kingston 2x16GB 3200MHz CL22](https://www.amazon.com/gp/product/B08GKVFMGN)",
-                "inline": false
-            },
-            {
-                "name": "DDR5 VLP Options",
-                "value": "There are currently no viable VLP kits on sale. [This](https://www.smartm.com/product/ddr5-vlp-rdimm) has been announced but so far no retailers carry it.",
+                "name": "DDR5",
+                "value": "There are currently **DDR5** VLP kits available. [This](https://www.smartm.com/product/ddr5-vlp-rdimm) has been announced but so far no retailers carry it.",
                 "inline": false
             }
         ]
