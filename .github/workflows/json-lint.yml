@@ -9,7 +9,5 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v3
-      - name: Set up prereqs
-        run: sudo apt install jq
       - name: Lint the json
-        run: cat commands.json | jq
+        run: python3 validate_json.py
