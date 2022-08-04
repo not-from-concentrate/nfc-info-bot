@@ -93,7 +93,8 @@
             },
             {
                 "name": "Noctua product links",
-                "value": "• [Intel - NH-L9i](https://noctua.at/en/nh-l9i) - **Intel** variant - LGA115X and LGA1200 compatible.\n• [Intel - NH-L9i-17xx](https://noctua.at/en/nh-l9i-17xx) - Revised L9i with LGA1700 mount kit.\n• [AMD - NH-L9a](https://noctua.at/en/nh-l9a) - **AMD** variant - AM2(+), AM3(+), FM1 and FM2(+) compatible.\n• [AMD - NH-L9a-AM4](https://noctua.at/en/nh-l9a-am4) - **AMD** variant - Revised L9a with AM4 mount kit.\n• [NA-FD1 Fan duct](https://noctua.at/en/na-fd1) - Foam fan duct accessory for L9x"
+                "value": "• [Intel - NH-L9i](https://noctua.at/en/nh-l9i) - **Intel** variant - LGA115X and LGA1200 compatible.\n• [Intel - NH-L9i-17xx](https://noctua.at/en/nh-l9i-17xx) - Revised L9i with LGA1700 mount kit.\n• [AMD - NH-L9a](https://noctua.at/en/nh-l9a) - **AMD** variant - AM2(+), AM3(+), FM1 and FM2(+) compatible.\n• [AMD - NH-L9a-AM4](https://noctua.at/en/nh-l9a-am4) - **AMD** variant - Revised L9a with AM4 mount kit.\n• [NA-FD1 Fan duct](https://noctua.at/en/na-fd1) - Foam fan duct accessory for L9x",
+                "inline": false
             },
             {
                 "name": "Metalfish Z39",
