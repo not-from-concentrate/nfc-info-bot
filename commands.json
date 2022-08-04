@@ -88,8 +88,12 @@
         "fields": [
             {
                 "name": "Noctua NH-L9x with NA-FD1 duct",
-                "value": "One of the smallest and quietest CPU coolers on the market - great all-rounder with no compatibility issues. For use with 65W base TDP CPUs. Also available in black under 'chromax' name.\n• [Intel - NH-L9i](https://noctua.at/en/nh-l9i) - **Intel** variant - LGA115X and LGA1200 compatible.\n• [Intel - NH-L9i-17xx](https://noctua.at/en/nh-l9i-17xx) - Revised L9i with LGA1700 mount kit.\n• [AMD - NH-L9a](https://noctua.at/en/nh-l9a) - **AMD** variant - AM2(+), AM3(+), FM1 and FM2(+) compatible.\n• [AMD - NH-L9a-AM4](https://noctua.at/en/nh-l9a-am4) - **AMD** variant - Revised L9a with AM4 mount kit.\n• [NA-FD1 Fan duct](https://noctua.at/en/na-fd1) - Foam fan duct accessory for L9x - improves temperatures and muffles the fan noise - highly recommended.",
+                "value": "One of the smallest and quietest CPU coolers on the market - great all-rounder with no compatibility issues. For use with 65W base TDP CPUs. Also available in black under 'chromax' name.\nNA-FD1 Fan duct improves temperatures and muffles the fan noise - highly recommended.",
                 "inline": false
+            },
+            {
+                "name": "Noctua product links",
+                "value": "• [Intel - NH-L9i](https://noctua.at/en/nh-l9i) - **Intel** variant - LGA115X and LGA1200 compatible.\n• [Intel - NH-L9i-17xx](https://noctua.at/en/nh-l9i-17xx) - Revised L9i with LGA1700 mount kit.\n• [AMD - NH-L9a](https://noctua.at/en/nh-l9a) - **AMD** variant - AM2(+), AM3(+), FM1 and FM2(+) compatible.\n• [AMD - NH-L9a-AM4](https://noctua.at/en/nh-l9a-am4) - **AMD** variant - Revised L9a with AM4 mount kit.\n• [NA-FD1 Fan duct](https://noctua.at/en/na-fd1) - Foam fan duct accessory for L9x"
             },
             {
                 "name": "Metalfish Z39",
@@ -98,7 +102,12 @@
             },
             {
                 "name": "Alpenföhn Black Ridge",
-                "value": "Larger C-shaped cooler with two possible fan configurations and common motherboard compatibility issues. For use with 95W base TDP CPUs. Compatible with LGA115X, LGA1200 and AM4 OOTB. Mount kit available for LGA1700.\n• Slim 92mm fan mode: RAM height limited to 33mm.\n• Slim 120mm fan mode: RAM height limited to 18mm (see **!vlp** for viable RAM kits).\n**Stand-off mod**: It is recommended to put spacers in between the fan and heatsink when installed as intake. Foam ducts are available for both configurations.\n**S4M note**: Most Black Ridge coolers will not fit S4M out of the box. Slight bending of heatpipes is required to get the height below 45mm. The bending can further affect RAM height limits.\n• [Black Ridge](https://www.alpenfoehn.de/en/products/cpu-cooler/black-ridge-en)\n• [NA-FD1 Fan duct](https://noctua.at/en/na-fd1) - for stand-off mod with 92mm fan.\n• [Alphacool Phobya gasket](https://www.aquatuning.us/water-cooling/radiators/decoupling-and-damping/15056/phobya-radiator-gasket-5mm-for-120mm-fans) - for stand-off mod with 120mm fan.",
+                "value": "Larger C-shaped cooler with two possible fan configurations and common motherboard compatibility issues. For use with 95W base TDP CPUs. Compatible with LGA115X, LGA1200 and AM4 OOTB. Mount kit available for LGA1700.\n• Slim 92mm fan mode: RAM height limited to 33mm.\n• Slim 120mm fan mode: RAM height limited to 18mm (see **!vlp** for viable RAM kits).\n**Stand-off mod**: It is recommended to put spacers in between the fan and heatsink when installed as intake. Foam ducts are available for both configurations.\n**S4M note**: Most Black Ridge coolers will not fit S4M out of the box. Slight bending of heatpipes is required to get the height below 45mm. The bending can further affect RAM height limits.",
+                "inline": false
+            },
+            {
+                "name": "Alpenföhn Black Ridge product links",
+                "value": "• [Black Ridge](https://www.alpenfoehn.de/en/products/cpu-cooler/black-ridge-en)\n• [NA-FD1 Fan duct](https://noctua.at/en/na-fd1) - for stand-off mod with 92mm fan.\n• [Alphacool Phobya gasket](https://www.aquatuning.us/water-cooling/radiators/decoupling-and-damping/15056/phobya-radiator-gasket-5mm-for-120mm-fans) - for stand-off mod with 120mm fan.",
                 "inline": false
             },
             {
