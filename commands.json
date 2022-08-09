@@ -448,12 +448,12 @@
         "fields": [
             {
                 "name": "DDR4",
-                "value": "• [Kingston 8GB 2666MHz CL19](https://www.amazon.com/dp/B07MK1YJFZ): non-ECC, for use with Intel and AMD\n• [URAM 16GB 2666MHz CL19](https://www.amazon.com/2666MHz-Compatible-PC4-21300-Unbuffered-Computer/dp/B09VNVC2HR): non-ECC, for use with Intel and AMD\n• [V-Color 2x16GB 2666MHz CL19](https://v-color.net/products/ddr4-32gb-ecc-vlp-udimm-server-memory): ECC unbuffered, for use with AMD\n• [Micron 16GB 3200MHz CL22](https://www.amazon.com/MICRON-DDR4-UDIMM-16GB-2RX8/dp/B09TFK74GW): ECC unbuffered, for use with AMD",
+                "value": "• [Kingston 8GB 2666MHz CL19](https://www.amazon.com/dp/B07MK1YJFZ): non-ECC, for use with Intel and AMD\n• [URAM 16GB 2666MHz CL19](https://www.amazon.com/2666MHz-Compatible-PC4-21300-Unbuffered-Computer/dp/B09VNVC2HR): non-ECC, for use with Intel and AMD\n• [V-Color 2x16GB 2666MHz CL19](https://v-color.net/products/ddr4-32gb-ecc-vlp-udimm-server-memory): ECC unbuffered, for use with AMD\n• [Micron 16GB 3200MHz CL22](https://www.amazon.com/MICRON-DDR4-UDIMM-16GB-2RX8/dp/B09TFK74GW): ECC unbuffered, for use with AMD\n• [Transcend 16GB 3200MHz CL22](https://www.transcend-info.com/embedded/product/module/ddr4/ts4glh72v2e3l): ECC unbuffered, for use with AMD",
                 "inline": false
             },
             {
                 "name": "DDR5",
-                "value": "There are currently **DDR5** VLP kits available. [This](https://www.smartm.com/product/ddr5-vlp-rdimm) has been announced but so far no retailers carry it.",
+                "value": "There are currently no **DDR5** VLP kits available. [This](https://www.smartm.com/product/ddr5-vlp-rdimm) has been announced but so far no retailers carry it.",
                 "inline": false
             }
         ]
