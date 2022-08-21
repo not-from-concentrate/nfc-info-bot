@@ -208,7 +208,7 @@
         "info": "HDPlex GaN power supplies",
         "color": "0x0099ff",
         "title": "HDPLex GaN",
-        "description": "**HDPlex 250W GaN units are currently in pre-order stage. Expected shipping dates are July 30th for USA and August 10th for Germany.**\n\nHDPlex is introducing a new line of GaN-based SFF PSUs intended to replace the existing 400W and 200W units. 250W and 500W units have been announced, but currently details are only available for the 250W version.\nUnlike previous HDPlex units where the AC-DC and DC-ATX conversion is done in separate units (a split PSU), the GaN units are all-in-one.\n\nFor info about legacy HDPlex PSUs, use **!hdplex** command.",
+        "description": "**HDPlex 250W GaN units have started shipping in USA. EU and rest of the world should follow soon.**\n\nHDPlex has introduced a new line of GaN-based SFF PSUs intended to replace the existing 400W and 200W units. 250W units are already shipping. The previously announced 500W units are on hold until further notice.\nUnlike previous HDPlex units where the AC-DC and DC-ATX conversion is done in separate units (a split PSU), the GaN units are all-in-one.\n\nFor info about legacy HDPlex PSUs, use **!hdplex** command.",
         "dm": false,
         "fields": [
             {
@@ -447,13 +447,23 @@
         "dm": false,
         "fields": [
             {
-                "name": "DDR4",
-                "value": "• [Kingston 8GB 2666MHz CL19](https://www.amazon.com/dp/B07MK1YJFZ): non-ECC, for use with Intel and AMD\n• [URAM 16GB 2666MHz CL19](https://www.amazon.com/2666MHz-Compatible-PC4-21300-Unbuffered-Computer/dp/B09VNVC2HR): non-ECC, for use with Intel and AMD\n• [V-Color 2x16GB 2666MHz CL19](https://v-color.net/products/ddr4-32gb-ecc-vlp-udimm-server-memory): ECC unbuffered, for use with AMD\n• [Micron 16GB 3200MHz CL22](https://www.amazon.com/MICRON-DDR4-UDIMM-16GB-2RX8/dp/B09TFK74GW): ECC unbuffered, for use with AMD\n• [Transcend 16GB 3200MHz CL22](https://www.transcend-info.com/embedded/product/module/ddr4/ts4glh72v2e3l): ECC unbuffered, for use with AMD",
+                "name": "DDR4 16GB Kits",
+                "value": "• [Kingston 8GB 2666MHz CL19](https://www.amazon.com/dp/B07MK1YJFZ): non-ECC, for use with Intel and AMD",
+                "inline": false
+            },
+            {
+                "name": "DDR4 32GB Kits",
+                "value": "• [URAM 16GB 2666MHz CL19](https://www.amazon.com/2666MHz-Compatible-PC4-21300-Unbuffered-Computer/dp/B09VNVC2HR): non-ECC, for use with Intel and AMD\n• [V-Color 2x16GB 2666MHz CL19](https://v-color.net/products/ddr4-32gb-ecc-vlp-udimm-server-memory): ECC unbuffered, for use with AMD\n• [Micron 16GB 3200MHz CL22](https://www.amazon.com/MICRON-DDR4-UDIMM-16GB-2RX8/dp/B09TFK74GW): ECC unbuffered, for use with AMD\n• [Transcend 16GB 3200MHz CL22](https://www.transcend-info.com/embedded/product/module/ddr4/ts4glh72v2e3l): ECC unbuffered, for use with AMD",
+                "inline": false
+            },
+            {
+                "name": "DDR4 64GB Kits",
+                "value": "• [Micron 32GB 2666MHz CL19](https://www.amazon.com/Micron-DDR4-2666-UDIMM-Memory-MTA18ADF4G72AZ-2G6B2/dp/B08765CN88): ECC unbuffered, for use with AMD\n• [Micron 32GB 3200MHz CL22](https://www.cdw.com/product/micron-ddr4-module-32-gb-dimm-288-pin-3200-mhz-pc4-25600-unbu/7075974): ECC unbuffered, for use with AMD",
                 "inline": false
             },
             {
                 "name": "DDR5",
-                "value": "There are currently no **DDR5** VLP kits available. [This](https://www.smartm.com/product/ddr5-vlp-rdimm) has been announced but so far no retailers carry it.",
+                "value": "There are currently **no DDR5** VLP kits available. [This](https://www.smartm.com/product/ddr5-vlp-rdimm) has been announced but so far no retailers carry it.",
                 "inline": false
             }
         ]
