@@ -1,0 +1,26 @@
+{
+  "name": "nfc-info-bot",
+  "version": "1.0.0",
+  "description": "NFC Info Discord Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/not-from-concentrate/nfc-info-bot.git"
+  },
+  "author": "mikedalton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/not-from-concentrate/nfc-info-bot/issues"
+  },
+  "homepage": "https://github.com/not-from-concentrate/nfc-info-bot#readme",
+  "dependencies": {
+    "@discordjs/rest": "^1.1.0",
+    "discord.js": "^14.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.0"
+  }
+}
