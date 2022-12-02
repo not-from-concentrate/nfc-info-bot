@@ -83,7 +83,7 @@
         "info": "CPU Cooler recommendations",
         "color": "0x0099ff",
         "title": "CPU Cooler recommendations",
-        "description": "The following CPU coolers are recommended for use in S4M (45mm clearance) and S4T (47mm clearance). List of coolers that are NOT recommended and for what reason is included at the end. If you don't see a cooler listed, ask around.",
+        "description": "The following CPU coolers are recommended for use in **S4M (45mm clearance)** and **S4T (47mm clearance)**. List of coolers that are NOT recommended and for what reason is included at the end. If you don't see a cooler listed, ask around.",
         "dm": false,
         "fields": [
             {
@@ -98,7 +98,7 @@
             },
             {
                 "name": "Metalfish Z39",
-                "value": "C-shaped alternative to NH-L9x with similar performance. Heatpipes can cause compatibility issues (i.e. interfere with M.2 stacks or VRAM heatsinks). For use with 65W base TDP CPUs. Compatible with LGA115X, LGA1200, LGA1700, AM3, AM4 and AM5.\n• [densium.net](https://densium.net/products/z39-cpu-cooler)",
+                "value": "C-shaped alternative to NH-L9x with similar performance. Heatpipes can cause compatibility issues (i.e. interfere with M.2 stacks or VRAM heatsinks). For use with 65W base TDP CPUs. Compatible with LGA115X, LGA1200, LGA1700, AM3, AM4 and AM5.",
                 "inline": false
             },
             {
