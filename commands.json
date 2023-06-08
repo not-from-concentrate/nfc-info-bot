@@ -273,12 +273,12 @@
             },
             {
                 "name": "Easy drop-in GPU",
-                "value": "[EVGA GeForce RTX 3060 Ti XC GAMING](https://www.evga.com/search/?q=EVGA%20GeForce%20GTX%203060%20Ti%20XC%20GAMING) (requires low-profile cables or 180 adapter)",
+                "value": "[MSI GeForce RTX 4060 Ti Ventus 2X](https://www.msi.com/Graphics-Card/GeForce-RTX-4060-Ti-VENTUS-2X-BLACK-8G-OC)",
                 "inline": true
             },
             {
                 "name": "Current most powerful non-mod NVidia GPU",
-                "value": "[EVGA GeForce RTX 3060 Ti XC GAMING](https://www.evga.com/search/?q=EVGA%20GeForce%20GTX%203060%20Ti%20XC%20GAMING) (requires low-profile cables or 180 adapter)",
+                "value": "[MSI GeForce RTX 4060 Ti Ventus 2X](https://www.msi.com/Graphics-Card/GeForce-RTX-4060-Ti-VENTUS-2X-BLACK-8G-OC)",
                 "inline": false
             },
             {
