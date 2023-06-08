@@ -47,8 +47,18 @@
         "dm": false,
         "fields": [
             {
+                "name": "S4M Dual GaN Layout",
+                "value": "The most common brickless configuration is using two [HDPLEX 250W GaN](https://hdplex.com/hdplex-fanless-250w-gan-aio-atx-psu.html) units daisy-chained to provide power to components as needed - typical configuration would be one GaN for motherboard/24pin, CPU/EPS and the second GaN for GPU power (with SATA power being handled by either unit). Builds that require less than 250W total can make use of just single unit.",
+                "inline": false
+            },
+            {
+                "name": "S4T GaN Layout",
+                "value": "Similarly to S4M, [HDPLEX 250W GaN](https://hdplex.com/hdplex-fanless-250w-gan-aio-atx-psu.html) is currently the easiest way to build brickless. The GaN unit can be placed next to motherboard to allow for front power button (threads of the power button need to be partially sanded for this) or mounted on the included bracket (requires rear or low profile front power button).",
+                "inline": false
+            },
+            {
                 "name": "S4M Standard Layout",
-                "value": "The most common brickless configuration is using an [HDPLEX 400W AC-DC](https://hdplex.com/hdplex-internal-400w-ac-dc-adapter-with-active-pfc-and-19vdc-output.html) module along the side of the chassis near the GPU to convert mains power input to 19V DC output. This is then fed to an [HDPLEX 400W HiFi DC-ATX module](https://hdplex.com/hdplex-400w-hi-fi-dc-atx-power-supply-16v-24v-wide-range-voltage-input.html), which converts the 19V to the various voltages and connectors necessary for the motherboard, GPU, and SATA drives (if used).",
+                "value": "The previous common brickless configuration uses an [HDPLEX 400W AC-DC](https://hdplex.com/hdplex-internal-400w-ac-dc-adapter-with-active-pfc-and-19vdc-output.html) module along the side of the chassis near the GPU to convert mains power input to 19V DC output. This is then fed to an [HDPLEX 400W HiFi DC-ATX module](https://hdplex.com/hdplex-400w-hi-fi-dc-atx-power-supply-16v-24v-wide-range-voltage-input.html), which converts the 19V to the various voltages and connectors necessary for the motherboard, GPU, and SATA drives (if used).",
                 "inline": false
             },
             {
@@ -86,6 +96,11 @@
         "description": "The following CPU coolers are recommended for use in **S4M (45mm clearance)** and **S4T (47mm clearance)**. List of coolers that are NOT recommended and for what reason is included at the end. If you don't see a cooler listed, ask around.",
         "dm": false,
         "fields": [
+            {
+                "name": "AXP90-x36 (with NA-FD1 duct)",
+                "value": "[This tiny cooler](http://www.thermalright.com/product/axp90-x36/) has surpassed Noctua L9x coolers in cooling performance while providing virtually identical compatibility. Noctua fan swap and fan duct highly recommended (note that fan duct needs to be affixed using tape or using similar method) - see Noctua product links.",
+                "inline": false
+            },
             {
                 "name": "Noctua NH-L9x with NA-FD1 duct",
                 "value": "One of the smallest and quietest CPU coolers on the market - great all-rounder with no compatibility issues. For use with 65W base TDP CPUs. Also available in black under 'chromax' name.\nNA-FD1 Fan duct improves temperatures and muffles the fan noise - highly recommended.",
@@ -208,7 +223,7 @@
         "info": "HDPlex GaN power supplies",
         "color": "0x0099ff",
         "title": "HDPLex GaN",
-        "description": "**HDPlex 250W GaN units have started shipping in USA. EU and rest of the world should follow soon.**\n\nHDPlex has introduced a new line of GaN-based SFF PSUs intended to replace the existing 400W and 200W units. 250W units are already shipping. The previously announced 500W units are on hold until further notice.\nUnlike previous HDPlex units where the AC-DC and DC-ATX conversion is done in separate units (a split PSU), the GaN units are all-in-one.\n\nFor info about legacy HDPlex PSUs, use **!hdplex** command.",
+        "description": "HDPlex has introduced a new line of GaN-based SFF PSUs intended to replace the existing 400W and 200W units. 250W units are readily available. The previously announced 500W units are awaiting release.\nUnlike previous HDPlex units where the AC-DC and DC-ATX conversion is done in separate units (a split PSU), the GaN units are all-in-one.\n\nFor info about legacy HDPlex PSUs, use **!hdplex** command.",
         "dm": false,
         "fields": [
             {
@@ -248,7 +263,7 @@
             },
             {
                 "name": "Maximum card height",
-                "value": "S4M: 111mm (without mods)\nS4T-L: 120mm with HDPlex 400W DC-ATX installed\nS4T-S: depends on GPU orientation",
+                "value": "S4M: 111mm using HDPlex 400W combo, up to 15mm more with GaN depending on PCIE power cabling\nS4T-L: 120mm with HDPlex 400W DC-ATX installed\nS4T-S: depends on GPU orientation",
                 "inline": true
             },
             {
@@ -268,12 +283,12 @@
             },
             {
                 "name": "Current most powerful non-mod AMD GPU",
-                "value": "[PowerColor Fighter Radeon RX 6650 XT 8GB](https://www.powercolor.com/product?id=1650273595) (requires low-profile cables or 180 adapter)",
+                "value": "[PowerColor Fighter Radeon RX 7600 8GB](https://www.powercolor.com/product?id=1682402479) (requires low-profile cables or 180 adapter)",
                 "inline": false
             },
             {
                 "name": "Current most powerful mod-required GPU",
-                "value": "[Asus Dual GeForce RTX 3070 SI](https://www.asus.com/Motherboards-Components/Graphics-Cards/Dual/DUAL-RTX3070-8G-SI/) (requires deshroud, cutting ~15mm of heatsink and swap of 400W PSU units for S4M)",
+                "value": "[Nvidia A4000 with cooler swap and shunt mod](https://jkgventures.tech/product/a4000-power-mod-with-sff-cooler/)",
                 "inline": false
             }
         ]
@@ -393,7 +408,7 @@
             },
             {
                 "name": "Silver screws",
-                "value": "[eBay link](https://www.ebay.com/itm/223973329759)",
+                "value": "[eBay link](https://www.ebay.com/itm/184247703708)",
                 "inline": false
             },
             {
