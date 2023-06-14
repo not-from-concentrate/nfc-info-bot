@@ -120,6 +120,8 @@ def update_commands():
     # Quick and dirty threading hourly loop
     threading.Timer(3600.00, update_commands).start()
 
+database_setup()
+
 update_commands()
 
 client = discord.Client()
