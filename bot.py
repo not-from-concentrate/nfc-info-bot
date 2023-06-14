@@ -178,9 +178,9 @@ async def handle_command(message):
             else:
                 print("Database error: too many matching rows")
             # log messages
-            conn.execute("INSERT INTO bot_message_log VALUES (message_id, guild_id, channel_id, Source)", [message.id, message.channel.guild.id, message.channel.id, "User"])
+            conn.execute("INSERT INTO bot_message_log (message_id, guild_id, channel_id, Source) VALUES (?, ?, ?, ?)", [message.id, message.channel.guild.id, message.channel.id, "User"])
             conn.commit()
-            conn.execute("INSERT INTO bot_message_log VALUES (message_id, guild_id, channel_id, Source)", [response.id, response.channel.guild.id, response.channel.id, "Bot"])
+            conn.execute("INSERT INTO bot_message_log (message_id, guild_id, channel_id, Source) VALUES (?, ?, ?, ?)", [response.id, response.channel.guild.id, response.channel.id, "Bot"])
             conn.commit()
 
 @client.event
