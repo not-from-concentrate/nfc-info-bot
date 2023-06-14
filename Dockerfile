@@ -1,5 +1,5 @@
-LABEL org.opencontainers.image.source https://github.com/not-from-concentrate/nfc-info-bot
 FROM python:3.9-slim
+LABEL org.opencontainers.image.source https://github.com/not-from-concentrate/nfc-info-bot
 RUN apt-get update
 RUN apt install -y git
 RUN pip install pipenv
