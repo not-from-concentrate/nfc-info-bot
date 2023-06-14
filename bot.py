@@ -19,55 +19,53 @@ command_list_embed = {}
 stats_db_file = "/db/stats.db"
 conn = None
 
+try:
+    conn = sqlite3.connect(stats_db_file)
+    cursor = conn.cursor()
+    print("Database loaded")
+except sqlite3.Error as e:
+    print(e)
+        
 # Set up stats database
 def database_setup():
     schema_version = 0
-    metadata = None
-    try:
-        conn = sqlite3.connect(stats_db_file)
-        cursor = conn.cursor()
-        print("Database loaded")
-    except sqlite3.Error as e:
-        print(e)
-    else:
-        cursor.row_factory = lambda cursor, row: row[0]
-        # determine schema version
-        table_list = cursor.execute("SELECT name FROM sqlite_master WHERE type='table';").fetchall()
-        if 'stats' in table_list:
-            schema_version = 1
-        if 'metadata' in table_list:
-            schema_version = cursor.execute("SELECT schema_version FROM metadata").fetchone()
-        # create tables
-        if schema_version < 1:
-            print("Upgrading database to schema version 1")
-            conn.execute("CREATE TABLE stats ( \
-                        command TEXT PRIMARY KEY, \
-                        invocation_count INTEGER, \
-                        last_invocation TEXT \
-                        );")
-            conn.commit()
-        if schema_version < 2:
-            print("Upgrading database to schema version 2")
-            print("Creating metadata table")
-            conn.execute("CREATE TABLE IF NOT EXISTS metadata ( \
-                        setting_id INTEGER PRIMARY KEY, \
-                        schema_version INTEGER NOT NULL \
-                        );")
-            conn.commit()
-            print("Inserting initial metadata row")
-            conn.execute("INSERT INTO metadata VALUES (?,?)", [1, 2])
-            conn.commit()
-            print("Creating bot_message_log table")
-            conn.execute("CREATE TABLE IF NOT EXISTS bot_message_log ( \
-                        message_id INTEGER PRIMARY KEY, \
-                        guild_id INTEGER NOT NULL, \
-                        channel_id INTEGER NOT NULL, \
-                        Timestamp DATETIME DEFAULT CURRENT_TIMESTAMP, \
-                        Source STRING NOT NULL \
-                        );")
-            conn.commit()
-        cursor.close()
-        print("Database verified at schema version {}".format(schema_version))
+    cursor.row_factory = lambda cursor, row: row[0]
+    # determine schema version
+    table_list = cursor.execute("SELECT name FROM sqlite_master WHERE type='table';").fetchall()
+    if 'stats' in table_list:
+        schema_version = 1
+    if 'metadata' in table_list:
+        schema_version = cursor.execute("SELECT schema_version FROM metadata").fetchone()
+    # create tables
+    if schema_version < 1:
+        print("Upgrading database to schema version 1")
+        conn.execute("CREATE TABLE stats ( \
+                    command TEXT PRIMARY KEY, \
+                    invocation_count INTEGER, \
+                    last_invocation TEXT \
+                    );")
+        conn.commit()
+    if schema_version < 2:
+        print("Upgrading database to schema version 2")
+        print("Creating metadata table")
+        conn.execute("CREATE TABLE IF NOT EXISTS metadata ( \
+                    setting_id INTEGER PRIMARY KEY, \
+                    schema_version INTEGER NOT NULL \
+                    );")
+        conn.commit()
+        print("Inserting initial metadata row")
+        conn.execute("INSERT INTO metadata VALUES (?,?)", [1, 2])
+        conn.commit()
+        print("Creating bot_message_log table")
+        conn.execute("CREATE TABLE IF NOT EXISTS bot_message_log ( \
+                    message_id INTEGER PRIMARY KEY, \
+                    guild_id INTEGER NOT NULL, \
+                    channel_id INTEGER NOT NULL, \
+                    Timestamp DATETIME DEFAULT CURRENT_TIMESTAMP, \
+                    Source STRING NOT NULL \
+                    );")
+        conn.commit()
+    print("Database verified at schema version {}".format(schema_version))
 
 def get_stats():
     stats = conn.execute("SELECT * FROM stats").fetchall()
@@ -184,7 +182,6 @@ async def handle_command(message):
             conn.commit()
             conn.execute("INSERT INTO bot_message_log VALUES (message_id, guild_id, channel_id, Source)", [response.id, response.channel.guild.id, response.channel.id, "Bot"])
             conn.commit()
-            cursor.close()
 
 @client.event
 async def on_message(message):
