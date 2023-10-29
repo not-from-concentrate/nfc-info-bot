@@ -412,8 +412,18 @@
                 "inline": false
             },
             {
-                "name": "Black screws",
+                "name": "Black screws #1",
                 "value": "[eBay link](https://www.ebay.com/itm/223609324702)",
+                "inline": false
+            },
+            {
+                "name": "Black screws #2",
+                "value": "[eBay link](https://www.ebay.com/itm/355082705998)",
+                "inline": false
+            },
+            {
+                "name": "Black screws #3",
+                "value": "[eBay link](https://www.ebay.com/itm/352996094822)",
                 "inline": false
             }
         ]
