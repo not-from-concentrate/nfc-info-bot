@@ -1,0 +1,13 @@
+name: nfc-info-bot
+
+services:
+  bot:
+    image: ghcr.io/not-from-concentrate/nfc-info-bot:0.1.2
+    container_name: nfc-info-bot
+    environment:
+      BOT_TOKEN: ${BOT_TOKEN}
+      COMMAND_URL: ${COMMAND_URL}
+      ADMIN_USER: ${ADMIN_USER}
+      LOG_CHANNEL: ${LOG_CHANNEL}
+    volumes:
+      - "~/nfc-info-bot_data:/db"
