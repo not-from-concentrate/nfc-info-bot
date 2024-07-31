@@ -379,11 +379,26 @@
         ]
     },
 
+    "!psu": {
+        "info": "General info on Power Supply options for Skyreach cases",
+        "color": "0x0099ff",
+        "title": "General PSU info",
+        "description": "Skyreach cases have specific space constraints that severely limit power supply options.\n\nMost builders use power supplies from HDPlex which are designed with Skyreach cases in mind (or vice versa) - for more info on HDPlex PSUs in production, refer to !gan command. For legacy HDPlex supplies, refer to !hdplex command.\n\nMore advanced builds (usually with STX motherboards) require even more specialized PSUs (see MEAN WELL PSUs below) and typically involve soldering and/or other hardware mods - not recommended for those faint of heart.",
+        "dm": false,
+        "fields": [
+            {
+                "name": "Medical PSU range MEAN WELL LOP-300",
+                "value": "[Spec sheet](https://www.meanwell.com/webapp/product/search.aspx?prod=LOP-300): Both 12V and 18V variants are available for use with STX boards that accept 12V or 19V.",
+                "inline": false
+            }
+        ]
+    },
+
     "!riser": {
         "info": "Risers",
         "color": "0x0099ff",
         "title": "Riser Info",
-        "description": "The S4M-C used a custom-designed PCIe riser from Li-Heat, while for most of the S4M production run, a custom SILIFLEX riser was used instead as it is more compact. Both are currently unavailable, but there are good PCIe 3.0 and 4.0 options available from ADT-Link and LINKUP.",
+        "description": "The S4M-C used a custom-designed PCIe riser from Li-Heat, while for most of the S4M production run, a custom SILIFLEX riser was used instead as it is more compact. Both are currently unavailable, but there are good PCIe 3.0, 4.0 and 5.0 options available from ADT-Link and LINKUP.",
         "dm": false,
         "fields": [
             {
@@ -393,7 +408,7 @@
             },
             {
                 "name": "LINKUP",
-                "value": "[LINKUP Premium/Ultra/Extreme 3.0 and 4.0 risers](https://linkup.one/ultra-4-0-pcie-riser-cables/)",
+                "value": "[LINKUP Straight 50mm risers](https://linkup.one/linkup-ava5-pcie-5-0-riser-cable-future-proof-for-gen-5-gpu-vertical-mount-x16-128gb-s-speed-compatible-with-pcie-4-0-wrx80se-straight-ver-1-black-5cm/)",
                 "inline": false
             }
         ]
@@ -418,16 +433,11 @@
             },
             {
                 "name": "Black screws #1",
-                "value": "[eBay link](https://www.ebay.com/itm/223609324702)",
-                "inline": false
-            },
-            {
-                "name": "Black screws #2",
                 "value": "[eBay link](https://www.ebay.com/itm/355082705998)",
                 "inline": false
             },
             {
-                "name": "Black screws #3",
+                "name": "Black screws #2",
                 "value": "[eBay link](https://www.ebay.com/itm/352996094822)",
                 "inline": false
             }
@@ -477,11 +487,6 @@
         "dm": false,
         "fields": [
             {
-                "name": "DDR4 16GB Kits",
-                "value": "• [Kingston 8GB 2666MHz CL19](https://www.amazon.com/dp/B07MK1YJFZ): non-ECC, for use with Intel and AMD",
-                "inline": false
-            },
-            {
                 "name": "DDR4 32GB Kits",
                 "value": "• [URAM 16GB 2666MHz CL19](https://www.amazon.com/2666MHz-Compatible-PC4-21300-Unbuffered-Computer/dp/B09VNVC2HR): non-ECC, for use with Intel and AMD\n• [V-Color 2x16GB 2666MHz CL19](https://v-color.net/products/ddr4-32gb-ecc-vlp-udimm-server-memory): ECC unbuffered, for use with AMD\n• [Micron 16GB 3200MHz CL22](https://www.amazon.com/MICRON-DDR4-UDIMM-16GB-2RX8/dp/B09TFK74GW): ECC unbuffered, for use with AMD\n• [Transcend 16GB 3200MHz CL22](https://www.transcend-info.com/embedded/product/module/ddr4/ts4glh72v2e3l): ECC unbuffered, for use with AMD",
                 "inline": false
@@ -492,8 +497,13 @@
                 "inline": false
             },
             {
-                "name": "DDR5",
-                "value": "There are currently **no DDR5** VLP kits available. [This](https://www.smartm.com/product/ddr5-vlp-rdimm) has been announced but so far no retailers carry it.",
+                "name": "DDR5 32GB Kits",
+                "value": "• [Innodisk 16GB 4800MHz](https://www.wdlsystems.com/innodisk-m5c0-ags2scvp): ECC unbuffered, for use with AMD",
+                "inline": false
+            },
+            {
+                "name": "DDR5 64GB Kits",
+                "value": "• [Innodisk 32GB 4800MHz](https://www.wdlsystems.com/innodisk-m5c0-bgs2tcvp): ECC unbuffered, for use with AMD",
                 "inline": false
             }
         ]
