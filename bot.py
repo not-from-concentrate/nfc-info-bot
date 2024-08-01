@@ -138,7 +138,7 @@ async def check_for_bad_links(message, domains):
             break
 
 async def handle_command(message):
-    if message.content.lower() == "!info-bot":
+    if message.content.lower() == "!info-bot" or message.content.lower() == "!help":
         response = await message.channel.send(embed=command_list_embed)
     elif message.content.lower() == "!update-commands":
         print("Update attempt: " + str(message.author.id))

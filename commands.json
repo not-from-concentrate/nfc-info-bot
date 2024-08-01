@@ -498,12 +498,12 @@
             },
             {
                 "name": "DDR5 32GB Kits",
-                "value": "• [Innodisk 16GB 4800MHz](https://www.wdlsystems.com/innodisk-m5c0-ags2scvp): ECC unbuffered, for use with AMD",
+                "value": "• [Innodisk 16GB 4800MHz CL40](https://www.wdlsystems.com/innodisk-m5c0-ags2scvp): ECC unbuffered, for use with AMD",
                 "inline": false
             },
             {
                 "name": "DDR5 64GB Kits",
-                "value": "• [Innodisk 32GB 4800MHz](https://www.wdlsystems.com/innodisk-m5c0-bgs2tcvp): ECC unbuffered, for use with AMD",
+                "value": "• [Innodisk 32GB 4800MHz CL40](https://www.wdlsystems.com/innodisk-m5c0-bgs2tcvp): ECC unbuffered, for use with AMD",
                 "inline": false
             }
         ]
