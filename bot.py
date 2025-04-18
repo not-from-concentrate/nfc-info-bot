@@ -1,7 +1,12 @@
 # bot.py
 import os, re, discord, requests, threading, sqlite3, datetime, json
+
 from thefuzz import fuzz
 from prettytable import PrettyTable
+
+if os.getenv('LOCAL_TESTING') == 'True':
+    import dotenv
+    dotenv.load_dotenv()
 
 TOKEN = os.getenv('BOT_TOKEN')
 COMMAND_URL = os.getenv('COMMAND_URL')
@@ -16,7 +21,11 @@ command_data = {}
 command_embeds = {}
 dm_embeds = {}
 command_list_embed = {}
-stats_db_file = "/db/stats.db"
+stats_db_file = None
+if os.getenv('LOCAL_TESTING') == 'True':
+    stats_db_file = "stats.db"
+else:
+    stats_db_file = "/db/stats.db"
 conn = None
 
 try:
@@ -110,7 +119,7 @@ def update_commands():
             command_embeds[cmd].add_field(name="Notes", value="There is a *lot* of data on this topic. Please check the DM you were just sent.", inline=False)
     
     command_list_embed.add_field(name="\u200B", value="\u200B")
-    command_list_embed.add_field(name="About nfc-info-bot", value="Idea and prototype by @Sm0keWag0n, but @Carson made the NodeJS actually good. Then it got re-written in Python. ¯\_(ツ)_/¯", inline=False)
+    command_list_embed.add_field(name="About nfc-info-bot", value="Idea and prototype by @Sm0keWag0n, but @Carson made the NodeJS actually good. Then it got re-written in Python.", inline=False)
     command_list_embed.add_field(name="Contribute", value="This info is community-driven. If you have ideas or information to add/correct, please visit the [GitHub repo](https://github.com/not-from-concentrate/nfc-info-bot) and submit Issues, or fork/pull request.", inline=False)
 
     print(command_data.keys())
@@ -122,7 +131,10 @@ database_setup()
 
 update_commands()
 
-client = discord.Client()
+intents = discord.Intents.default()
+intents.message_content = True
+
+client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
