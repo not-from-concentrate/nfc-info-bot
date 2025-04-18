@@ -1,0 +1,30 @@
+name: Container Build
+permissions:
+  contents: read
+  packages: write
+  
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '*.json'
+      - '.github/workflows/*'
+  workflow_dispatch:
+
+jobs:
+      container-build:
+        runs-on: ubuntu-latest
+        steps:
+          - name: 'Checkout GitHub Action'
+            uses: actions/checkout@v4
+          - name: 'Login to GitHub Container Registry'
+            uses: docker/login-action@v3
+            with:
+              registry: ghcr.io
+              username: ${{github.actor}}
+              password: ${{secrets.GITHUB_TOKEN}}
+          - name: 'Build Image'
+            run: |
+              docker build . --tag ghcr.io/not-from-concentrate/nfc-info-bot:latest
+              docker push ghcr.io/not-from-concentrate/nfc-info-bot:latest
