@@ -1,0 +1,26 @@
+name: Container Build Test
+permissions:
+  contents: read
+  
+on:
+  push:
+    branches-ignore:
+      - main
+    paths-ignore:
+      - '*.json'
+      - '.github/workflows/*'
+  workflow_dispatch:
+
+jobs:
+      container-build-test:
+        runs-on: ubuntu-latest
+        defaults:
+          run:
+            working-directory: './nfc-info-bot'
+        steps:
+          - name: 'Checkout GitHub Action'
+            uses: actions/checkout@v4
+
+          - name: 'Build Image'
+            run: |
+              docker build . --tag ghcr.io/not-from-concentrate/nfc-info-bot:latest
