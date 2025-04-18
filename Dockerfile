@@ -7,5 +7,5 @@ ENV PROJECT_DIR /usr/local/src/nfc-info-bot
 WORKDIR ${PROJECT_DIR}
 RUN git clone https://github.com/not-from-concentrate/nfc-info-bot ${PROJECT_DIR}
 RUN pipenv install --system --deploy
-RUN pipenv graph
+RUN pipenv graph --system
 ENTRYPOINT ["python", "bot.py"]
