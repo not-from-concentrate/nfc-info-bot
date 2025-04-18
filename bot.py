@@ -4,7 +4,6 @@ import os, re, discord, requests, threading, sqlite3, datetime, json
 from thefuzz import fuzz
 from prettytable import PrettyTable
 
-# for local testing, uncomment the next two lines
 if os.getenv('LOCAL_TESTING') == 'True':
     import dotenv
     dotenv.load_dotenv()
