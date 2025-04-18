@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.12-slim
 LABEL org.opencontainers.image.source https://github.com/not-from-concentrate/nfc-info-bot
 RUN apt-get update
 RUN apt install -y git
