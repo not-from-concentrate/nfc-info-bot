@@ -14,9 +14,6 @@ on:
 jobs:
       container-build-test:
         runs-on: ubuntu-latest
-        defaults:
-          run:
-            working-directory: './nfc-info-bot'
         steps:
           - name: 'Checkout GitHub Action'
             uses: actions/checkout@v4
