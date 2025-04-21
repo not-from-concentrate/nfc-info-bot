@@ -95,16 +95,20 @@ def get_stats():
 def update_commands():
     global command_data, command_embeds, dm_embeds, command_list_embed
 
-    with requests.get(COMMAND_URL) as response:
-        command_data = response.json()
+    if os.getenv('LOCAL_TESTING') == 'True':
+        with open("commands.json", "r") as f:
+            command_data = json.load(f)
+    else:
+        with requests.get(COMMAND_URL) as response:
+            command_data = response.json()
 
     command_list_embed = discord.Embed(title="Command List", color=0x0099ff)
     for cmd in command_data:
         cmd_data = command_data[cmd]
         if cmd_data["dm"]:
-            command_list_embed.add_field(name=cmd+" [@username]", value=cmd_data["info"], inline=True)
+            command_list_embed.add_field(name="!"+cmd+" [@username]", value=cmd_data["info"], inline=True)
         else:
-            command_list_embed.add_field(name=cmd, value=cmd_data["info"], inline=True)
+            command_list_embed.add_field(name="!"+cmd, value=cmd_data["info"], inline=True)
         
         command_embeds[cmd] = discord.Embed(title=cmd_data["title"], color=0x0099ff, description=cmd_data["description"])
         dm_embeds[cmd] = discord.Embed(title=cmd_data["title"], color=0x0099ff, description=cmd_data["description"])
@@ -150,50 +154,51 @@ async def check_for_bad_links(message, domains):
             break
 
 async def handle_command(message):
-    if message.content.lower() == "!info-bot":
-        response = await message.channel.send(embed=command_list_embed)
-    elif message.content.lower() == "!update-commands":
-        print("Update attempt: " + str(message.author.id))
-        if message.author.id in ADMIN_USERS:
-            update_commands()
-            await message.channel.send("Commands updated")
-        else:
-            await message.channel.send("Not authorized")
-    elif message.content.lower() == "!info-bot-stats":
-        print("Stats attempt: " + str(message.author.id))
-        if message.author.id in ADMIN_USERS:
-            await message.channel.send("```" + get_stats() + "```")
-        else:
-            await message.channel.send("Not authorized")
-    else:
-        if len(message.mentions) > 0:
-            user = message.mentions[0]
-        else:
-            user = message.author
-        command = message.content.split()[0].lower()
-
-        if command in command_data:
-            response = await message.channel.send(embed=command_embeds[command])
-            if command_data[command]["dm"]:
-                await user.send(embed=dm_embeds[command])
-            print("Logging command")
-            cursor = conn.cursor()
-            # log stats
-            cursor.execute("SELECT * from stats WHERE command=?", [command])
-            command_row = cursor.fetchall()
-            if len(command_row) == 0:
-                conn.execute("INSERT INTO stats VALUES (?,?,?)", [command, 1, datetime.datetime.utcnow()])
-                conn.commit()
-            elif len(command_row) == 1:
-                conn.execute("UPDATE stats SET invocation_count=?, last_invocation=? WHERE command = ?", [command_row[0][1]+1, datetime.datetime.utcnow(), command])
-                conn.commit()
+    if message.content.startswith("!"):
+        if message.content.lower() == "!info-bot":
+            response = await message.channel.send(embed=command_list_embed)
+        elif message.content.lower() == "!update-commands":
+            print("Update attempt: " + str(message.author.id))
+            if message.author.id in ADMIN_USERS:
+                update_commands()
+                await message.channel.send("Commands updated")
             else:
-                print("Database error: too many matching rows")
-            # log messages
-            conn.execute("INSERT INTO bot_message_log (message_id, guild_id, channel_id, Source) VALUES (?, ?, ?, ?)", [message.id, message.channel.guild.id, message.channel.id, "User"])
-            conn.commit()
-            conn.execute("INSERT INTO bot_message_log (message_id, guild_id, channel_id, Source) VALUES (?, ?, ?, ?)", [response.id, response.channel.guild.id, response.channel.id, "Bot"])
-            conn.commit()
+                await message.channel.send("Not authorized")
+        elif message.content.lower() == "!info-bot-stats":
+            print("Stats attempt: " + str(message.author.id))
+            if message.author.id in ADMIN_USERS:
+                await message.channel.send("```" + get_stats() + "```")
+            else:
+                await message.channel.send("Not authorized")
+        else:
+            if len(message.mentions) > 0:
+                user = message.mentions[0]
+            else:
+                user = message.author
+            command = message.content.split()[0].lower().lstrip("!")
+
+            if command in command_data:
+                response = await message.channel.send(embed=command_embeds[command])
+                if command_data[command]["dm"]:
+                    await user.send(embed=dm_embeds[command])
+                print("Logging command")
+                cursor = conn.cursor()
+                # log stats
+                cursor.execute("SELECT * from stats WHERE command=?", ["!"+command])
+                command_row = cursor.fetchall()
+                if len(command_row) == 0:
+                    conn.execute("INSERT INTO stats VALUES (?,?,?)", ["!"+command, 1, datetime.datetime.utcnow()])
+                    conn.commit()
+                elif len(command_row) == 1:
+                    conn.execute("UPDATE stats SET invocation_count=?, last_invocation=? WHERE command = ?", [command_row[0][1]+1, datetime.datetime.utcnow(), "!"+command])
+                    conn.commit()
+                else:
+                    print("Database error: too many matching rows")
+                # log messages
+                conn.execute("INSERT INTO bot_message_log (message_id, guild_id, channel_id, Source) VALUES (?, ?, ?, ?)", [message.id, message.channel.guild.id, message.channel.id, "User"])
+                conn.commit()
+                conn.execute("INSERT INTO bot_message_log (message_id, guild_id, channel_id, Source) VALUES (?, ?, ?, ?)", [response.id, response.channel.guild.id, response.channel.id, "Bot"])
+                conn.commit()
 
 @client.event
 async def on_message(message):

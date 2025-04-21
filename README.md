@@ -10,7 +10,7 @@ Data for the commands is stored in JSON format, in the [commands.json](commands.
 
 Example:
 ```
-    "!brickless": {
+    "brickless": {
         "info": "Brickless configurations",
         "color": "#0099ff",
         "title": "Brickless Fitment Info",
@@ -28,7 +28,7 @@ Example:
 
 |Section   |Detail   |
 |---|---|
-|"!brickless"   |Command name   |
+|"brickless"   |Command name   |
 |"info"   |Short name for for command list   |
 |"color"   |Color for MessageEmbed object (generally leave this set to "#0099ff")  |
 |"title"   |Header for MessageEmbed   |
