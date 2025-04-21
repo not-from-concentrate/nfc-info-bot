@@ -1,5 +1,5 @@
 {
-    "!180": {
+    "180": {
         "info": "180 degree PCIe adapter",
         "color": "0x0099ff",
         "title": "180 degree PCIe adapter",
@@ -24,7 +24,7 @@
         ]
     },
 
-    "!bom": {
+    "bom": {
         "info": "Official NFC Bills of Materials",
         "color": "0x0099ff",
         "title": "NFC Bills of Materials",
@@ -39,7 +39,7 @@
         ]
     },
 
-    "!brickless": {
+    "brickless": {
         "info": "Brickless configurations",
         "color": "0x0099ff",
         "title": "Brickless Fitment Info",
@@ -74,7 +74,7 @@
         ]
     },
 
-    "!c6": {
+    "c6": {
         "info": "C6 Inlet Info",
         "color": "0x0099ff",
         "title": "C6 Inlet Info",
@@ -89,7 +89,7 @@
         ]
     },
 
-    "!cooler": {
+    "cooler": {
         "info": "CPU Cooler recommendations",
         "color": "0x0099ff",
         "title": "CPU Cooler recommendations",
@@ -139,7 +139,7 @@
         ]
     },
 
-    "!custom": {
+    "custom": {
         "info": "Get custom S4M or S4T work",
         "color": "0x0099ff",
         "title": "Custom Requests",
@@ -154,7 +154,7 @@
         ]
     },
 
-    "!dimensions": {
+    "dimensions": {
         "info": "Chassis Dimensions",
         "color": "0x0099ff",
         "title": "Chassis Dimensions",
@@ -204,7 +204,7 @@
         ]
     },
 
-    "!fusion360": {
+    "fusion360": {
         "info": "Use Josh's Fusion360 referral code!",
         "color": "0x0099ff",
         "title": "Fusion360",
@@ -219,7 +219,7 @@
         ]
     },
 
-    "!gan": {
+    "gan": {
         "info": "HDPlex GaN power supplies",
         "color": "0x0099ff",
         "title": "HDPLex GaN",
@@ -249,7 +249,7 @@
         ]
     },
 
-    "!gpu": {
+    "gpu": {
         "info": "GPU options and fitment",
         "color": "0x0099ff",
         "title": "GPU Info",
@@ -299,7 +299,7 @@
         ]
     },
 
-    "!gunique": {
+    "gunique": {
         "info": "Information about G-Unique power supplies",
         "color": "0x0099ff",
         "title": "G-Unique PSUs",
@@ -309,7 +309,7 @@
         ]
     },
 
-    "!hdplex": {
+    "hdplex": {
         "info": "HDPlex installation",
         "color": "0x0099ff",
         "title": "HDPlex installation",
@@ -354,7 +354,7 @@
         ]
     },
 
-    "!lowprofile": {
+    "lowprofile": {
         "info": "Info and guides on ultra-low-profile PCIe power cables",
         "color": "0x0099ff",
         "title": "Low Profile PCIe",
@@ -379,7 +379,7 @@
         ]
     },
 
-    "!psu": {
+    "psu": {
         "info": "General info on Power Supply options for Skyreach cases",
         "color": "0x0099ff",
         "title": "General PSU info",
@@ -394,7 +394,7 @@
         ]
     },
 
-    "!riser": {
+    "riser": {
         "info": "Risers",
         "color": "0x0099ff",
         "title": "Riser Info",
@@ -414,7 +414,7 @@
         ]
     },
 
-    "!screws": {
+    "screws": {
         "info": "Screws",
         "color": "0x0099ff",
         "title": "Info on chassis screws",
@@ -444,7 +444,7 @@
         ]
     },
 
-    "!sendcutsend": {
+    "sendcutsend": {
         "info": "SendCutSend is a channel sponsor!",
         "color": "0x0099ff",
         "title": "SendCutSend",
@@ -464,7 +464,7 @@
         ]
     },
 
-    "!support": {
+    "support": {
         "info": "Support Info",
         "color": "0x0099ff",
         "title": "Support Info",
@@ -479,7 +479,7 @@
         ]
     },
 
-    "!vlp": {
+    "vlp": {
         "info": "VLP RAM Options",
         "color": "0x0099ff",
         "title": "VLP RAM Options",
