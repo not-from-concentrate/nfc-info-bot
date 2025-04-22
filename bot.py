@@ -1,16 +1,20 @@
 # bot.py
 import os, re, discord, requests, threading, sqlite3, datetime, json
+from discord import guild_only
 
 from thefuzz import fuzz
 from prettytable import PrettyTable
 
-if os.getenv('LOCAL_TESTING') == 'True':
+local_testing = (os.getenv('LOCAL_TESTING') == 'True')
+
+if local_testing:
     import dotenv
     dotenv.load_dotenv()
 
 TOKEN = os.getenv('BOT_TOKEN')
 COMMAND_URL = os.getenv('COMMAND_URL')
 ADMIN_USERS = json.loads(os.getenv('ADMIN_USER'))
+GUILD_ID = os.getenv('GUILD_ID')
 LOG_CHANNEL = os.getenv('LOG_CHANNEL')
 LINK_PATTERN = r'(?:https?:\/\/)(?:[^@\n]+@)?([^:\/\n\s?]+)'
 REAL_GIFT_DOMAIN = 'discord.gift'
@@ -22,7 +26,7 @@ command_embeds = {}
 dm_embeds = {}
 command_list_embed = {}
 stats_db_file = None
-if os.getenv('LOCAL_TESTING') == 'True':
+if local_testing:
     stats_db_file = "stats.db"
 else:
     stats_db_file = "/db/stats.db"
@@ -95,7 +99,7 @@ def get_stats():
 def update_commands():
     global command_data, command_embeds, dm_embeds, command_list_embed
 
-    if os.getenv('LOCAL_TESTING') == 'True':
+    if local_testing:
         with open("commands.json", "r") as f:
             command_data = json.load(f)
     else:
@@ -139,10 +143,11 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 client = discord.Client(intents=intents)
+bot = discord.Bot(intents=intents)
 
-@client.event
+@bot.event
 async def on_ready():
-    print(f'{client.user} has connected to Discord!')
+    print(f'{bot.user} has connected to Discord!')
 
 async def check_for_bad_links(message, domains):
     log_channel = client.get_channel(int(LOG_CHANNEL))
@@ -200,7 +205,23 @@ async def handle_command(message):
                 conn.execute("INSERT INTO bot_message_log (message_id, guild_id, channel_id, Source) VALUES (?, ?, ?, ?)", [response.id, response.channel.guild.id, response.channel.id, "Bot"])
                 conn.commit()
 
-@client.event
+async def get_commands(ctx: discord.AutocompleteContext):
+    autocomplete_commands = []
+    for command in command_data:
+        cmd_data = command_data[command]
+        autocomplete_commands.append(command+" - "+cmd_data["info"])
+    return autocomplete_commands
+
+@bot.slash_command(name="infobot", description="NFC Info Bot")
+@guild_only()
+async def infobot_command(
+    ctx: discord.ApplicationContext,
+    command: discord.Option(str, autocomplete=discord.utils.basic_autocomplete(get_commands))
+):
+    command = command.split()[0]
+    await ctx.respond(embed=command_embeds[command])
+
+@bot.event
 async def on_message(message):
     domains = re.findall(LINK_PATTERN, message.content)
     if domains:
@@ -208,4 +229,10 @@ async def on_message(message):
     elif message.content.startswith("!"):
         await handle_command(message)
 
-client.run(TOKEN)
+#@bot.event
+#async def on_ready():
+#    await bot.tree.sync(guild=GUILD_ID)
+
+
+#client.run(TOKEN)
+bot.run(TOKEN)
