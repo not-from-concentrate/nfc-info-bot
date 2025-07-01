@@ -253,7 +253,7 @@
         "info": "GPU options and fitment",
         "color": "0x0099ff",
         "title": "GPU Info",
-        "description": "GPU fitment presents an interesting challenge in the S4M and S4T stacked/linked. The community maintains a spreadsheet (linked below) of GPU compatibility with the S4M chassis. The spreadsheet has not yet been updated for the S4T, but any GPU that fits in the S4M will also fit in the S4T stacked/linked. Please note that the spreadsheet may contain errors, and is intended as a guide, not a final answer. Reference the sheet first, and then also feel free to ask in #s4m-s4t-builds-and-modding if you have any doubts.",
+        "description": "GPU fitment presents an interesting challenge in the S4M and S4T stacked/linked. The community maintains a spreadsheet (linked below) of GPU compatibility with the S4M chassis. The spreadsheet has not yet been updated for the S4T, but any GPU that fits in the S4M will also fit in the S4T stacked/linked. Please note that the spreadsheet may contain errors, and is intended as a guide, not a final answer. Reference the sheet first, and then also feel free to ask in #nfc-case-builds if you have any doubts.",
         "dm": false,
         "fields": [
             {
@@ -278,17 +278,17 @@
             },
             {
                 "name": "Easy drop-in GPU",
-                "value": "[MSI GeForce RTX 4060 Ti Ventus 2X](https://www.msi.com/Graphics-Card/GeForce-RTX-4060-Ti-VENTUS-2X-BLACK-8G-OC)",
+                "value": "[Gigabyte GeForce RTX 5060 Ti WINDFORCE OC 16G](https://www.gigabyte.com/Graphics-Card/GV-N506TWF2OC-16GD)",
                 "inline": true
             },
             {
                 "name": "Current most powerful non-mod NVidia GPU",
-                "value": "[MSI GeForce RTX 4060 Ti Ventus 2X](https://www.msi.com/Graphics-Card/GeForce-RTX-4060-Ti-VENTUS-2X-BLACK-8G-OC)",
+                "value": "[Gigabyte GeForce RTX 5060 Ti WINDFORCE OC 16G](https://www.gigabyte.com/Graphics-Card/GV-N506TWF2OC-16GD)",
                 "inline": false
             },
             {
                 "name": "Current most powerful non-mod AMD GPU",
-                "value": "[PowerColor Fighter Radeon RX 7600 8GB](https://www.powercolor.com/product?id=1682402479) (requires low-profile cables or 180 adapter)",
+                "value": "[PowerColor Reaper AMD Radeon RX 9060 XT 16GB GDDR6](https://www.powercolor.com/product-detail248.htm) (requires low-profile cables or 180 adapter in S4M)",
                 "inline": false
             },
             {
