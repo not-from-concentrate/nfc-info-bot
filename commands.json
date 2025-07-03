@@ -290,11 +290,6 @@
                 "name": "Current most powerful non-mod AMD GPU",
                 "value": "[PowerColor Reaper AMD Radeon RX 9060 XT 16GB GDDR6](https://www.powercolor.com/product-detail248.htm) (requires low-profile cables or 180 adapter in S4M)",
                 "inline": false
-            },
-            {
-                "name": "Current most powerful mod-required GPU",
-                "value": "[Zotac RTX 4070 with heatsink cut-off mod and deshroud](https://discord.com/channels/516778810029506600/668870876372140064/1151977076413435945)\nExplanation on how to mod the card follows the linked message. Or just ask Josh to make you one ;-)",
-                "inline": false
             }
         ]
     },
