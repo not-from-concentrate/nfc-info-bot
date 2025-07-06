@@ -294,6 +294,141 @@
         ]
     },
 
+    "gputest": {
+        "info": "GPU options and fitment",
+        "color": "0x0099ff",
+        "title": "GPU Info",
+        "description": "GPU fitment presents an interesting challenge in the S4M and S4T stacked/linked. The community maintains a spreadsheet (linked below) of GPU compatibility with the S4M chassis. The spreadsheet has not yet been updated for the S4T, but any GPU that fits in the S4M will also fit in the S4T stacked/linked. Please note that the spreadsheet may contain errors, and is intended as a guide, not a final answer. Reference the sheet first, and then also feel free to ask in #nfc-case-builds if you have any doubts.",
+        "dm": false,
+        "fields": [
+            {
+                "name": "Maximum slots",
+                "value": "Two (2)",
+                "inline": true
+            },
+            {
+                "name": "Maximum card length",
+                "value": "S4M: 215mm\nS4T-S/L: 230mm",
+                "inline": true
+            },
+            {
+                "name": "Maximum card height",
+                "value": "S4M: 111mm using HDPlex 400W combo, up to 15mm more with GaN depending on PCIE power cabling\nS4T-L: 120mm with HDPlex 400W DC-ATX installed\nS4T-S: depends on GPU orientation",
+                "inline": true
+            },
+            {
+                "name": "Community GPU spreadsheet",
+                "value": "[Link](https://docs.google.com/spreadsheets/d/1n9scdPzsS2toauLei92J0qu5gzBA4gs8Wu0CwvSXP4M/edit#gid=2143955767)",
+                "inline": false
+            },
+            {
+                "name": "Gigabyte Windforce Series",
+                "value": "",
+                "inline": false
+            },
+            {
+                "name": "5060 8GB Windforce",
+                "value": "[https://amzn.to/4eDbkNx](https://amzn.to/4eDbkNx>)",
+                "inline": true
+            },
+            {
+                "name": "5060 8GB Windforce OC",
+                "value": "[https://amzn.to/44BxV8E](https://amzn.to/44BxV8E>)",
+                "inline": true
+            },
+            {
+                "name": "5060 8GB Windforce Max OC (full 16x pcie finger w/ larger pcb)",
+                "value": "[https://amzn.to/4eJE3QL](https://amzn.to/4eJE3QL>)",
+                "inline": true
+            },
+            {
+                "name": "5060 Ti 8GB Windforce",
+                "value": "[https://amzn.to/3I5VcrM](https://amzn.to/3I5VcrM>)",
+                "inline": true
+            },
+            {
+                "name": "5060 Ti 8GB Windforce OC",
+                "value": "[https://amzn.to/4exStn7](https://amzn.to/4exStn7>)",
+                "inline": true
+            },
+            {
+                "name": "5060 Ti 8GB Windforce Max OC  (full 16x pcie finger w/ larger pcb)",
+                "value": "[https://amzn.to/3Gv2vIQ](https://amzn.to/3Gv2vIQ>)",
+                "inline": true
+            },
+            {
+                "name": "5060 Ti 16GB Windforce",
+                "value": "[https://amzn.to/4kksIId](https://amzn.to/4kksIId>)",
+                "inline": true
+            },
+            {
+                "name": "5060 Ti 16GB Windforce Max OC (full 16x pcie finger w/ larger pcb)",
+                "value": "[https://amzn.to/4laqJXT](https://amzn.to/4laqJXT>)",
+                "inline": true
+            },
+            {
+                "name": "Gigabyte Eagle Series",
+                "value": "",
+                "inline": false
+            },
+            {
+                "name": "5060 8GB Eagle OC",
+                "value": "[https://amzn.to/46oxMry](https://amzn.to/46oxMry>)",
+                "inline": false
+            },
+            {
+                "name": "5060 8GB Eagle OC Ice (White)",
+                "value": "[https://amzn.to/3Tq6f1o](https://amzn.to/3Tq6f1o>)",
+                "inline": true
+            },
+            {
+                "name": "5060 TI 8GB Eagle OC",
+                "value": "[https://amzn.to/44rFe2t](https://amzn.to/44rFe2t>)",
+                "inline": true
+            },
+            {
+                "name": "5060 Ti 8GB Eagle OC Ice (White)",
+                "value": "[https://amzn.to/3TkO25j](https://amzn.to/3TkO25j>)",
+                "inline": true
+            },
+            {
+                "name": "5060 TI 16GB Eagle OC",
+                "value": "[https://amzn.to/4kjOkUT](https://amzn.to/4kjOkUT>)",
+                "inline": true
+            },
+            {
+                "name": "5060 Ti 16GB Eagle OC Ice (White)",
+                "value": "[https://amzn.to/44L1MfT](https://amzn.to/44L1MfT>)",
+                "inline": true
+            },
+            {
+                "name": "Gigabyte Low Profile Series",
+                "value": "",
+                "inline": false
+            },
+            {
+                "name": "5060 8GB OC Low Profile",
+                "value": "[https://amzn.to/401wsa8](https://amzn.to/401wsa8>)",
+                "inline": true
+            },
+            {
+                "name": "AMD PowerColor Reaper Series",
+                "value": "",
+                "inline": false
+            },
+            {
+                "name": "9060 XT 8GB Reaper",
+                "value": "[https://amzn.to/4euL3kg](https://amzn.to/4euL3kg>)",
+                "inline": true
+            },
+            {
+                "name": "9060 XT 16GB Reaper",
+                "value": "[https://amzn.to/403FrHR](https://amzn.to/403FrHR>)",
+                "inline": true
+            }
+        ]
+    },
+
     "gunique": {
         "info": "Information about G-Unique power supplies",
         "color": "0x0099ff",
