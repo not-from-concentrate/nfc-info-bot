@@ -298,7 +298,7 @@
         "info": "GPU options and fitment",
         "color": "0x0099ff",
         "title": "GPU Info",
-        "description": "GPU fitment presents an interesting challenge in the S4M and S4T stacked/linked. The community maintains a spreadsheet (linked below) of GPU compatibility with the S4M chassis. The spreadsheet has not yet been updated for the S4T, but any GPU that fits in the S4M will also fit in the S4T stacked/linked. Please note that the spreadsheet may contain errors, and is intended as a guide, not a final answer. Reference the sheet first, and then also feel free to ask in #nfc-case-builds if you have any doubts.",
+        "description": "GPU fitment presents an interesting challenge in the S4M and S4T stacked/linked. The community maintains a spreadsheet (linked below) of GPU compatibility with the S4M chassis. The spreadsheet has not yet been updated for the S4T, but any GPU that fits in the S4M will also fit in the S4T stacked/linked. Please note that the spreadsheet may contain errors, and is intended as a guide, not a final answer. Reference the sheet first, and then also feel free to ask in #nfc-case-builds if you have any doubts.\n\nAs an Amazon Associate, we earn from qualifying purchases.",
         "dm": false,
         "fields": [
             {
