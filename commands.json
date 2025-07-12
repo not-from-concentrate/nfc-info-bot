@@ -418,7 +418,7 @@
             },
             {
                 "name": "Gigabyte Windforce Series",
-                "value": "---------------",
+                "value": "5060 Windforce: L=199 W=116 H=40\n5060 Ti Windforce: L=208 W=120 H=40 mm\nAll sub models/ memory capacities are the same dimensions besides some "Max OC" (3 Fan coolers)",
                 "inline": false
             },
             {
@@ -438,13 +438,13 @@
             },
             {
                 "name": "Gigabyte Eagle Series",
-                "value": "---------------",
+                "value": "5060 Eagle: L=208 W=120 H=40\n5060 Eagle Ice (white): L=208 W=120 H=40\n5060 Ti Eagle: L=215 W=122 H=40 mm\nFitmet of 5060 Ti Eagle should fit in theory, but may be tight.",
                 "inline": false
             },
             {
                 "name": "5060 8GB Eagle OC",
                 "value": "[Black](https://amzn.to/46oxMry) | [White](https://amzn.to/3Tq6f1o)",
-                "inline": false
+                "inline": true
             },
             {
                 "name": "5060 TI 8GB Eagle OC",
