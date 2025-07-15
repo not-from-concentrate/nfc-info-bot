@@ -1,0 +1,21 @@
+info: 180 degree PCIe adapter
+color: "0x0099ff"
+title: 180 degree PCIe adapter
+description: >-
+  180 degree adapters are typically noted as "A-type" or "B-type",
+  although this is not necessarily consistent between manufacturers. The
+  difference between the types is whether the ridge for locking the plug in
+  points toward the GPU's PCB or away from it.
+
+  Most adapters still have pins sticking out the back, covered by a foam pad. However, the pins can still poke through the foam, causing a component-destroying high-current short. Remove the pad, sand/file down the pins, and then reinstall the pad. 180 degree adapters from NFC Systems already have this modification.
+dm: false
+fields:
+  - name: NFC 180 - Buy this one. No, seriously. Buy it. It's objectively better.
+    value: "[NFC Shop page](https://store.nfc-systems.com/collections/parts-accessories/products/180-angle-adapter)"
+    inline: false
+  - name: modDIY 180
+    value: "[modDIY](https://www.moddiy.com/products/GPU-VGA-8Pin-6Pin-PCIE-U-Turn-180-Degree-Angle-Connector-Adapter-Board.html)"
+    inline: false
+  - name: FormulaMod 180 (also some 90s)
+    value: "[FormulaMod](https://www.formulamod.com/formulamod-fm-pciatxusb-interface-direction-changer-converter-for-gpu-power-interfacemotherboard-atx24pin-usb30-p2205842.html)"
+    inline: false

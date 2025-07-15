@@ -1,0 +1,32 @@
+info: HDPlex GaN power supplies
+color: "0x0099ff"
+title: HDPLex GaN
+description: >-
+  HDPlex has introduced a new line of GaN-based SFF PSUs intended to
+  replace the existing 400W and 200W units. 250W and 500W units are readily
+  available.
+
+  Unlike previous HDPlex units where the AC-DC and DC-ATX conversion is done in separate units (a split PSU), the GaN units are all-in-one.
+
+  For info about legacy HDPlex PSUs, use **!hdplex** command.
+dm: false
+fields:
+  - name: GaN 250W AIO
+    value: "[250W unit](https://hdplex.com/hdplex-fanless-250w-gan-aio-atx-psu.html) - Dimensions: 70(D) x 55(W) x 25(H) mm"
+    inline: false
+  - name: 250W Fitment notes
+    value: >-
+      •The 250W unit will fit in the front of the S4T chassis.
+
+      •Two 250W units can be installed in the S4M and S4T expansion kit builds, with one unit to power the GPU and one to power the motherboard. In a dual PSU configuration, a jumper wire is used to allow the PSU powering the motherboard to control the second PSU. The dual configuration _does not_ combine the power to provide a single 500W source; it provides two discrete 250W sources.
+    inline: false
+  - name: GaN 500W AIO
+    value: "[500W unit](https://hdplex.com/hdplex-500w-gan-aio-atx-power-supply.html) - Dimensions: 200(D) x 55(W) x 40(H) mm"
+    inline: false
+  - name: 500W Fitment notes
+    value: >-
+      •The 500W unit will fit in front position in S4M but it's [very tight
+      fit](https://discord.com/channels/516778810029506600/545061165420773396/1180761986687057930).
+
+      • Fitting under GPU is theoretically possible, provided GPU height is under 110mm but no finished build has been shared yet.
+    inline: false
