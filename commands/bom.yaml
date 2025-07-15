@@ -1,0 +1,9 @@
+info: Official NFC Bills of Materials
+color: "0x0099ff"
+title: NFC Bills of Materials
+description: NFC Systems has provided some bills of materials for a few standard builds, designed to help new builders get started with a set of known-compatible hardware and notes about the specific build.
+dm: false
+fields:
+  - name: Bills of Materials
+    value: "[https://nfc-systems.com/boms](https://nfc-systems.com/boms)"
+    inline: false

@@ -1,0 +1,88 @@
+info: GPU options and fitment
+color: "0x0099ff"
+title: GPU Info
+description: >-
+  GPU fitment presents an interesting challenge in the S4M and S4T
+  stacked/linked. The community maintains a spreadsheet (linked below) of GPU
+  compatibility with the S4M chassis. The spreadsheet has not yet been updated
+  for the S4T, but any GPU that fits in the S4M will also fit in the S4T
+  stacked/linked. Please note that the spreadsheet may contain errors, and is
+  intended as a guide, not a final answer. Reference the sheet first, and then
+  also feel free to ask in #nfc-case-builds if you have any doubts.
+
+  As an Amazon Associate, we earn from qualifying purchases.
+dm: false
+fields:
+  - name: Maximum slots
+    value: Two (2)
+    inline: true
+  - name: Maximum card length
+    value: |-
+      S4M: 215mm
+      S4T-S/L: 230mm
+    inline: true
+  - name: Maximum card height
+    value: >-
+      S4M: 111mm using HDPlex 400W combo, up to 15mm more with GaN depending on
+      PCIE power cabling
+
+      S4T-L: 120mm with HDPlex 400W DC-ATX installed
+
+      S4T-S: depends on GPU orientation
+    inline: true
+  - name: Community GPU spreadsheet
+    value: "[Link](https://docs.google.com/spreadsheets/d/1n9scdPzsS2toauLei92J0qu5gzBA4gs8Wu0CwvSXP4M/edit#gid=2143955767)"
+    inline: false
+  - name: Affiliate Notice
+    value: All of the following are affiliate links
+    inline: false
+  - name: Gigabyte Windforce Series
+    value: >-
+      5060 Windforce: L=199 W=116 H=40
+
+      5060 Ti Windforce: L=208 W=120 H=40 mm
+
+      All sub models/ memory capacities are the same dimensions besides some "Max OC" (3 Fan coolers)
+    inline: false
+  - name: 5060 8GB Windforce
+    value: |-
+      x8: [Base](https://amzn.to/4eDbkNx) | [OC](https://amzn.to/44BxV8E)
+      x16: [Max OC](https://amzn.to/4eJE3QL)
+    inline: true
+  - name: 5060 Ti 8GB Windforce
+    value: |-
+      x8: [Base](https://amzn.to/3I5VcrM) | [OC](https://amzn.to/4exStn7)
+      x16: [Max OC](https://amzn.to/3Gv2vIQ)
+    inline: true
+  - name: 5060 Ti 16GB Windforce
+    value: |-
+      x8: [Base](https://amzn.to/4kksIId)
+      x16: [Max OC](https://amzn.to/4laqJXT)
+    inline: true
+  - name: Gigabyte Eagle Series
+    value: >-
+      5060 Eagle: L=208 W=120 H=40
+
+      5060 Ti Eagle: L=215 W=122 H=40 mm (should fit in theory, but may be tight)
+    inline: false
+  - name: 5060 8GB Eagle OC
+    value: "[Black](https://amzn.to/46oxMry) | [White](https://amzn.to/3Tq6f1o)"
+    inline: true
+  - name: 5060 TI 8GB Eagle OC
+    value: "[Black](https://amzn.to/44rFe2t) | [White](https://amzn.to/3TkO25j)"
+    inline: true
+  - name: 5060 TI 16GB Eagle OC
+    value: "[Black](https://amzn.to/4kjOkUT) | [White](https://amzn.to/44L1MfT)"
+    inline: true
+  - name: Gigabyte Low Profile Series
+    value: ---------------
+    inline: false
+  - name: 5060 8GB OC Low Profile
+    value: "[Affiliate Link](https://amzn.to/401wsa8)"
+    inline: true
+  - name: AMD PowerColor Reaper Series
+    value: ---------------
+    inline: false
+  - name: 9060 XT  Reaper
+    value: "[8GB](https://amzn.to/4euL3kg) | [16GB](https://amzn.to/403FrHR)"
+    inline: true

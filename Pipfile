@@ -9,6 +9,7 @@ py-cord = "*"
 requests = "*"
 prettytable = "*"
 thefuzz = "*"
+pyyaml = "*"
 
 [dev-packages]
 

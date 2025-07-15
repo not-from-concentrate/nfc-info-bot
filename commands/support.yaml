@@ -1,0 +1,9 @@
+info: Support Info
+color: "0x0099ff"
+title: Support Info
+description: While members of the NFC team are on the server a lot and love interacting with the community, the best way to get help on any questions or issues regarding orders (normal or custom), product availability, defective products, etc., is to send an e-mail.
+dm: false
+fields:
+  - name: Support E-mail
+    value: support@nfc-systems.com
+    inline: false

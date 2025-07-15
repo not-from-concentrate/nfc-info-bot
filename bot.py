@@ -1,5 +1,5 @@
 # bot.py
-import os, re, discord, requests, threading, sqlite3, datetime, json
+import os, re, discord, requests, threading, sqlite3, datetime, json, yaml
 
 from thefuzz import fuzz
 from prettytable import PrettyTable
@@ -93,14 +93,24 @@ def get_stats():
 
 # Set up the commands JSON file pull and parse
 def update_commands():
-    global command_data, command_embeds, dm_embeds, command_list_embed
+    global command_list, command_data, command_embeds, dm_embeds, command_list_embed
 
     if os.getenv('LOCAL_TESTING') == 'True':
-        with open("commands.json", "r") as f:
-            command_data = json.load(f)
+        print("Loading commands from local YAML files")
+        with open("commands.yaml", "r") as f:
+            command_list = yaml.safe_load(f)
+        for cmd in command_list:
+            with open("commands/" + cmd + ".yaml", "r") as f:
+                command_detail = yaml.safe_load(f)
+            command_data[cmd] = command_detail
     else:
-        with requests.get(COMMAND_URL) as response:
-            command_data = response.json()
+        print("Loading commands from remote YAML")
+        with requests.get(COMMAND_URL + "commands.yaml") as response:
+            command_list = yaml.safe_load(response)
+        for cmd in command_list:
+            with requests.get(COMMAND_URL + "commands/" + cmd + ".yaml") as response:
+                command_detail = yaml.safe_load(response)
+            command_data[cmd] = command_detail
 
     command_list_embed = discord.Embed(title="Command List", color=0x0099ff)
     for cmd in command_data:

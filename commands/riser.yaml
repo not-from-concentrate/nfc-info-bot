@@ -1,0 +1,12 @@
+info: Risers
+color: "0x0099ff"
+title: Riser Info
+description: The S4M-C used a custom-designed PCIe riser from Li-Heat, while for most of the S4M production run, a custom SILIFLEX riser was used instead as it is more compact. Both are currently unavailable, but there are good PCIe 3.0, 4.0 and 5.0 options available from ADT-Link and LINKUP.
+dm: false
+fields:
+  - name: ADT-Link
+    value: "[R33 Series PCIe 3.0 x16 risers](http://www.adt.link/product/R33.html) (S4M requires R33SR, while S4T linked and stacked requirement depends on case and GPU orientation)"
+    inline: false
+  - name: LINKUP
+    value: "[LINKUP Straight 50mm risers](https://linkup.one/linkup-ava5-pcie-5-0-riser-cable-future-proof-for-gen-5-gpu-vertical-mount-x16-128gb-s-speed-compatible-with-pcie-4-0-wrx80se-straight-ver-1-black-5cm/)"
+    inline: false

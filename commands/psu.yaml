@@ -1,0 +1,15 @@
+info: General info on Power Supply options for Skyreach cases
+color: "0x0099ff"
+title: General PSU info
+description: >-
+  Skyreach cases have specific space constraints that severely limit
+  power supply options.
+
+  Most builders use power supplies from HDPlex which are designed with Skyreach cases in mind (or vice versa) - for more info on HDPlex PSUs in production, refer to !gan command. For legacy HDPlex supplies, refer to !hdplex command.
+
+  More advanced builds (usually with STX motherboards) require even more specialized PSUs (see MEAN WELL PSUs below) and typically involve soldering and/or other hardware mods - not recommended for those faint of heart.
+dm: false
+fields:
+  - name: Medical PSU range MEAN WELL LOP-300
+    value: "[Spec sheet](https://www.meanwell.com/webapp/product/search.aspx?prod=LOP-300): Both 12V and 18V variants are available for use with STX boards that accept 12V or 19V."
+    inline: false

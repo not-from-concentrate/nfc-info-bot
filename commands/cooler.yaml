@@ -1,0 +1,74 @@
+info: CPU Cooler recommendations
+color: "0x0099ff"
+title: CPU Cooler recommendations
+description: The following CPU coolers are recommended for use in **S4M (45mm clearance)** and **S4T (47mm clearance)**. List of coolers that are NOT recommended and for what reason is included at the end. If you don't see a cooler listed, ask around.
+dm: false
+fields:
+  - name: AXP90-x36 (with NA-FD1 duct)
+    value: "[This tiny cooler](http://www.thermalright.com/product/axp90-x36/) has surpassed Noctua L9x coolers in cooling performance while providing virtually identical compatibility. Noctua fan swap and fan duct highly recommended (note that fan duct needs to be affixed using tape or using similar method) - see Noctua product links."
+    inline: false
+  - name: Noctua NH-L9x with NA-FD1 duct
+    value: >-
+      One of the smallest and quietest CPU coolers on the market - great
+      all-rounder with no compatibility issues. For use with 65W base TDP
+      CPUs. Also available in black under 'chromax' name.
+
+      NA-FD1 Fan duct improves temperatures and muffles the fan noise - highly recommended.
+    inline: false
+  - name: Noctua product links
+    value: >-
+      • [Intel - NH-L9i](https://noctua.at/en/nh-l9i) - **Intel** variant -
+      LGA115X and LGA1200 compatible.
+
+      • [Intel - NH-L9i-17xx](https://noctua.at/en/nh-l9i-17xx) - Revised L9i with LGA1700 mount kit.
+
+      • [AMD - NH-L9a](https://noctua.at/en/nh-l9a) - **AMD** variant - AM2(+), AM3(+), FM1 and FM2(+) compatible.
+
+      • [AMD - NH-L9a-AM4](https://noctua.at/en/nh-l9a-am4) - **AMD** variant - Revised L9a with AM4 mount kit.
+
+      • [NA-FD1 Fan duct](https://noctua.at/en/na-fd1) - Foam fan duct accessory for L9x
+    inline: false
+  - name: Metalfish Z39
+    value: C-shaped alternative to NH-L9x with similar performance. Heatpipes can cause compatibility issues (i.e. interfere with M.2 stacks or VRAM heatsinks). For use with 65W base TDP CPUs. Compatible with LGA115X, LGA1200, LGA1700, AM3, AM4 and AM5.
+    inline: false
+  - name: Alpenföhn Black Ridge
+    value: >-
+      Larger C-shaped cooler with two possible fan configurations and common
+      motherboard compatibility issues. For use with 95W base TDP CPUs.
+      Compatible with LGA115X, LGA1200 and AM4 OOTB. Mount kit available for
+      LGA1700.
+
+      • Slim 92mm fan mode: RAM height limited to 33mm.
+
+      • Slim 120mm fan mode: RAM height limited to 18mm (see **!vlp** for viable RAM kits).
+
+      **Stand-off mod**: It is recommended to put spacers in between the fan and heatsink when installed as intake. Foam ducts are available for both configurations.
+
+      **S4M note**: Most Black Ridge coolers will not fit S4M out of the box. Slight bending of heatpipes is required to get the height below 45mm. The bending can further affect RAM height limits.
+    inline: false
+  - name: Alpenföhn Black Ridge product links
+    value: >-
+      • [Black Ridge](https://www.alpenfoehn.de/en/products/cpu-cooler/black-ridge-en)
+
+      • [NA-FD1 Fan duct](https://noctua.at/en/na-fd1) - for stand-off mod with 92mm fan.
+
+      • [Alphacool Phobya gasket](https://www.aquatuning.us/water-cooling/radiators/decoupling-and-damping/15056/phobya-radiator-gasket-5mm-for-120mm-fans) - for stand-off mod with 120mm fan.
+    inline: false
+  - name: (S4T only) ID-Cooling IS-47K
+    value: >-
+      Black Ridge alternative with slightly improved motherboard compatibility,
+      no RAM limitations and similar cooling capacity. Compatible with
+      LGA115x, LGA1200 and AM4 OOTB. 3rd party mount kit for LGA1700
+      intermittently available on AliExpress.
+
+      • [IS-47K](https://www.idcooling.com/Product/detail/id/205/name/IS-47K)
+    inline: false
+  - name: NOT recommended
+    value: >-
+      • Any cooler below 37mm height: NH-L9x outperforms them in everything
+      except cost.
+
+      • Any cooler at or above 44mm height with fan on top: Fan running too close to side panel will cause turbulence. Examples: Cryorig C7, Thermalright AXP-90.
+
+      • MasterAir G200P: Surpassed by both NH-L9x and Z39.
+    inline: false
