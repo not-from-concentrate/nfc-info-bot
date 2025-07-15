@@ -96,15 +96,21 @@ def update_commands():
     global command_list, command_data, command_embeds, dm_embeds, command_list_embed
 
     if os.getenv('LOCAL_TESTING') == 'True':
+        print("Loading commands from local YAML files")
         with open("commands.yaml", "r") as f:
             command_list = yaml.safe_load(f)
         for cmd in command_list:
-            with open("commands/"+cmd+".yaml","r") as f:
+            with open("commands/" + cmd + ".yaml", "r") as f:
                 command_detail = yaml.safe_load(f)
             command_data[cmd] = command_detail
     else:
-        with requests.get(COMMAND_URL) as response:
-            command_data = response.json()
+        print("Loading commands from remote YAML")
+        with requests.get(COMMAND_URL + "commands.yaml") as response:
+            command_list = yaml.safe_load(response)
+        for cmd in command_list:
+            with requests.get(COMMAND_URL + "commands/" + cmd + ".yaml") as response:
+                command_detail = yaml.safe_load(response)
+            command_data[cmd] = command_detail
 
     command_list_embed = discord.Embed(title="Command List", color=0x0099ff)
     for cmd in command_data:
