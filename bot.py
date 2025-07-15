@@ -106,10 +106,10 @@ def update_commands():
     else:
         print("Loading commands from remote YAML")
         with requests.get(COMMAND_URL + "commands.yaml") as response:
-            command_list = yaml.safe_load(response)
+            command_list = yaml.safe_load(response.text)
         for cmd in command_list:
-            with requests.get(COMMAND_URL + "commands/" + cmd + ".yaml") as response:
-                command_detail = yaml.safe_load(response)
+            with requests.get(COMMAND_URL + "commands/" + str(cmd) + ".yaml") as response:
+                command_detail = yaml.safe_load(response.text)
             command_data[cmd] = command_detail
 
     command_list_embed = discord.Embed(title="Command List", color=0x0099ff)
