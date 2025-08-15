@@ -1,0 +1,399 @@
+# NFC Info Bot Commands
+
+## Table of Contents
+- [180 degree PCIe adapter](#180-degree-pcie-adapter)
+- [NFC Bills of Materials](#nfc-bills-of-materials)
+- [Brickless Fitment Info](#brickless-fitment-info)
+- [C6 Inlet Info](#c6-inlet-info)
+- [CPU Cooler recommendations](#cpu-cooler-recommendations)
+- [Custom Requests](#custom-requests)
+- [Chassis Dimensions](#chassis-dimensions)
+- [Fusion360](#fusion360)
+- [HDPLex GaN](#hdplex-gan)
+- [GPU Info](#gpu-info)
+- [G-Unique PSUs](#g-unique-psus)
+- [HDPlex installation](#hdplex-installation)
+- [Low Profile PCIe](#low-profile-pcie)
+- [General PSU info](#general-psu-info)
+- [Riser Info](#riser-info)
+- [Info on chassis screws](#info-on-chassis-screws)
+- [SendCutSend](#sendcutsend)
+- [Support Info](#support-info)
+- [VLP RAM Options](#vlp-ram-options)
+
+## 180 degree PCIe adapter
+
+180 degree adapters are typically noted as "A-type" or "B-type", although this is not necessarily consistent between manufacturers. The difference between the types is whether the ridge for locking the plug in points toward the GPU's PCB or away from it.
+
+Most adapters still have pins sticking out the back, covered by a foam pad. However, the pins can still poke through the foam, causing a component-destroying high-current short. Remove the pad, sand/file down the pins, and then reinstall the pad. 180 degree adapters from NFC Systems already have this modification.
+
+### NFC 180 - Buy this one. No, seriously. Buy it. It's objectively better.
+[NFC Shop page](https://store.nfc-systems.com/collections/parts-accessories/products/180-angle-adapter)
+
+### modDIY 180
+[modDIY](https://www.moddiy.com/products/GPU-VGA-8Pin-6Pin-PCIE-U-Turn-180-Degree-Angle-Connector-Adapter-Board.html)
+
+### FormulaMod 180 (also some 90s)
+[FormulaMod](https://www.formulamod.com/formulamod-fm-pciatxusb-interface-direction-changer-converter-for-gpu-power-interfacemotherboard-atx24pin-usb30-p2205842.html)
+
+## NFC Bills of Materials
+
+NFC Systems has provided some bills of materials for a few standard builds, designed to help new builders get started with a set of known-compatible hardware and notes about the specific build.
+
+### Bills of Materials
+[https://nfc-systems.com/boms](https://nfc-systems.com/boms)
+
+## Brickless Fitment Info
+
+"Brickless" is a configuration where the the entire power supply function is housed inside the chassis. This is in contrast to "brick" configurations, where the AC->DC conversion is done by a power brick (most commonly a Dell 330w unit) that lives outside the chassis.
+
+### S4M Dual GaN Layout
+The most common brickless configuration is using two [HDPLEX 250W GaN](https://hdplex.com/hdplex-fanless-250w-gan-aio-atx-psu.html) units daisy-chained to provide power to components as needed - typical configuration would be one GaN for motherboard/24pin, CPU/EPS and the second GaN for GPU power (with SATA power being handled by either unit). Builds that require less than 250W total can make use of just single unit.
+
+### S4T GaN Layout
+Similarly to S4M, [HDPLEX 250W GaN](https://hdplex.com/hdplex-fanless-250w-gan-aio-atx-psu.html) is currently the easiest way to build brickless. The GaN unit can be placed next to motherboard to allow for front power button (threads of the power button need to be partially sanded for this) or mounted on the included bracket (requires rear or low profile front power button).
+
+### S4M Standard Layout
+The previous common brickless configuration uses an [HDPLEX 400W AC-DC](https://hdplex.com/hdplex-internal-400w-ac-dc-adapter-with-active-pfc-and-19vdc-output.html) module along the side of the chassis near the GPU to convert mains power input to 19V DC output. This is then fed to an [HDPLEX 400W HiFi DC-ATX module](https://hdplex.com/hdplex-400w-hi-fi-dc-atx-power-supply-16v-24v-wide-range-voltage-input.html), which converts the 19V to the various voltages and connectors necessary for the motherboard, GPU, and SATA drives (if used).
+
+### S4M flipped Layout
+When using a GPU taller than 111.5mm, there is not enough room to place the HDPLEX 400W AC-DC module next to the GPU. Additional clearance can be gained by switching the positions of the AC-DC module and the DC-ATX module, as the DC-ATX is thinner and leaves more room for GPU height. This layout does result in more complicated wiring, as mains power input needs to run up to the top/front, and the 24-pin and 4/8 pin ATX connectors need to run from the bottom of the chassis up to the motherboard.
+
+HDPLEX AC-DC version 1.0 is too wide (58mm) to support flipped layout without modification. Version 2.0 and later are narrower (55mm), and do not require modification.
+
+[[Installation Video](https://youtu.be/0Dm-66DmvfI?t=974) **Note:** this case has been modded to fit a version 1.0 AC-DC. It is recommended to either mod the PSU or to use a version 2.0 or later unit, _not_ mod the case.]
+
+### S4T Brickless
+The S4T supports the following brickless configurations:
+
+* HDPLEX [200W AC-DC](https://hdplex.com/hdplex-internal-200w-ac-dc-adapter-with-active-pfc-and-19vdc-output.html) + [200W DC-ATX](https://hdplex.com/hdplex-200w-dc-atx-power-supply-16v-24v-wide-range-voltage-input.html) [[Installation Video](https://www.youtube.com/watch?v=v0qfDD8sUvw&t=195s)]
+
+* HDPLEX [400W AC-DC](https://hdplex.com/hdplex-internal-400w-ac-dc-adapter-with-active-pfc-and-19vdc-output.html) + [200W DC-ATX](https://hdplex.com/hdplex-200w-dc-atx-power-supply-16v-24v-wide-range-voltage-input.html) [[Installation Video](https://www.youtube.com/watch?v=v0qfDD8sUvw&t=320s)]
+
+* [Meanwell RPS-200-12-C AC-DC + J-HACK ONE2 PLUGin 200X DC-ATX kit](https://j-hackcompany.com/?product=j-hack-one2-plugin-200x-power-kit)
+
+## C6 Inlet Info
+
+The S4M is designed with a specific Schurter C6 inlet in mind. If you use an HDPlex 400 and it includes a C6, it is a different model and will be too long.
+
+### Schurter C6
+This Schurter C6 ([Mouser](https://www.mouser.com/ProductDetail/693-4300.0101)/[DigiKey](https://www.digikey.com/products/en?keywords=4300.0101)) is very similar to the one the S4M was designed for, but still needs to be shaved down a bit on the sides to fit. It should also be mounted from the outside.
+
+## CPU Cooler recommendations
+
+The following CPU coolers are recommended for use in **S4M (45mm clearance)** and **S4T (47mm clearance)**. List of coolers that are NOT recommended and for what reason is included at the end. If you don't see a cooler listed, ask around.
+
+### AXP90-x36 (with NA-FD1 duct)
+[This tiny cooler](http://www.thermalright.com/product/axp90-x36/) has surpassed Noctua L9x coolers in cooling performance while providing virtually identical compatibility. Noctua fan swap and fan duct highly recommended (note that fan duct needs to be affixed using tape or using similar method) - see Noctua product links.
+
+### Noctua NH-L9x with NA-FD1 duct
+One of the smallest and quietest CPU coolers on the market - great all-rounder with no compatibility issues. For use with 65W base TDP CPUs. Also available in black under 'chromax' name.
+
+NA-FD1 Fan duct improves temperatures and muffles the fan noise - highly recommended.
+
+### Noctua product links
+• [Intel - NH-L9i](https://noctua.at/en/nh-l9i) - **Intel** variant - LGA115X and LGA1200 compatible.
+
+• [Intel - NH-L9i-17xx](https://noctua.at/en/nh-l9i-17xx) - Revised L9i with LGA1700 mount kit.
+
+• [AMD - NH-L9a](https://noctua.at/en/nh-l9a) - **AMD** variant - AM2(+), AM3(+), FM1 and FM2(+) compatible.
+
+• [AMD - NH-L9a-AM4](https://noctua.at/en/nh-l9a-am4) - **AMD** variant - Revised L9a with AM4 mount kit.
+
+• [NA-FD1 Fan duct](https://noctua.at/en/na-fd1) - Foam fan duct accessory for L9x
+
+### Metalfish Z39
+C-shaped alternative to NH-L9x with similar performance. Heatpipes can cause compatibility issues (i.e. interfere with M.2 stacks or VRAM heatsinks). For use with 65W base TDP CPUs. Compatible with LGA115X, LGA1200, LGA1700, AM3, AM4 and AM5.
+
+### Alpenföhn Black Ridge
+Larger C-shaped cooler with two possible fan configurations and common motherboard compatibility issues. For use with 95W base TDP CPUs. Compatible with LGA115X, LGA1200 and AM4 OOTB. Mount kit available for LGA1700.
+
+• Slim 92mm fan mode: RAM height limited to 33mm.
+
+• Slim 120mm fan mode: RAM height limited to 18mm (see **!vlp** for viable RAM kits).
+
+**Stand-off mod**: It is recommended to put spacers in between the fan and heatsink when installed as intake. Foam ducts are available for both configurations.
+
+**S4M note**: Most Black Ridge coolers will not fit S4M out of the box. Slight bending of heatpipes is required to get the height below 45mm. The bending can further affect RAM height limits.
+
+### Alpenföhn Black Ridge product links
+• [Black Ridge](https://www.alpenfoehn.de/en/products/cpu-cooler/black-ridge-en)
+
+• [NA-FD1 Fan duct](https://noctua.at/en/na-fd1) - for stand-off mod with 92mm fan.
+
+• [Alphacool Phobya gasket](https://www.aquatuning.us/water-cooling/radiators/decoupling-and-damping/15056/phobya-radiator-gasket-5mm-for-120mm-fans) - for stand-off mod with 120mm fan.
+
+### (S4T only) ID-Cooling IS-47K
+Black Ridge alternative with slightly improved motherboard compatibility, no RAM limitations and similar cooling capacity. Compatible with LGA115x, LGA1200 and AM4 OOTB. 3rd party mount kit for LGA1700 intermittently available on AliExpress.
+
+• [IS-47K](https://www.idcooling.com/Product/detail/id/205/name/IS-47K)
+
+### NOT recommended
+• Any cooler below 37mm height: NH-L9x outperforms them in everything except cost.
+
+• Any cooler at or above 44mm height with fan on top: Fan running too close to side panel will cause turbulence. Examples: Cryorig C7, Thermalright AXP-90.
+
+• MasterAir G200P: Surpassed by both NH-L9x and Z39.
+
+## Custom Requests
+
+### Send an email
+For all custom requests, whether that be custom front panel, custom cables, custom _anything_, email support@nfc-systems.com
+
+## Chassis Dimensions
+
+### S4M External
+348mm x 225mm x 64mm
+
+### S4M Internal
+341mm x 215mm x 57mm
+
+### S4M Weight
+1.13kg
+
+### S4T (standalone)
+200mm x 239mm x 69mm
+
+### S4T-S (stacked, sandwich layout)
+200mm x 239mm x 134mm
+
+### S4T-L (linked, vertical layout)
+400mm x 239mm x 69mm
+
+### S4T Weight
+0.6kg
+
+## Fusion360
+
+Please use my [Fusion360 Referral Link](http://aklam.io/3gSHX4) for rewards if you are looking for CAD/CAM/Render software that NFC uses for designs. Thanks!
+
+### Referral Link
+http://aklam.io/3gSHX4
+
+## HDPLex GaN
+
+HDPlex has introduced a new line of GaN-based SFF PSUs intended to replace the existing 400W and 200W units. 250W and 500W units are readily available.
+
+Unlike previous HDPlex units where the AC-DC and DC-ATX conversion is done in separate units (a split PSU), the GaN units are all-in-one.
+
+For info about legacy HDPlex PSUs, use **!hdplex** command.
+
+### GaN 250W AIO
+[250W unit](https://hdplex.com/hdplex-fanless-250w-gan-aio-atx-psu.html) - Dimensions: 70(D) x 55(W) x 25(H) mm
+
+### 250W Fitment notes
+•The 250W unit will fit in the front of the S4T chassis.
+
+•Two 250W units can be installed in the S4M and S4T expansion kit builds, with one unit to power the GPU and one to power the motherboard. In a dual PSU configuration, a jumper wire is used to allow the PSU powering the motherboard to control the second PSU. The dual configuration _does not_ combine the power to provide a single 500W source; it provides two discrete 250W sources.
+
+### GaN 500W AIO
+[500W unit](https://hdplex.com/hdplex-500w-gan-aio-atx-power-supply.html) - Dimensions: 200(D) x 55(W) x 40(H) mm
+
+### 500W Fitment notes
+•The 500W unit will fit in front position in S4M but it's [very tight fit](https://discord.com/channels/516778810029506600/545061165420773396/1180761986687057930).
+
+• Fitting under GPU is theoretically possible, provided GPU height is under 110mm but no finished build has been shared yet.
+
+## GPU Info
+
+GPU fitment presents an interesting challenge in the S4M and S4T stacked/linked. The community maintains a spreadsheet (linked below) of GPU compatibility with the S4M chassis. The spreadsheet has not yet been updated for the S4T, but any GPU that fits in the S4M will also fit in the S4T stacked/linked. Please note that the spreadsheet may contain errors, and is intended as a guide, not a final answer. Reference the sheet first, and then also feel free to ask in #nfc-case-builds if you have any doubts.
+
+As an Amazon Associate, we earn from qualifying purchases.
+
+### Maximum slots
+Two (2)
+
+### Maximum card length
+S4M: 215mm
+S4T-S/L: 230mm
+
+### Maximum card height
+S4M: 111mm using HDPlex 400W combo, up to 15mm more with GaN depending on PCIE power cabling
+
+S4T-L: 120mm with HDPlex 400W DC-ATX installed
+
+S4T-S: depends on GPU orientation
+
+### Community GPU spreadsheet
+[Link](https://docs.google.com/spreadsheets/d/1n9scdPzsS2toauLei92J0qu5gzBA4gs8Wu0CwvSXP4M/edit#gid=2143955767)
+
+### Affiliate Notice
+All of the following are affiliate links
+
+### Gigabyte Windforce Series
+5060 Windforce: L=199 W=116 H=40
+
+5060 Ti Windforce: L=208 W=120 H=40 mm
+
+All sub models/ memory capacities are the same dimensions besides some "Max OC" (3 Fan coolers)
+
+### 5060 8GB Windforce
+x8: [Base](https://amzn.to/4eDbkNx) | [OC](https://amzn.to/44BxV8E)
+x16: [Max OC](https://amzn.to/4eJE3QL)
+
+### 5060 Ti 8GB Windforce
+x8: [Base](https://amzn.to/3I5VcrM) | [OC](https://amzn.to/4exStn7)
+x16: [Max OC](https://amzn.to/3Gv2vIQ)
+
+### 5060 Ti 16GB Windforce
+x8: [Base](https://amzn.to/4kksIId)
+x16: [Max OC](https://amzn.to/4laqJXT)
+
+### Gigabyte Eagle Series
+5060 Eagle: L=208 W=120 H=40
+
+5060 Ti Eagle: L=215 W=122 H=40 mm (should fit in theory, but may be tight)
+
+### 5060 8GB Eagle OC
+[Black](https://amzn.to/46oxMry) | [White](https://amzn.to/3Tq6f1o)
+
+### 5060 TI 8GB Eagle OC
+[Black](https://amzn.to/44rFe2t) | [White](https://amzn.to/3TkO25j)
+
+### 5060 TI 16GB Eagle OC
+[Black](https://amzn.to/4kjOkUT) | [White](https://amzn.to/44L1MfT)
+
+### Gigabyte Low Profile Series
+---------------
+
+### 5060 8GB OC Low Profile
+[Affiliate Link](https://amzn.to/401wsa8)
+
+### AMD PowerColor Reaper Series
+---------------
+
+### 9060 XT  Reaper
+[8GB](https://amzn.to/4euL3kg) | [16GB](https://amzn.to/403FrHR)
+
+## G-Unique PSUs
+
+G-UNIQUE products are innovative and push the limits...sometimes literally...of what a small powersupply can do. If you are experienced with electricity and approach cautiously there is truly nothing that can compete with them.
+
+Please understand uncertified high voltage power supplies carry a risk, which is why NFC does not officially endorse these products at this time, although if things change we would be extremely enthusiastic to promote them.
+
+Update: Gury has been unresponsive for quite some time. In addition to the cautions above, be aware that you may not be able to get any service or assistance with G-Unique power supplies.
+
+## HDPlex installation
+
+NOTE: The HDPlex 400W AC-DC unit has been discontinued, as HDPlex is focusing development on an all-in-one 500W GaN-based unit. Details on this unit are still unknown.
+
+The HDPlex 400W NanoATX combo power supply is currently the best and most compatible power supply for the S4M, mostly because Josh works with the HDPlex designer to address fitment issues and new designs. It separates the two functions of a power supply (AC->DC conversion and DC voltage step-down) into two separate units to allow for more compact placement. HDPlex also offers a cheaper and more compact 200W combo that may be appropriate for lower-power builds.
+
+For info about HDPlex PSUs currently in production, use **!gan** command.
+
+### Standard Layout
+The most common configuration is mounting the HDPLEX AC-DC unit along the side of the chassis near the GPU to convert mains power input to 19V DC output. This is then fed to the HDPLEX DC-ATX unit (400W unit mounts along the front of the chassis next to the motherboard, 200W unit plugs straight into the motherboard's 24-pin connector), which converts the 19V to the various voltages and connectors necessary for the motherboard, GPU, and SATA drives (if used).
+
+### Flipped/Swapped Layout
+In order to accommodate some GPUs with height greater than the normal maximum of 111mm, the locations of the AC-DC unit and the DC-ATX unit can be swapped so that the AC-DC unit is along the front of the chassis and the DC-ATX unit is next to the GPU. This allows extra clearance since the DC-ATX unit is thinner, but it presents two extra challenges. First, custom power cabling will be likely since the main power input needs to run farther to reach the AC-DC unit, and the 24-pin and 8-pin power need to run further to reach the motherboard. Second, the original version (not marked with a version number) of the AC-DC unit is too thick to fit flush along the front of the chassis. It either needs to have a section milled out to fit, or you need to use a version 2.0 AC-DC unit (made thinner to fit).
+
+### Hardware Revisions
+As of 2020-05-16, the 400W AC-DC unit has four versions: one with no version mark (called 1.X), 2.0, 2.1, and 3.0. The significant difference is that version 2.0+ are thinner to accommodate flipped/swapped layout without requiring any milling. The 400W DC-ATX unit has gone through several revisions, and the revision is printed directly on the unit. The pinout of the PCIe power connector was changed between versions 1.X, 2.0, and 2.1. View the Specs page on the following product page link or follow the direct links below to reference the correct diagram for your revision of the 400W DC-ATX unit.
+
+### 400W DC-ATX Product Page
+[Link](https://hdplex.com/hdplex-400w-hi-fi-dc-atx-power-supply-16v-24v-wide-range-voltage-input.html)
+
+### 400W DC-ATX Pin-out Diagrams
+[1.X](https://hdplex.com/pub/media/image/Product/400WDCATX/spec/HDPLEX.400WDCATX.DIAGRAM.SelfLock.png) | [2.0](https://hdplex.com/pub/media/image/Product/400WDCATX/spec/HDPLEX.400W.DC-ATX.2.0.Diagram.png) | [2.1/3.0](https://hdplex.com/pub/media/image/Product/400WDCATX/spec/HDPLEX.400W.DCATX.2.1.Diagram.png)
+
+### Mounting
+You are advised against using adhesive/velcro to mount the DC-ATX unit to the front of the chassis (Search: Residue) unless absolutely necessary. The tension from the wires will be more than enough for most use cases. If you really feel the need to use some sort of adhesive to mount the DC-ATX in place. If you feel that you must mount it, then as per Josh, "Use mounting tape. Grey/clear/or whatever from Scotch/3M if you NEED to, because it will come off without leaving sticky residue behind. And it's REALLY strong, way stronger than velcro. Velcro can hold really well, but it still vibrates in the hooks. Mounting tape doesn't." See: https://imgur.com/a/BqD27j2
+
+### AC Inlet
+The 400W bundle includes two detachable connectors in the latest revisions (v2.0 - Onwards) - C6 and C14. Most brickless builds use the C6 connector, as the C14 connector does not fit into the cutout at the back of the S4M.
+
+## Low Profile PCIe
+
+180 adapters work in many cases, but if they are still just a bit too thick, ultra-low-profile cables are the way to go. Ultra-low-profile cables do away with the plastic connector, leaving the individual wires with plugs attached, and those plugs are then slotted directly onto the pins on the GPU. Be _very_ careful to triple-check pinout before applying power.
+
+### Photo guide to make your own from existing cables
+https://imgur.com/gallery/dqkanA2
+
+### Video guide on de-pinning cables using staples
+https://www.youtube.com/watch?v=n6gQ5ie2Dw0
+
+### 3rd-party cables
+There are vendors who make low-profile cables, such as [Kareon Kables](https://kareonkables.com/products/nfc-skyreach-hdplex-dc-atx-series-ultra-low-profile-pci-e-psu-cable). These can be a good choice, but be _very_ careful and verify the correct pin-out anyway. Several members have had equipment damaged by incorrectly made 3rd-party cables.
+
+## General PSU info
+
+Skyreach cases have specific space constraints that severely limit power supply options.
+
+Most builders use power supplies from HDPlex which are designed with Skyreach cases in mind (or vice versa) - for more info on HDPlex PSUs in production, refer to !gan command. For legacy HDPlex supplies, refer to !hdplex command.
+
+More advanced builds (usually with STX motherboards) require even more specialized PSUs (see MEAN WELL PSUs below) and typically involve soldering and/or other hardware mods - not recommended for those faint of heart.
+
+### Medical PSU range MEAN WELL LOP-300
+[Spec sheet](https://www.meanwell.com/webapp/product/search.aspx?prod=LOP-300): Both 12V and 18V variants are available for use with STX boards that accept 12V or 19V.
+
+## Riser Info
+
+The S4M-C used a custom-designed PCIe riser from Li-Heat, while for most of the S4M production run, a custom SILIFLEX riser was used instead as it is more compact. Both are currently unavailable, but there are good PCIe 3.0, 4.0 and 5.0 options available from ADT-Link and LINKUP.
+
+### ADT-Link
+[R33 Series PCIe 3.0 x16 risers](http://www.adt.link/product/R33.html) (S4M requires R33SR, while S4T linked and stacked requirement depends on case and GPU orientation)
+
+### LINKUP
+[LINKUP Straight 50mm risers](https://linkup.one/linkup-ava5-pcie-5-0-riser-cable-future-proof-for-gen-5-gpu-vertical-mount-x16-128gb-s-speed-compatible-with-pcie-4-0-wrx80se-straight-ver-1-black-5cm/)
+
+## Info on chassis screws
+
+The screws used on the S4 chassis are M3 and use a 120° countersunk head (most screws at hardware stores are 90° and will not sit flush). A seller on eBay sells screws that have been confirmed to work with the S4 chassis, but requires the use of a size #1 Phillips head rather than the #2 used for original S4 screws.
+
+### Screw sizes
+S4M: M3x4mm
+S4T: M3x5mm
+
+### Silver screws
+[eBay link](https://www.ebay.com/itm/184247703708)
+
+### Black screws #1
+[eBay link](https://www.ebay.com/itm/355082705998)
+
+### Black screws #2
+[eBay link](https://www.ebay.com/itm/352996094822)
+
+## SendCutSend
+
+[SendCutSend](https://sendcutsend.com) is now a channel sponsor!!! You can use the NFC15SCS promocode to get 15% off your SendCutSend orders!
+
+### Website
+[https://sendcutsend.com](https://sendcutsend.com)
+
+### Promo code for 15% off your SendCutSend orders
+NFC15SCS
+
+## Support Info
+
+While members of the NFC team are on the server a lot and love interacting with the community, the best way to get help on any questions or issues regarding orders (normal or custom), product availability, defective products, etc., is to send an e-mail.
+
+### Support E-mail
+support@nfc-systems.com
+
+## VLP RAM Options
+
+Certain cooler configurations may require VLP (Very Low Profile) RAM. Here's a list of recommended options - please note that the kits are sold with only the default JEDEC configuration (no XMP profiles). Overclocking the modules can bring them much closer to XMP config values seen in standard RAM kits.
+
+Note that there are compatibility issues related to ECC RAM: Intel doesn't support ECC with desktop motherboards (only Wx80 series). AMD supports Unbuffered/Unregistered ECC modules but some motherboards might have limited support - check your motherboard manual to confirm.
+
+### DDR4 32GB Kits
+• [URAM 16GB 2666MHz CL19](https://www.amazon.com/2666MHz-Compatible-PC4-21300-Unbuffered-Computer/dp/B09VNVC2HR): non-ECC, for use with Intel and AMD
+
+• [V-Color 2x16GB 2666MHz CL19](https://v-color.net/products/ddr4-32gb-ecc-vlp-udimm-server-memory): ECC unbuffered, for use with AMD
+
+• [Micron 16GB 3200MHz CL22](https://www.amazon.com/MICRON-DDR4-UDIMM-16GB-2RX8/dp/B09TFK74GW): ECC unbuffered, for use with AMD
+
+• [Transcend 16GB 3200MHz CL22](https://www.transcend-info.com/embedded/product/module/ddr4/ts4glh72v2e3l): ECC unbuffered, for use with AMD
+
+### DDR4 64GB Kits
+• [Micron 32GB 2666MHz CL19](https://www.amazon.com/Micron-DDR4-2666-UDIMM-Memory-MTA18ADF4G72AZ-2G6B2/dp/B08765CN88): ECC unbuffered, for use with AMD
+
+• [Micron 32GB 3200MHz CL22](https://www.cdw.com/product/micron-ddr4-module-32-gb-dimm-288-pin-3200-mhz-pc4-25600-unbu/7075974): ECC unbuffered, for use with AMD
+
+### DDR5 32GB Kits
+• [Innodisk 16GB 4800MHz CL40](https://www.wdlsystems.com/innodisk-m5c0-ags2scvp): ECC unbuffered, for use with AMD
+
+• [Apacer 16GB 5600MHz CL46](https://www.mouser.com/ProductDetail/Apacer/D12.35289H.001?qs=a2MtRaTmNOSl76C5gZhDqw%3D%3D): ECC unbuffered, for use with AMD
+
+### DDR5 64GB Kits
+• [Innodisk 32GB 4800MHz CL40](https://www.wdlsystems.com/innodisk-m5c0-bgs2tcvp): ECC unbuffered, for use with AMD
