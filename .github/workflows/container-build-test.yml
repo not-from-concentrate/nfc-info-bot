@@ -5,8 +5,11 @@ on:
     branches-ignore:
       - main
     paths-ignore:
-      - '*.json'
+      - '**/*.json'
+      - '**/*.yaml'
+      - '**/*.md'
       - '.github/workflows/*'
+      - 'validate_json.py'
   workflow_dispatch:
 
 env:
