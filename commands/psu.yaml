@@ -13,3 +13,5 @@ fields:
   - name: Medical PSU range MEAN WELL LOP-300
     value: "[Spec sheet](https://www.meanwell.com/webapp/product/search.aspx?prod=LOP-300): Both 12V and 18V variants are available for use with STX boards that accept 12V or 19V."
     inline: false
+    chassis:
+      - ALL

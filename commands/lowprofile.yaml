@@ -7,9 +7,15 @@ fields:
   - name: Photo guide to make your own from existing cables
     value: https://imgur.com/gallery/dqkanA2
     inline: false
+    chassis: 
+      - ALL
   - name: Video guide on de-pinning cables using staples
     value: https://www.youtube.com/watch?v=n6gQ5ie2Dw0
     inline: false
+    chassis: 
+      - ALL
   - name: 3rd-party cables
     value: There are vendors who make low-profile cables, such as [Kareon Kables](https://kareonkables.com/products/nfc-skyreach-hdplex-dc-atx-series-ultra-low-profile-pci-e-psu-cable). These can be a good choice, but be _very_ careful and verify the correct pin-out anyway. Several members have had equipment damaged by incorrectly made 3rd-party cables.
     inline: false
+    chassis: 
+      - ALL

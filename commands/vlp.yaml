@@ -21,18 +21,26 @@ fields:
 
       • [Transcend 16GB 3200MHz CL22](https://www.transcend-info.com/embedded/product/module/ddr4/ts4glh72v2e3l): ECC unbuffered, for use with AMD
     inline: false
+    chassis:
+      - ALL
   - name: DDR4 64GB Kits
     value: >-
       • [Micron 32GB 2666MHz CL19](https://www.amazon.com/Micron-DDR4-2666-UDIMM-Memory-MTA18ADF4G72AZ-2G6B2/dp/B08765CN88): ECC unbuffered, for use with AMD
 
       • [Micron 32GB 3200MHz CL22](https://www.cdw.com/product/micron-ddr4-module-32-gb-dimm-288-pin-3200-mhz-pc4-25600-unbu/7075974): ECC unbuffered, for use with AMD
     inline: false
+    chassis:
+      - ALL
   - name: DDR5 32GB Kits
     value: >-
       • [Innodisk 16GB 4800MHz CL40](https://www.wdlsystems.com/innodisk-m5c0-ags2scvp): ECC unbuffered, for use with AMD
 
       • [Apacer 16GB 5600MHz CL46](https://www.mouser.com/ProductDetail/Apacer/D12.35289H.001?qs=a2MtRaTmNOSl76C5gZhDqw%3D%3D): ECC unbuffered, for use with AMD
     inline: false
+    chassis:
+      - ALL
   - name: DDR5 64GB Kits
     value: "• [Innodisk 32GB 4800MHz CL40](https://www.wdlsystems.com/innodisk-m5c0-bgs2tcvp): ECC unbuffered, for use with AMD"
     inline: false
+    chassis:
+      - ALL

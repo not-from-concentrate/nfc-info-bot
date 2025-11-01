@@ -7,12 +7,18 @@ fields:
   - name: S4M Dual GaN Layout
     value: The most common brickless configuration is using two [HDPLEX 250W GaN](https://hdplex.com/hdplex-fanless-250w-gan-aio-atx-psu.html) units daisy-chained to provide power to components as needed - typical configuration would be one GaN for motherboard/24pin, CPU/EPS and the second GaN for GPU power (with SATA power being handled by either unit). Builds that require less than 250W total can make use of just single unit.
     inline: false
+    chassis:
+      - S4M
   - name: S4T GaN Layout
     value: Similarly to S4M, [HDPLEX 250W GaN](https://hdplex.com/hdplex-fanless-250w-gan-aio-atx-psu.html) is currently the easiest way to build brickless. The GaN unit can be placed next to motherboard to allow for front power button (threads of the power button need to be partially sanded for this) or mounted on the included bracket (requires rear or low profile front power button).
     inline: false
+    chassis:
+      - S4T
   - name: S4M Standard Layout
     value: The previous common brickless configuration uses an [HDPLEX 400W AC-DC](https://hdplex.com/hdplex-internal-400w-ac-dc-adapter-with-active-pfc-and-19vdc-output.html) module along the side of the chassis near the GPU to convert mains power input to 19V DC output. This is then fed to an [HDPLEX 400W HiFi DC-ATX module](https://hdplex.com/hdplex-400w-hi-fi-dc-atx-power-supply-16v-24v-wide-range-voltage-input.html), which converts the 19V to the various voltages and connectors necessary for the motherboard, GPU, and SATA drives (if used).
     inline: false
+    chassis:
+      - S4M
   - name: S4M flipped Layout
     value: >-
       When using a GPU taller than 111.5mm, there is not enough room to place
@@ -28,6 +34,8 @@ fields:
 
       \[[Installation Video](https://youtu.be/0Dm-66DmvfI?t=974) **Note:** this case has been modded to fit a version 1.0 AC-DC. It is recommended to either mod the PSU or to use a version 2.0 or later unit, _not_ mod the case.\]
     inline: false
+    chassis:
+      - S4M
   - name: S4T Brickless
     value: >-
       The S4T supports the following brickless configurations:
@@ -38,3 +46,5 @@ fields:
 
       * [Meanwell RPS-200-12-C AC-DC + J-HACK ONE2 PLUGin 200X DC-ATX kit](https://j-hackcompany.com/?product=j-hack-one2-plugin-200x-power-kit)
     inline: false
+    chassis:
+      - S4T

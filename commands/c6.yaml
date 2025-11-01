@@ -7,3 +7,5 @@ fields:
   - name: Schurter C6
     value: This Schurter C6 ([Mouser](https://www.mouser.com/ProductDetail/693-4300.0101)/[DigiKey](https://www.digikey.com/products/en?keywords=4300.0101)) is very similar to the one the S4M was designed for, but still needs to be shaved down a bit on the sides to fit. It should also be mounted from the outside.
     inline: false
+    chassis:
+      - ALL

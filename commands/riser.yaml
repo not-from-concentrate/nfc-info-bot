@@ -7,6 +7,10 @@ fields:
   - name: ADT-Link
     value: "[R33 Series PCIe 3.0 x16 risers](http://www.adt.link/product/R33.html) (S4M requires R33SR, while S4T linked and stacked requirement depends on case and GPU orientation)"
     inline: false
+    chassis:
+      - ALL
   - name: LINKUP
     value: "[LINKUP Straight 50mm risers](https://linkup.one/linkup-ava5-pcie-5-0-riser-cable-future-proof-for-gen-5-gpu-vertical-mount-x16-128gb-s-speed-compatible-with-pcie-4-0-wrx80se-straight-ver-1-black-5cm/)"
     inline: false
+    chassis:
+      - ALL

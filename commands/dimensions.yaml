@@ -7,24 +7,36 @@ fields:
   - name: S4M External
     value: 348mm x 225mm x 64mm
     inline: true
+    chassis:
+      - S4M
   - name: S4M Internal
     value: 341mm x 215mm x 57mm
     inline: true
+    chassis:
+      - S4M
   - name: S4M Weight
     value: 1.13kg
     inline: true
-  - name: "\b"
-    value: "\b"
-    inline: true
+    chassis:
+      - S4M
   - name: S4T (standalone)
     value: 200mm x 239mm x 69mm
     inline: true
+    chassis:
+      - S4T
   - name: S4T-S (stacked, sandwich layout)
     value: 200mm x 239mm x 134mm
+    inline: true
+    chassis:
+      - S4T
     inline: true
   - name: S4T-L (linked, vertical layout)
     value: 400mm x 239mm x 69mm
     inline: true
+    chassis:
+      - S4T
   - name: S4T Weight
     value: 0.6kg
     inline: true
+    chassis:
+      - S4T

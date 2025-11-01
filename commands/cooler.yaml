@@ -7,6 +7,8 @@ fields:
   - name: AXP90-x36 (with NA-FD1 duct)
     value: "[This tiny cooler](http://www.thermalright.com/product/axp90-x36/) has surpassed Noctua L9x coolers in cooling performance while providing virtually identical compatibility. Noctua fan swap and fan duct highly recommended (note that fan duct needs to be affixed using tape or using similar method) - see Noctua product links."
     inline: false
+    chassis:
+      - ALL
   - name: Noctua NH-L9x with NA-FD1 duct
     value: >-
       One of the smallest and quietest CPU coolers on the market - great
@@ -15,6 +17,8 @@ fields:
 
       NA-FD1 Fan duct improves temperatures and muffles the fan noise - highly recommended.
     inline: false
+    chassis:
+      - ALL
   - name: Noctua product links
     value: >-
       • [Intel - NH-L9i](https://noctua.at/en/nh-l9i) - **Intel** variant -
@@ -28,6 +32,8 @@ fields:
 
       • [NA-FD1 Fan duct](https://noctua.at/en/na-fd1) - Foam fan duct accessory for L9x
     inline: false
+    chassis:
+      - ALL
   - name: Metalfish Z39
     value: C-shaped alternative to NH-L9x with similar performance. Heatpipes can cause compatibility issues (i.e. interfere with M.2 stacks or VRAM heatsinks). For use with 65W base TDP CPUs. Compatible with LGA115X, LGA1200, LGA1700, AM3, AM4 and AM5.
     inline: false
@@ -46,6 +52,8 @@ fields:
 
       **S4M note**: Most Black Ridge coolers will not fit S4M out of the box. Slight bending of heatpipes is required to get the height below 45mm. The bending can further affect RAM height limits.
     inline: false
+    chassis:
+      - ALL
   - name: Alpenföhn Black Ridge product links
     value: >-
       • [Black Ridge](https://www.alpenfoehn.de/en/products/cpu-cooler/black-ridge-en)
@@ -54,6 +62,8 @@ fields:
 
       • [Alphacool Phobya gasket](https://www.aquatuning.us/water-cooling/radiators/decoupling-and-damping/15056/phobya-radiator-gasket-5mm-for-120mm-fans) - for stand-off mod with 120mm fan.
     inline: false
+    chassis:
+      - ALL
   - name: (S4T only) ID-Cooling IS-47K
     value: >-
       Black Ridge alternative with slightly improved motherboard compatibility,
@@ -63,6 +73,8 @@ fields:
 
       • [IS-47K](https://www.idcooling.com/Product/detail/id/205/name/IS-47K)
     inline: false
+    chassis:
+      - S4T
   - name: NOT recommended
     value: >-
       • Any cooler below 37mm height: NH-L9x outperforms them in everything
@@ -72,3 +84,5 @@ fields:
 
       • MasterAir G200P: Surpassed by both NH-L9x and Z39.
     inline: false
+    chassis:
+      - ALL

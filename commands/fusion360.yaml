@@ -7,3 +7,5 @@ fields:
   - name: Referral Link
     value: http://aklam.io/3gSHX4
     inline: false
+    chassis:
+      - ALL

@@ -7,3 +7,5 @@ fields:
   - name: Support E-mail
     value: support@nfc-systems.com
     inline: false
+    chassis:
+      - ALL
