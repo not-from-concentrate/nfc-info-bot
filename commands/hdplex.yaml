@@ -14,21 +14,35 @@ fields:
   - name: Standard Layout
     value: The most common configuration is mounting the HDPLEX AC-DC unit along the side of the chassis near the GPU to convert mains power input to 19V DC output. This is then fed to the HDPLEX DC-ATX unit (400W unit mounts along the front of the chassis next to the motherboard, 200W unit plugs straight into the motherboard's 24-pin connector), which converts the 19V to the various voltages and connectors necessary for the motherboard, GPU, and SATA drives (if used).
     inline: false
+    chassis:
+      - ALL
   - name: Flipped/Swapped Layout
     value: In order to accommodate some GPUs with height greater than the normal maximum of 111mm, the locations of the AC-DC unit and the DC-ATX unit can be swapped so that the AC-DC unit is along the front of the chassis and the DC-ATX unit is next to the GPU. This allows extra clearance since the DC-ATX unit is thinner, but it presents two extra challenges. First, custom power cabling will be likely since the main power input needs to run farther to reach the AC-DC unit, and the 24-pin and 8-pin power need to run further to reach the motherboard. Second, the original version (not marked with a version number) of the AC-DC unit is too thick to fit flush along the front of the chassis. It either needs to have a section milled out to fit, or you need to use a version 2.0 AC-DC unit (made thinner to fit).
     inline: false
+    chassis:
+      - ALL
   - name: Hardware Revisions
     value: "As of 2020-05-16, the 400W AC-DC unit has four versions: one with no version mark (called 1.X), 2.0, 2.1, and 3.0. The significant difference is that version 2.0+ are thinner to accommodate flipped/swapped layout without requiring any milling. The 400W DC-ATX unit has gone through several revisions, and the revision is printed directly on the unit. The pinout of the PCIe power connector was changed between versions 1.X, 2.0, and 2.1. View the Specs page on the following product page link or follow the direct links below to reference the correct diagram for your revision of the 400W DC-ATX unit."
     inline: false
+    chassis:
+      - ALL
   - name: 400W DC-ATX Product Page
     value: "[Link](https://hdplex.com/hdplex-400w-hi-fi-dc-atx-power-supply-16v-24v-wide-range-voltage-input.html)"
     inline: false
+    chassis:
+      - ALL
   - name: 400W DC-ATX Pin-out Diagrams
     value: "[1.X](https://hdplex.com/pub/media/image/Product/400WDCATX/spec/HDPLEX.400WDCATX.DIAGRAM.SelfLock.png) | [2.0](https://hdplex.com/pub/media/image/Product/400WDCATX/spec/HDPLEX.400W.DC-ATX.2.0.Diagram.png) | [2.1/3.0](https://hdplex.com/pub/media/image/Product/400WDCATX/spec/HDPLEX.400W.DCATX.2.1.Diagram.png)"
     inline: false
+    chassis:
+      - ALL
   - name: Mounting
     value: "You are advised against using adhesive/velcro to mount the DC-ATX unit to the front of the chassis (Search: Residue) unless absolutely necessary. The tension from the wires will be more than enough for most use cases. If you really feel the need to use some sort of adhesive to mount the DC-ATX in place. If you feel that you must mount it, then as per Josh, \"Use mounting tape. Grey/clear/or whatever from Scotch/3M if you NEED to, because it will come off without leaving sticky residue behind. And it's REALLY strong, way stronger than velcro. Velcro can hold really well, but it still vibrates in the hooks. Mounting tape doesn't.\" See: https://imgur.com/a/BqD27j2"
     inline: false
+    chassis:
+      - ALL
   - name: AC Inlet
     value: The 400W bundle includes two detachable connectors in the latest revisions (v2.0 - Onwards) - C6 and C14. Most brickless builds use the C6 connector, as the C14 connector does not fit into the cutout at the back of the S4M.
     inline: false
+    chassis:
+      - ALL

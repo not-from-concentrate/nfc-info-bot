@@ -9,12 +9,20 @@ fields:
       S4M: M3x4mm
       S4T: M3x5mm
     inline: false
+    chassis:
+      - ALL
   - name: Silver screws
     value: "[eBay link](https://www.ebay.com/itm/184247703708)"
     inline: false
+    chassis:
+      - ALL
   - name: "Black screws #1"
     value: "[eBay link](https://www.ebay.com/itm/355082705998)"
     inline: false
+    chassis:
+      - ALL
   - name: "Black screws #2"
     value: "[eBay link](https://www.ebay.com/itm/352996094822)"
     inline: false
+    chassis:
+      - ALL
