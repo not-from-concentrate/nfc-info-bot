@@ -256,7 +256,8 @@ class CommandSelect(Select):
 
 class ChassisSelect(Select):
     def __init__(self, parent_view: 'InfoBotView', command: str | None, current: str | None):
-        # Only show when command chosen; ALWAYS include an 'ALL' option. Allow no selection (min_values=0) -> treat as ALL.
+        # Only show when a valid command is chosen. Allow no selection (min_values=0) -> blank means ALL.
+        # The parent view already checks for specific chassis before instantiating this select, so no need to re-check here.
         if not command or command not in command_data:
             options = [SelectOption(label="Select command first", value="_placeholder", description="Choose a command", default=True)]
             super().__init__(placeholder="Select chassis (optional)", min_values=0, max_values=1, options=options, disabled=True)
@@ -268,14 +269,12 @@ class ChassisSelect(Select):
             for c in ch:
                 if c != 'ALL':
                     chassis_set.add(c)
-        if not chassis_set:
-            for c in chassis_list:
-                if c != 'ALL':
-                    chassis_set.add(c)
-        options = [SelectOption(label='ALL', value='ALL', default=(current is None or current == 'ALL'))]
+        options = []
         for c in sorted(chassis_set):
             options.append(SelectOption(label=c, value=c, default=(current == c)))
-        super().__init__(placeholder="Chassis filter (blank = ALL)", min_values=0, max_values=1, options=options, disabled=False)
+        # If somehow instantiated with empty set, disable (should be prevented by caller)
+        disabled = len(options) == 0
+        super().__init__(placeholder="Chassis filter (optional)", min_values=0, max_values=1, options=options, disabled=disabled)
         self.parent_view = parent_view
 
     async def callback(self, interaction: Interaction):
@@ -350,17 +349,21 @@ class InfoBotView(View):
             self.remove_item(self.chassis_select)
         self.command_select = CommandSelect(self)
         self.add_item(self.command_select)
-        # Only add chassis select when a command has been chosen
+        # Only add chassis select when a command has been chosen AND there are specific chassis
         if self.selected_command:
-            self.chassis_select = ChassisSelect(self, self.selected_command, self.selected_chassis)
-            self.add_item(self.chassis_select)
+            specific = self._command_has_specific_chassis(self.selected_command)
+            if specific:
+                self.chassis_select = ChassisSelect(self, self.selected_command, self.selected_chassis)
+                self.add_item(self.chassis_select)
+            else:
+                self.chassis_select = None
         else:
             self.chassis_select = None
 
     def rebuild_chassis_select(self):
         if self.chassis_select:
             self.remove_item(self.chassis_select)
-        if self.selected_command:
+        if self.selected_command and self._command_has_specific_chassis(self.selected_command):
             self.chassis_select = ChassisSelect(self, self.selected_command, self.selected_chassis)
             self.add_item(self.chassis_select)
         else:
@@ -372,13 +375,26 @@ class InfoBotView(View):
         if self.selected_command not in command_data:
             return discord.Embed(title="Unknown command", description="Data not found.", color=0xff0000)
         data = command_data[self.selected_command]
-        chassis_effective = self.selected_chassis or 'ALL'
+        # If there are no specific chassis for this command, force ALL
+        if not self._command_has_specific_chassis(self.selected_command):
+            chassis_effective = 'ALL'
+        else:
+            chassis_effective = self.selected_chassis or 'ALL'
         embed = discord.Embed(title=data.get("title", self.selected_command), description=data.get("description", ''), color=0x0099ff)
         fields = _filter_fields_by_chassis(self.selected_command, chassis_effective)
         for field in fields:
             embed.add_field(name=field.get("name", ""), value=field.get("value", ""), inline=field.get("inline", False))
         embed.set_footer(text=f"Chassis: {chassis_effective}")
         return embed
+    def _command_has_specific_chassis(self, command: str) -> bool:
+        data = command_data.get(command)
+        if not data:
+            return False
+        for field in data.get('fields', []):
+            ch = field.get('chassis') or ['ALL']
+            if any(c != 'ALL' for c in ch):
+                return True
+        return False
 
     async def refresh(self, interaction: Interaction):
         embed = self.build_embed()
