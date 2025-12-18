@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>nfc-info-bot — Commands Viewer</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#06b6d4}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071126 0%,#08111a 100%);color:#e6eef6;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    .wrap{max-width:900px;margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    h1{font-size:1.25rem;margin:0}
+    .controls{display:flex;gap:8px;align-items:center}
+    button{background:#0b1220;border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:8px 10px;border-radius:6px;cursor:pointer}
+    button.primary{background:var(--accent);color:#022; border:none}
+    input.search{padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:#071224;color:var(--muted)}
+    .list{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.02)}
+    .card a{color:var(--accent);text-decoration:none;font-weight:600}
+    .cmd-title{display:flex;align-items:center;gap:10px}
+    .cmd-header{padding:12px;border-radius:8px;margin-bottom:12px}
+    .fields{margin-top:8px}
+    .field{margin-bottom:10px}
+    .field h4{margin:0 0 4px 0;color:#dff}
+    .meta{color:var(--muted);font-size:0.9rem;margin-bottom:8px}
+    .nav{display:flex;gap:8px;margin-top:12px}
+    .hint{color:var(--muted);font-size:0.85rem;margin-top:12px}
+    footer{margin-top:28px;color:var(--muted);font-size:0.85rem}
+    pre{white-space:pre-wrap;word-wrap:break-word}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>nfc-info-bot — Commands Viewer</h1>
+      <div class="controls">
+        <input class="search" placeholder="Search commands..." aria-label="Search commands" />
+        <button id="btn-index">Index</button>
+        <button id="btn-top">Top</button>
+      </div>
+    </header>
+
+    <main id="app">
+      <div id="content">Loading...</div>
+    </main>
+
+    <footer>
+      <div class="hint">Open this repository over HTTP (e.g. <code>python -m http.server</code>) to allow fetching the YAML files. Uses <a href="https://github.com/nodeca/js-yaml" target="_blank" rel="noopener">js-yaml</a> to parse YAML in the browser.</div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <script>
+    const app = document.getElementById('content');
+    const search = document.querySelector('.search');
+    const btnIndex = document.getElementById('btn-index');
+    const btnTop = document.getElementById('btn-top');
+
+    const state = { names: [], cache: {}, current: null };
+
+    async function fetchText(path){
+      const res = await fetch(path);
+      if(!res.ok) throw new Error(`Fetch ${path} failed: ${res.status}`);
+      return await res.text();
+    }
+
+    async function loadIndex(){
+      try{
+        const txt = await fetchText('commands.yaml');
+        const names = jsyaml.load(txt);
+        if(!Array.isArray(names)) throw new Error('commands.yaml not a YAML list');
+        state.names = names.map(String);
+      }catch(e){
+        console.error(e);
+        app.innerHTML = `<div class="meta">Error loading commands.yaml — ${e.message}</div>`;
+        return;
+      }
+      route();
+    }
+
+    function renderIndex(filter=''){
+      const list = state.names.filter(n => n.toLowerCase().includes(filter.toLowerCase()));
+      if(list.length===0){
+        app.innerHTML = `<div class="meta">No commands match "${escapeHtml(filter)}"</div>`;
+        return;
+      }
+      const items = list.map(n => `
+        <div class="card"><div class="cmd-title"><a href="#cmd/${encodeURIComponent(n)}">${escapeHtml(n)}</a></div>
+          <div class="meta">${state.cache[n]?.info ? escapeHtml(state.cache[n].info) : ''}</div>
+        </div>`).join('');
+      app.innerHTML = `<div class="list">${items}</div>`;
+    }
+
+    function escapeHtml(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'})[c])}
+
+    async function loadCommand(name){
+      if(state.cache[name]) return state.cache[name];
+      try{
+        const txt = await fetchText('commands/' + name + '.yaml');
+        const data = jsyaml.load(txt);
+        state.cache[name] = data || {};
+        return state.cache[name];
+      }catch(e){
+        console.error(e);
+        state.cache[name] = {error: e.message};
+        return state.cache[name];
+      }
+    }
+
+    async function renderCommand(name){
+      const idx = state.names.indexOf(name);
+      if(idx===-1){ app.innerHTML = `<div class="meta">Unknown command: ${escapeHtml(name)}</div>`; return; }
+      const data = await loadCommand(name);
+      if(data.error){ app.innerHTML = `<div class="meta">Error loading ${escapeHtml(name)}: ${escapeHtml(data.error)}</div>`; return; }
+      const color = data.color || '#0b1220';
+      const title = data.title || name;
+      const description = data.description ? escapeHtml(data.description) : '';
+      const dm = data.dm ? '<span class="meta">DM suggested</span>' : '';
+      const fieldsHtml = (data.fields||[]).map(f=>`<div class="field"><h4>${escapeHtml(f.name)}</h4><div>${escapeHtml(f.value)}</div></div>`).join('');
+      app.innerHTML = `
+        <div class="cmd-header" style="background:${color};color:#001;">
+          <div class="cmd-title"><h2 style="margin:0">${escapeHtml(title)}</h2></div>
+        </div>
+        <div class="meta">${escapeHtml(data.info||'')} ${dm}</div>
+        <div class="card">
+          <div class="description">${description}</div>
+          <div class="fields">${fieldsHtml}</div>
+          <div class="nav">
+            <button onclick="goIndex()">Index</button>
+            <button onclick="scrollTop()">Top</button>
+            <button onclick="prevCmd('${encodeURIComponent(name)}')">← Back</button>
+            <button onclick="nextCmd('${encodeURIComponent(name)}')">Next →</button>
+          </div>
+        </div>`;
+    }
+
+    function goIndex(){ location.hash = ''; }
+    function scrollTop(){ window.scrollTo({top:0,behavior:'smooth'}); }
+    function prevCmd(name){
+      const decoded = decodeURIComponent(name);
+      const i = state.names.indexOf(decoded);
+      if(i>0) location.hash = '#cmd/' + encodeURIComponent(state.names[i-1]); else history.back();
+    }
+    function nextCmd(name){
+      const decoded = decodeURIComponent(name);
+      const i = state.names.indexOf(decoded);
+      if(i>-1 && i<state.names.length-1) location.hash = '#cmd/' + encodeURIComponent(state.names[i+1]);
+    }
+
+    function route(){
+      const h = location.hash || '';
+      if(h.startsWith('#cmd/')){
+        const name = decodeURIComponent(h.slice(5));
+        renderCommand(name);
+      }else{
+        renderIndex(search.value||'');
+      }
+    }
+
+    window.addEventListener('hashchange', route);
+    search.addEventListener('input', ()=>{ if(!location.hash) renderIndex(search.value); });
+    btnIndex.addEventListener('click', ()=>{ goIndex(); });
+    btnTop.addEventListener('click', ()=>{ scrollTop(); });
+
+    // keyboard: left/right for prev/next when viewing a command
+    window.addEventListener('keydown', (e)=>{
+      if(!location.hash.startsWith('#cmd/')) return;
+      const name = decodeURIComponent(location.hash.slice(5));
+      if(e.key === 'ArrowLeft') prevCmd(encodeURIComponent(name));
+      if(e.key === 'ArrowRight') nextCmd(encodeURIComponent(name));
+    });
+
+    // start
+    loadIndex();
+  </script>
+</body>
+</html>
