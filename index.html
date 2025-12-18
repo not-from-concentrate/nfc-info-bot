@@ -45,7 +45,7 @@
     </main>
 
     <footer>
-      <div class="hint">Open this repository over HTTP (e.g. <code>python -m http.server</code>) to allow fetching the YAML files. Uses <a href="https://github.com/nodeca/js-yaml" target="_blank" rel="noopener">js-yaml</a> to parse YAML in the browser.</div>
+
     </footer>
   </div>
 
@@ -133,7 +133,7 @@
         <div class="cmd-header" style="background:${color};color:#001;">
           <div class="cmd-title"><h2 style="margin:0">${escapeHtml(title)}</h2></div>
         </div>
-        <div class="meta">${escapeHtml(data.info||'')} ${dm}</div>
+        <div class="meta">${markdownToHtml(data.info||'')} ${dm}</div>
         <div class="card">
           <div class="description">${descriptionHtml}</div>
           <div class="fields">${fieldsHtml}</div>
