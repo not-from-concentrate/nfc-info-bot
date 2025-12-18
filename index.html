@@ -50,6 +50,8 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@2.4.0/dist/purify.min.js"></script>
   <script>
     const app = document.getElementById('content');
     const search = document.querySelector('.search');
@@ -93,6 +95,16 @@
 
     function escapeHtml(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'})[c])}
 
+    function markdownToHtml(md){
+      if(md === undefined || md === null) return '';
+      try{
+        const raw = marked.parse(String(md), {gfm:true, breaks:true});
+        return DOMPurify.sanitize(raw, {ADD_ATTR: ['target','rel']});
+      }catch(e){
+        return escapeHtml(md);
+      }
+    }
+
     async function loadCommand(name){
       if(state.cache[name]) return state.cache[name];
       try{
@@ -114,16 +126,16 @@
       if(data.error){ app.innerHTML = `<div class="meta">Error loading ${escapeHtml(name)}: ${escapeHtml(data.error)}</div>`; return; }
       const color = data.color || '#0b1220';
       const title = data.title || name;
-      const description = data.description ? escapeHtml(data.description) : '';
+      const descriptionHtml = data.description ? markdownToHtml(data.description) : '';
       const dm = data.dm ? '<span class="meta">DM suggested</span>' : '';
-      const fieldsHtml = (data.fields||[]).map(f=>`<div class="field"><h4>${escapeHtml(f.name)}</h4><div>${escapeHtml(f.value)}</div></div>`).join('');
+      const fieldsHtml = (data.fields||[]).map(f=>`<div class="field"><h4>${escapeHtml(f.name)}</h4><div>${markdownToHtml(f.value)}</div></div>`).join('');
       app.innerHTML = `
         <div class="cmd-header" style="background:${color};color:#001;">
           <div class="cmd-title"><h2 style="margin:0">${escapeHtml(title)}</h2></div>
         </div>
         <div class="meta">${escapeHtml(data.info||'')} ${dm}</div>
         <div class="card">
-          <div class="description">${description}</div>
+          <div class="description">${descriptionHtml}</div>
           <div class="fields">${fieldsHtml}</div>
           <div class="nav">
             <button onclick="goIndex()">Index</button>
