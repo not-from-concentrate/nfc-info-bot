@@ -1,6 +1,7 @@
 # bot.py
 import os, re, discord, requests, threading, sqlite3, datetime, json, yaml
 from discord import Option
+from discord.ext import tasks
 from discord.ui import View, Select, Button
 from discord import SelectOption, ButtonStyle, Interaction
 
@@ -26,6 +27,20 @@ except Exception as e:
 LINK_PATTERN = r'(?:https?:\/\/)(?:[^@\n]+@)?([^:\/\n\s?]+)'
 REAL_GIFT_DOMAIN = 'discord.gift'
 MIN_RATIO = 90
+
+DB_SCHEMA_VERSION = 3
+BST_FORUM_CHANNEL = None
+try:
+    if os.getenv('BST_FORUM_CHANNEL'):
+        BST_FORUM_CHANNEL = int(os.getenv('BST_FORUM_CHANNEL'))
+except ValueError as e:
+    print(f"Failed to parse BST_FORUM_CHANNEL: {e}; BST pruning disabled.")
+BST_PRUNE_DELETE = os.getenv('BST_PRUNE_DELETE') == 'True'
+BST_PRUNE_MAX_AGE_DAYS = 183
+try:
+    BST_PRUNE_MAX_AGE_DAYS = int(os.getenv('BST_PRUNE_MAX_AGE_DAYS', '183'))
+except ValueError as e:
+    print(f"Failed to parse BST_PRUNE_MAX_AGE_DAYS: {e}; defaulting to 183.")
 
 # Init variables
 command_data = {}
@@ -85,7 +100,20 @@ def database_setup():
                     Source STRING NOT NULL \
                     );")
         conn.commit()
-    print("Database verified at schema version {}".format(schema_version))
+    if schema_version < 3:
+        print("Upgrading database to schema version 3")
+        print("Creating bst_archive table")
+        conn.execute("CREATE TABLE IF NOT EXISTS bst_archive ( \
+                    thread_id INTEGER PRIMARY KEY, \
+                    created_at TEXT NOT NULL, \
+                    title TEXT, \
+                    content TEXT, \
+                    author_id INTEGER, \
+                    archived_at TEXT NOT NULL \
+                    );")
+        conn.execute("UPDATE metadata SET schema_version = ?", [3])
+        conn.commit()
+    print("Database verified at schema version {}".format(max(schema_version, DB_SCHEMA_VERSION)))
 
 def get_stats():
     stats = conn.execute("SELECT * FROM stats").fetchall()
@@ -101,6 +129,33 @@ def get_stats():
         text_table.add_row([row[0], row[1], row[2]])
 
     return text_table.get_string(title="Current nfc-info-bot stats")
+
+async def _collect_bst_threads(forum):
+    threads = {}
+    for thread in await forum.guild.active_threads():
+        if thread.parent_id == forum.id:
+            threads[thread.id] = thread
+    async for thread in forum.archived_threads(limit=None):
+        threads.setdefault(thread.id, thread)
+    return list(threads.values())
+
+async def _starter_text(thread):
+    try:
+        message = await thread.fetch_message(thread.id)
+    except discord.NotFound:
+        return "", None
+    content = message.clean_content
+    if message.attachments:
+        names = ", ".join(a.filename for a in message.attachments)
+        content = f"{content}\n[attachments: {names}]" if content else f"[attachments: {names}]"
+    return content, message.author.id
+
+def _archive_bst_post(thread, created_at, content, author_id):
+    conn.execute(
+        "INSERT OR REPLACE INTO bst_archive (thread_id, created_at, title, content, author_id, archived_at) VALUES (?, ?, ?, ?, ?, ?)",
+        [thread.id, created_at.isoformat(), thread.name, content, author_id,
+         datetime.datetime.now(datetime.UTC).isoformat()])
+    conn.commit()
 
 # Set up the commands JSON file pull and parse
 def update_commands():
@@ -450,9 +505,47 @@ async def infobotui(ctx: discord.ApplicationContext):
     view = InfoBotView()
     await ctx.respond(content="Select a command and chassis to display data.", view=view, ephemeral=False)
 
+@tasks.loop(hours=24)
+async def prune_bst_forum():
+    mode = "delete" if BST_PRUNE_DELETE else "dry-run"
+    try:
+        forum = client.get_channel(BST_FORUM_CHANNEL) or await client.fetch_channel(BST_FORUM_CHANNEL)
+        if not isinstance(forum, discord.ForumChannel):
+            print(f"[bst-prune] Channel {BST_FORUM_CHANNEL} is not a forum channel; skipping.")
+            return
+        cutoff = datetime.datetime.now(datetime.UTC) - datetime.timedelta(days=BST_PRUNE_MAX_AGE_DAYS)
+        print(f"[bst-prune] Starting {mode} run on #{forum.name}; cutoff {cutoff:%Y-%m-%d %H:%M} UTC")
+        threads = await _collect_bst_threads(forum)
+        eligible = deleted = failed = 0
+        for thread in threads:
+            if thread.flags.pinned:
+                continue
+            created_at = discord.utils.snowflake_time(thread.id)
+            if created_at >= cutoff:
+                continue
+            eligible += 1
+            link = f"https://discord.com/channels/{thread.guild.id}/{thread.id}"
+            if not BST_PRUNE_DELETE:
+                print(f"[bst-prune][dry-run] would delete thread {thread.id} (created {created_at:%Y-%m-%d}) {link}")
+                continue
+            try:
+                content, author_id = await _starter_text(thread)
+                _archive_bst_post(thread, created_at, content, author_id)
+                await thread.delete()
+                deleted += 1
+                print(f"[bst-prune] Deleted thread {thread.id} (created {created_at:%Y-%m-%d})")
+            except Exception as e:
+                failed += 1
+                print(f"[bst-prune] Failed to archive/delete thread {thread.id}: {e}")
+        print(f"[bst-prune] Finished {mode} run: examined {len(threads)}, eligible {eligible}, deleted {deleted}, failed {failed}")
+    except Exception as e:
+        print(f"[bst-prune] Run failed: {e}")
+
 @client.event
 async def on_ready():
     print(f'{client.user} has connected to Discord!')
+    if BST_FORUM_CHANNEL and not prune_bst_forum.is_running():
+        prune_bst_forum.start()
 
 async def check_for_bad_links(message, domains):
     log_channel = client.get_channel(int(LOG_CHANNEL))

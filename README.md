@@ -59,3 +59,15 @@ The bot will automatically refresh its list of commands from the repo hourly at 
 | COMMAND_URL | URL to the repository raw content base |
 | ADMIN_USER | ID of discord user who can run restricted commands |
 | LOG_CHANNEL | ID of channel to log information to |
+| BST_FORUM_CHANNEL | (Optional) ID of the BST (buy/sell/trade) forum channel. Pruning is disabled when unset |
+| BST_PRUNE_DELETE | (Optional) Set to `True` to actually delete old BST posts. Any other value (default) is dry-run |
+| BST_PRUNE_MAX_AGE_DAYS | (Optional) Age in days after which BST posts are pruned. Default `183` (~6 months) |
+
+## BST Forum Pruning
+
+When `BST_FORUM_CHANNEL` is set, the bot checks the BST forum at startup and then every 24 hours for posts older than `BST_PRUNE_MAX_AGE_DAYS`. Pinned posts are never pruned.
+
+- **Dry-run (default):** the bot only prints the ID, creation date, and a Discord link for each post that would be deleted.
+- **Delete mode (`BST_PRUNE_DELETE=True`):** before each post is deleted, its thread ID, creation timestamp, title, author ID, and the text of the opening post (not the replies) are saved to the `bst_archive` table in the stats database. A post is only deleted after it has been archived.
+
+The bot needs the **View Channel**, **Read Message History**, and **Manage Threads** permissions on the forum channel.

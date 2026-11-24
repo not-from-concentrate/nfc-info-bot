@@ -9,5 +9,8 @@ services:
       COMMAND_URL: ${COMMAND_URL}
       ADMIN_USER: ${ADMIN_USER}
       LOG_CHANNEL: ${LOG_CHANNEL}
+      BST_FORUM_CHANNEL: ${BST_FORUM_CHANNEL:-}
+      BST_PRUNE_DELETE: ${BST_PRUNE_DELETE:-False}
+      BST_PRUNE_MAX_AGE_DAYS: ${BST_PRUNE_MAX_AGE_DAYS:-183}
     volumes:
       - "~/nfc-info-bot_data:/db"
